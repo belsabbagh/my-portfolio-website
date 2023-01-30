@@ -1,7 +1,6 @@
 <script lang="ts">
     export let svg: string;
     export let size: string = "80px";
+    export let color: string = "white";
 </script>
-<div>
-    <img src={svg} alt="icon" width={size} height={size}/>
-</div>
+<img class={$$props.class} src={svg} alt="icon" width={size} height={size}/>
