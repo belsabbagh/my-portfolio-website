@@ -1,5 +1,5 @@
 <script lang="ts">
-  import contacts from '@/config/contacts';
+  import contacts from '$config/contacts';
   
   export let detailed: Boolean = false;
 export let repositoryCount: Number;

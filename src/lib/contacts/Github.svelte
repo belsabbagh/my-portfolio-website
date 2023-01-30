@@ -1,10 +1,10 @@
 <script lang="ts">
   import GithubDetails from './GithubDetails.svelte';
 
-  import Contact from '@/lib/Contact.svelte';
-  import contacts from '@/config/contacts';
-  import Icon from '@/lib/Icon.svelte';
-  import ContactHeader from '@/lib/ContactHeader.svelte';
+  import Contact from '$lib/Contact.svelte';
+  import contacts from '$config/contacts';
+  import Icon from '$lib/Icon.svelte';
+  import ContactHeader from '$lib/ContactHeader.svelte';
 
   export let detailed: Boolean = false;
 

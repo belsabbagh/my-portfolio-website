@@ -1,4 +1,4 @@
-import githubSvg from '@/assets/github-mark.svg';
+import githubSvg from '$assets/github-mark.svg';
 
 export default {
   github: {
