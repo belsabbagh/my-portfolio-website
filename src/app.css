@@ -2,8 +2,9 @@
 
 :root {
   --primary: rgb(218, 224, 255);
-  --accent:  #a3b1ff;
-  --background: #100d38;
+  --accent:  #a640fa;
+  --background: #170A2E;
+  --logo: #e99fff;
   font-family: 'Product Sans', sans-serif;
   font-size: 18px;
   line-height: 24px;
@@ -50,6 +51,19 @@ a {
   transform-origin: bottom left;
 }
 
+.icon {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  top: 0;
+  color: var(--primary);
+  transition: top 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+.icon:hover {
+  top: -6px;
+  color: var(--accent);
+}
+
 body {
   margin: 0;
   width: 100%;
@@ -68,7 +82,6 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
   width: 100%;
   text-align: center;
 }

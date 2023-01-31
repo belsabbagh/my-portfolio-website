@@ -24,15 +24,4 @@
   .contacts > * {
     margin: 0.5rem;
   }
-  .icon {
-    position: relative;
-    width: 2rem;
-    height: 2rem;
-    top: 0;
-    transition: top 0.1s ease-in-out, color 0.1s ease-in-out;
-  }
-  .icon:hover {
-    top: -6px;
-    color: #a0acf2;
-  }
 </style>

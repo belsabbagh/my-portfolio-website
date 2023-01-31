@@ -1,14 +1,20 @@
 <script lang="ts">
   import Introduction from '@/lib/Introduction.svelte';
-
+  import MdTagFaces from 'svelte-icons/md/MdTagFaces.svelte'
+  import MdCode from 'svelte-icons/md/MdCode.svelte'
   import ContactsNav from '@/lib/ContactsNav.svelte';
   import Footer from '@/lib/Footer.svelte';
-  import MainSection from './lib/MainSection.svelte';
+  import MainSection from '@/lib/MainSection.svelte';
+  import Logo from '@/lib/Logo.svelte';
 </script>
 
 <main>
   <header>
-    This will be the header
+    <Logo />
+    <nav class="nav">
+      <a href="#about-me">About Me</a>
+      <a href="#my-work">My Work</a>
+    </nav>
   </header>
   <div class="body">
     <div class="left-bar"><ContactsNav /></div>
@@ -16,17 +22,23 @@
       <section style="margin-bottom: 4rem;">
         <Introduction />
       </section>
-      <MainSection title="About Me">
-
+      <MainSection id="about-me" title="About Me">
+        <div class="section-icon" slot="icon">
+          <MdTagFaces />
+        </div>
+        This is me.
       </MainSection>
-      <MainSection title="My Work">
-
+      <MainSection id="my-work" title="My Work">
+        <div class="section-icon" slot="icon">
+          <MdCode />
+        </div>
+        This is my work.
       </MainSection>
       <section class="main-section">
         <Footer />
       </section>
     </div>
-    <div class="right-bar" />
+    <div class="right-bar"></div>
   </div>
 </main>
 
@@ -36,9 +48,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 2rem 1rem 1rem 1rem;
   }
   header {
     margin-bottom: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   .body {
     display: flex;
@@ -50,22 +67,22 @@
     padding-right: 5px;
   }
   .left-bar {
-    position: sticky;
-    border: 1px solid var(--accent);
-    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    bottom: 0;
-    position: sticky;
-    position: -webkit-sticky;
-
   }
   .middle-part {
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 1rem;
+  }
+
+  .section-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.8rem;
+    color: var(--accent);
   }
 </style>
