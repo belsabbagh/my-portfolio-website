@@ -1,6 +1,5 @@
 <script lang="ts">
   import Layout from '@/lib/Layout.svelte';
-
   import Introduction from '@/lib/Introduction.svelte';
   import MdTagFaces from 'svelte-icons/md/MdTagFaces.svelte';
   import MdCode from 'svelte-icons/md/MdCode.svelte';
