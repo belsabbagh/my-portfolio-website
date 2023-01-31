@@ -27,9 +27,6 @@
       </div>
       This is my work.
     </MainSection>
-    <section class="main-section">
-      <Footer />
-    </section>
   </Layout>
 </main>
 

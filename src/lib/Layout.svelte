@@ -1,15 +1,10 @@
 <script lang="ts">
+  import Header from '@/lib/Header.svelte';
+  import Footer from '@/lib/Footer.svelte';
   import ContactsNav from '@/lib/ContactsNav.svelte';
-  import Logo from '@/lib/Logo.svelte';
 </script>
 
-<header>
-  <Logo />
-  <nav class="nav">
-    <a href="#about-me">About Me</a>
-    <a href="#my-work">My Work</a>
-  </nav>
-</header>
+<Header />
 <div class="body">
   <div class="left-bar"><ContactsNav /></div>
   <div class="middle-part">
@@ -17,15 +12,8 @@
   </div>
   <div class="right-bar" />
 </div>
-
+<Footer />
 <style>
-  header {
-    margin-bottom: 5rem;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
   .body {
     display: flex;
     flex-direction: row;
