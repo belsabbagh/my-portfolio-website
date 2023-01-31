@@ -1,9 +1,7 @@
-
-
 :root {
   --primary: rgb(218, 224, 255);
-  --accent:  #a640fa;
-  --background: #170A2E;
+  --accent: #a640fa;
+  --background: #170a2e;
   --logo: #e99fff;
   font-family: 'Product Sans', sans-serif;
   font-size: 18px;

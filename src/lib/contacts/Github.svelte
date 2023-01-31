@@ -16,7 +16,11 @@
     <Icon svg={contacts.github.svg} size={'64px'} slot="icon" />
     <h2 slot="name">{contacts.github.name}</h2>
   </ContactHeader>
-  <GithubDetails slot="content" {detailed} repositoryCount={contacts.github.repositoryCount}/>
+  <GithubDetails
+    slot="content"
+    {detailed}
+    repositoryCount={contacts.github.repositoryCount}
+  />
 </Contact>
 
 <style>
