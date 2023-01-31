@@ -1,7 +1,9 @@
 :root {
   --primary: rgb(218, 224, 255);
   --accent: #d770ff;
-  --background: #170a2e;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --background: rgb(23, 10, 46);
+  --background-header: rgba(23, 10, 46, 0.85);
   font-family: 'Product Sans', sans-serif;
   font-size: 18px;
   line-height: 24px;
@@ -80,7 +82,7 @@ h1 {
 
 #app {
   width: 100%;
-  text-align: center;
+  text-align: start;
 }
 
 button {
