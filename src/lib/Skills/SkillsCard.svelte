@@ -16,6 +16,7 @@
 
 <style>
   ul {
+    list-style: none;
     text-align: start;
     padding: 0 0 0 1rem;
     margin: 0;
@@ -29,11 +30,11 @@
     color: var(--primary);
   }
   .skills {
-    padding: 0 1rem 1rem 1rem;
+    padding: 0 1rem 1rem 0rem;
     display: flex;
     flex-direction: column;
     justify-content: start;
 
-    margin: 0 0.5rem 0rem 0.5rem;
+    margin: 0 0.5rem 0rem 00rem;
   }
 </style>
