@@ -9,7 +9,9 @@
   <div class="description">
     <span class="text-description">I'm a computer science junior at</span>
     <a class="text-link" href="http://www.miuegypt.edu.eg/">MIU, Egypt</a>.
-    <span class="text-description">I love writing maintainable and scalable code.</span>
+    <span class="text-description"
+      >I love writing maintainable and scalable code.</span
+    >
   </div>
 </div>
 

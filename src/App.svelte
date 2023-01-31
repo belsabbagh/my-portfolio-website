@@ -4,10 +4,7 @@
   import Introduction from '@/lib/Introduction.svelte';
   import MdTagFaces from 'svelte-icons/md/MdTagFaces.svelte';
   import MdCode from 'svelte-icons/md/MdCode.svelte';
-  import ContactsNav from '@/lib/ContactsNav.svelte';
-  import Footer from '@/lib/Footer.svelte';
   import MainSection from '@/lib/MainSection.svelte';
-  import Logo from '@/lib/Logo.svelte';
 </script>
 
 <main>

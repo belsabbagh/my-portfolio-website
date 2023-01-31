@@ -13,6 +13,7 @@
   <div class="right-bar" />
 </div>
 <Footer />
+
 <style>
   .body {
     display: flex;

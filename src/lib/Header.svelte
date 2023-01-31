@@ -1,5 +1,4 @@
 <script lang="ts">
-  import ContactsNav from '@/lib/ContactsNav.svelte';
   import Logo from '@/lib/Logo.svelte';
 </script>
 
@@ -20,4 +19,3 @@
     justify-content: space-between;
   }
 </style>
-
