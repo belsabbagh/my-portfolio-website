@@ -13,6 +13,6 @@
     height: 32px;
     max-width: fit-content;
     max-height: fit-content;
-    color: var(--logo);
+    color: var(--accent);
   }
 </style>

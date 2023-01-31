@@ -32,6 +32,6 @@
     height: 100%;
     margin-bottom: 1rem;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--primary);
   }
 </style>
