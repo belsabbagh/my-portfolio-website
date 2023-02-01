@@ -7,9 +7,11 @@
   </div>
   <h1 class="my-name">Belal Elsabbagh.</h1>
   <div class="description">
-    I'm a computer science junior at
-    <a class="text-link" href="http://www.miuegypt.edu.eg/">MIU, Egypt</a>. I
-    love to write maintainable and scalable code.
+    <span class="text-description">I'm a computer science junior at</span>
+    <a class="text-link" href="http://www.miuegypt.edu.eg/">MIU, Egypt</a>.
+    <span class="text-description"
+      >I love writing maintainable and scalable code.</span
+    >
   </div>
 </div>
 
@@ -25,8 +27,10 @@
     margin-bottom: 3%;
   }
   .description {
-    color: var(--primary);
-    opacity: 0.8;
     max-width: 60%;
+  }
+  .text-description {
+    color: var(--primary);
+    opacity: 0.7;
   }
 </style>

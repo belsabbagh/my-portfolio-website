@@ -5,6 +5,8 @@
 
 <style>
   .footer {
+    margin: auto;
+    text-align: center;
     font-family: Monaco, monospace;
   }
 </style>

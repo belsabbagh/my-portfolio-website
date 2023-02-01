@@ -1,5 +1,15 @@
 {
-    "tabWidth": 2,
-    "singleQuote": true,
-    "arrowParens": "always"
+  "plugins": ["prettier-plugin-svelte"],
+  "tabWidth": 2,
+  "singleQuote": true,
+  "arrowParens": "always",
+  "pluginSearchDirs": false,
+  "overrides": [
+    {
+      "files": "*.svelte",
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
 }
