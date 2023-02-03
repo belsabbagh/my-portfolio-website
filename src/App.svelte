@@ -4,9 +4,11 @@
   import MdCode from 'svelte-icons/md/MdCode.svelte';
   import MainSection from '@/lib/Layout/MainSection.svelte';
   import AboutMe from '@/lib/AboutMe.svelte';
+  import Introduction from '@/lib/Introduction.svelte';
 </script>
 
 <Main>
+  <Introduction />
   <section style="margin-bottom: 4rem;" />
   <MainSection id="about-me" title="About Me">
     <div class="section-icon" slot="icon"><MdTagFaces /></div>

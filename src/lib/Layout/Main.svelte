@@ -10,10 +10,6 @@
   <Header>
     <Logo slot="logo" />
   </Header>
-  <div class="intro">
-    <Introduction />
-  </div>
-
   <div class="body">
     <div class="left-bar"><ContactsNav /></div>
     <div class="middle-part">
@@ -30,6 +26,7 @@
     flex-direction: column;
     align-items: flex-start;
     margin: 0rem 1rem 0rem 1rem;
+    padding-bottom: 1.5rem;
   }
   .body {
     display: flex;
@@ -57,7 +54,4 @@
     max-width: 850px;
   }
 
-  .intro {
-    margin-left: 13rem;
-  }
 </style>

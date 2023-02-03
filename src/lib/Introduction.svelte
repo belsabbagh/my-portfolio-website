@@ -1,36 +1,37 @@
 <script lang="ts">
+  import CoverName from './CoverName.svelte';
+import TextLink from './TextLink.svelte';
 </script>
 
-<div class={'intro'}>
+<div class="intro">
   <div class="greeting" style="color: var(--accent)">
     Nice to meet you. My name is
   </div>
-  <h1 class="my-name">Belal Elsabbagh.</h1>
+  <CoverName>Belal Elsabbagh.</CoverName>
   <div class="description">
-    <span class="text-description">I'm a computer science junior at</span>
-    <a class="text-link" href="http://www.miuegypt.edu.eg/">MIU, Egypt</a>.
-    <span class="text-description"
-      >I love writing maintainable and scalable code.</span
-    >
+    <p>
+      I'm a software developer specializing in building/designing digital solutions. I'm currently studying for my bachelor's degree
+      in computer science at
+      <TextLink target="_blank" rel="noreferrer noopener" href="http://www.miuegypt.edu.eg/">MIU, Egypt</TextLink>
+    </p>
   </div>
 </div>
 
 <style>
   .intro {
     text-align: start;
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    margin-left: -5rem
   }
   .greeting {
     font-family: Monaco, monospace;
   }
-  .my-name {
-    margin-top: 3%;
-    margin-bottom: 3%;
-  }
   .description {
     max-width: 60%;
   }
-  .text-description {
-    color: var(--primary);
-    opacity: 0.7;
+  p {
+    width: 100%
   }
 </style>

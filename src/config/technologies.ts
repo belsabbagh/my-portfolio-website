@@ -1,7 +1,7 @@
 const technologies: { title: string; technologies: string[] }[] = [
   {
     title: 'General',
-    technologies: ['C++', 'Java', 'Python', 'JavaScript', 'TypeScript'],
+    technologies: ['C/C++', 'Java', 'Python', 'JavaScript', 'TypeScript'],
   },
   {
     title: 'A.I.',
@@ -13,7 +13,7 @@ const technologies: { title: string; technologies: string[] }[] = [
   },
   {
     title: 'Back-end',
-    technologies: ['Express', 'NoSQL', 'SQL', 'REST', 'PHP', 'Laravel'],
+    technologies: ['Express', 'MongoDB', 'SQL', 'REST', 'PHP', 'Laravel'],
   },
 ];
 
