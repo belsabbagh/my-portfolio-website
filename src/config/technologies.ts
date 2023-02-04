@@ -1,7 +1,14 @@
 export default [
   {
     title: 'Languages',
-    technologies: ['C/C++', 'Java', 'Python', 'PHP', 'JavaScript', 'TypeScript'],
+    technologies: [
+      'C/C++',
+      'Java',
+      'Python',
+      'PHP',
+      'JavaScript',
+      'TypeScript',
+    ],
   },
   {
     title: 'A.I. & D.Sc.',
@@ -13,6 +20,6 @@ export default [
   },
   {
     title: 'Back-end',
-    technologies: ['Node.js','Express', 'MongoDB', 'SQL', 'REST', 'Laravel'],
+    technologies: ['Node.js', 'Express', 'MongoDB', 'SQL', 'REST', 'Laravel'],
   },
 ];

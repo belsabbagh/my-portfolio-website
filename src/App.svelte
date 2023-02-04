@@ -21,7 +21,7 @@
   </MainSection>
   <MainSection id="work" title="Things I've Built">
     <div class="section-icon" slot="icon"><MdCode /></div>
-    <Work/>
+    <Work />
   </MainSection>
   <section id="contact" class="contact">
     <h1>Want to get in touch?</h1>

@@ -12,7 +12,7 @@
   <div class="body">
     <div class="left-bar">
       <ContactsNav />
-      <div class="line"></div>
+      <div class="line" />
     </div>
     <div class="middle-part">
       <slot />

@@ -9,7 +9,7 @@
 </script>
 
 <div class={$$props.class}>
-  <TextLink {href}> <h3 class="project-title">{title}</h3></TextLink>
+  <TextLink {href}><h3 class="project-title">{title}</h3></TextLink>
   <p>{description}</p>
   <TechStack items={tags} />
 </div>
