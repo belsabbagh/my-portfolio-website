@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Languages',
-    technologies: ['C/C++', 'Java', 'Python', 'PHP', 'JavaScript ES6+', 'TypeScript'],
+    technologies: ['C/C++', 'Java', 'Python', 'PHP', 'JavaScript', 'TypeScript'],
   },
   {
     title: 'A.I. & D.Sc.',

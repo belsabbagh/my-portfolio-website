@@ -2,7 +2,7 @@
   import TextLink from '@/components/TextLink.svelte';
 </script>
 
-<footer class="footer">
+<footer>
   <div>
     Made by Belal Elsabbagh, inspired by <TextLink
       target="_blank"
@@ -14,9 +14,10 @@
 </footer>
 
 <style>
-  .footer {
+  footer {
     margin: auto;
     text-align: center;
     font-family: Monaco, monospace;
+    padding: 1rem;
   }
 </style>

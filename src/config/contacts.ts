@@ -1,13 +1,9 @@
-import githubSvg from '@/assets/github-mark.svg';
-
 interface Contact {
   name: string;
   link: string;
-  svg?: string;
 }
 
 const github: Contact = {
-  svg: githubSvg,
   name: 'GitHub',
   link: 'https://github.com/belal-elsabbagh',
 };

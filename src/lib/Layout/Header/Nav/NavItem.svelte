@@ -1,25 +1,13 @@
 <script lang="ts">
   export let href: string;
-
-  const scroll = () => {
-    const element = document.getElementById(href.slice(1));
-    console.log(element);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 </script>
 
-<a {href} class={`item ${$$props.class}`} on:click={scroll}><slot /></a>
+<a {href} class={$$props.class}><slot /></a>
 
 <style>
   a {
     transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
   }
-  /* Style 2: */
-  /* On Hover: Top and left border of after element and right, bottom borders of before element is */
-  /* incresed from 0 to 10px */
-
   a:after,
   a:before {
     content: '';

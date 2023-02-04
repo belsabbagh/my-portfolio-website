@@ -10,7 +10,10 @@
     <Logo slot="logo" />
   </Header>
   <div class="body">
-    <div class="left-bar"><ContactsNav /></div>
+    <div class="left-bar">
+      <ContactsNav />
+      <div class="line"></div>
+    </div>
     <div class="middle-part">
       <slot />
     </div>
@@ -25,7 +28,6 @@
     flex-direction: column;
     align-items: flex-start;
     margin: 0rem 1rem 0rem 1rem;
-    padding-bottom: 1.5rem;
   }
 
   main :global(section) {
@@ -42,7 +44,7 @@
   }
   .left-bar {
     position: fixed;
-    bottom: 1rem;
+    bottom: 0rem;
     left: 1rem;
     display: flex;
     flex-direction: column;
@@ -56,5 +58,12 @@
     margin: auto;
     padding: 1rem;
     max-width: 850px;
+  }
+
+  .line {
+    width: 1px;
+    height: 2rem;
+    background-color: var(--primary-text);
+    margin: 0.5rem 0rem 0rem 0rem;
   }
 </style>
