@@ -23,6 +23,8 @@
     max-height: fit-content;
   }
   .contacts :global(.icon) {
+    width: 1.5rem;
+    height: 1.5rem;
     margin: 0.5rem;
   }
 </style>

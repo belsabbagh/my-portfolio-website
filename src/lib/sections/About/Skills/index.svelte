@@ -11,7 +11,7 @@
 
 <style>
   .skillset {
-    font-family: 'Fira Code', monospace;
+    font-family: var(--code-font);
     font-size: 0.75rem;
     display: flex;
     flex-wrap: wrap;

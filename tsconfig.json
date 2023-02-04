@@ -7,9 +7,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@assets/*": ["./src/assets/*"],
-      "@components/*": ["./src/components/*"]
+      "@/*": ["./src/*"]
     },
     /**
      * Typecheck JS in `.svelte` and `.js` files by default.

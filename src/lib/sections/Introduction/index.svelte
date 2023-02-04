@@ -18,7 +18,7 @@
         href="http://www.miuegypt.edu.eg/"
       >
         MIU, Egypt
-      </TextLink>
+      </TextLink>.
     </p>
   </div>
 </div>
@@ -32,7 +32,7 @@
     margin-left: -5rem;
   }
   .greeting {
-    font-family: Monaco, monospace;
+    font-family: var(--code-font);
   }
   .description {
     max-width: 60%;

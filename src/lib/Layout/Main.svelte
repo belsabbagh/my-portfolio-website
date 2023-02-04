@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 0rem 1rem 0rem 1rem;
+    margin: 0rem 2rem 0rem 2rem;
   }
 
   main :global(section) {
