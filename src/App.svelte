@@ -3,8 +3,8 @@
   import MdTagFaces from 'svelte-icons/md/MdTagFaces.svelte';
   import MdCode from 'svelte-icons/md/MdCode.svelte';
   import MainSection from '@/lib/Layout/MainSection.svelte';
-  import AboutMe from '@/lib/AboutMe.svelte';
-  import Introduction from '@/lib/Introduction.svelte';
+  import AboutMe from '@/lib/sections/AboutMe/index.svelte';
+  import Introduction from '@/lib/sections/Introduction/index.svelte';
 </script>
 
 <Main>

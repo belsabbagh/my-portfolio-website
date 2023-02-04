@@ -1,6 +1,6 @@
 <script lang="ts">
   import AboutMeEssay from './AboutMeEssay.svelte';
-  import SkillSet from '@/lib/Skills/Skills.svelte';
+  import SkillSet from './Skills/index.svelte';
   import FaUser from 'svelte-icons/fa/FaUser.svelte';
   import pfp from '@/assets/pfp.png';
   const pfpSize = { width: 300, height: 300 };

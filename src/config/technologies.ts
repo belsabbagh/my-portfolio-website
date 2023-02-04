@@ -1,7 +1,7 @@
-const technologies: { title: string; technologies: string[] }[] = [
+export default [
   {
-    title: 'General',
-    technologies: ['C/C++', 'Java', 'Python', 'JavaScript', 'TypeScript'],
+    title: 'Languages',
+    technologies: ['C/C++', 'Java', 'Python', 'PHP', 'ES6+ & TS'],
   },
   {
     title: 'A.I.',
@@ -13,8 +13,6 @@ const technologies: { title: string; technologies: string[] }[] = [
   },
   {
     title: 'Back-end',
-    technologies: ['Express', 'MongoDB', 'SQL', 'REST', 'PHP', 'Laravel'],
+    technologies: ['Express', 'MongoDB', 'SQL', 'REST', 'Laravel'],
   },
 ];
-
-export default technologies;

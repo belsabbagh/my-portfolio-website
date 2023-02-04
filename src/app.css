@@ -35,32 +35,11 @@ a {
   position: relative;
 }
 
-.icon {
-  position: relative;
-  width: 2rem;
-  height: 2rem;
-  top: 0;
-  color: var(--primary);
-  transition: top 0.1s ease-in-out, color 0.1s ease-in-out;
-}
-.icon:hover {
-  top: -6px;
-  color: var(--accent);
-}
-
 body {
   margin: 0;
   width: 100%;
   min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-
-}
-
-.card {
-  padding: 2em;
 }
 
 #app {

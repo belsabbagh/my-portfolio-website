@@ -3,12 +3,13 @@
   import FaGithub from 'svelte-icons/fa/FaGithub.svelte';
   import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte';
   import FaEnvelope from 'svelte-icons/fa/FaEnvelope.svelte';
+  import IconLink from '@/components/IconLink.svelte';
 </script>
 
 <div class="contacts">
-  <a class={'icon'} href={contacts.github.link}><FaGithub /></a>
-  <a class={'icon'} href={contacts.linkedin.link}><FaLinkedin /></a>
-  <a class={'icon'} href={contacts.email.link}><FaEnvelope /></a>
+  <IconLink class="icon" href={contacts.github.link}><FaGithub /></IconLink>
+  <IconLink class="icon" href={contacts.linkedin.link}><FaLinkedin /></IconLink>
+  <IconLink class="icon" href={contacts.email.link}><FaEnvelope /></IconLink>
 </div>
 
 <style>
@@ -21,7 +22,7 @@
     height: 100%;
     max-height: fit-content;
   }
-  .contacts > * {
+  .contacts :global(.icon) {
     margin: 0.5rem;
   }
 </style>

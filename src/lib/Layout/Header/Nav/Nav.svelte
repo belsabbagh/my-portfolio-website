@@ -5,9 +5,12 @@
 
 <nav class="nav">
   {#each items as i}
-    <NavItem href={i.href}>{i.text}</NavItem>
+    <NavItem class="nav-item" href={i.href}>{i.text}</NavItem>
   {/each}
 </nav>
 
 <style>
+  .nav :global(.nav-item) {
+    padding: 0.75rem;
+  }
 </style>

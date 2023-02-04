@@ -10,19 +10,18 @@
   };
 </script>
 
-<a {href} class="item" on:click={scroll}><slot /></a>
+<a {href} class={`item ${$$props.class}`} on:click={scroll}><slot /></a>
 
 <style>
   a {
     transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-    padding: 0.75rem;
   }
   /* Style 2: */
   /* On Hover: Top and left border of after element and right, bottom borders of before element is */
   /* incresed from 0 to 10px */
 
-  .item:after,
-  .item:before {
+  a:after,
+  a:before {
     content: '';
     position: absolute;
     display: block;
@@ -32,7 +31,7 @@
     transition: all 0.3s ease;
   }
 
-  .item:after {
+  a:after {
     width: 0%;
     height: 0%;
     top: 0;
@@ -41,7 +40,7 @@
     border-left: 2px solid transparent;
   }
 
-  .item:before {
+  a:before {
     width: 0%;
     height: 0%;
     right: 0;
@@ -50,8 +49,8 @@
     border-right: 2px solid transparent;
   }
 
-  .item:hover::before,
-  .item:hover::after {
+  a:hover::before,
+  a:hover::after {
     width: 10px;
     height: 10px;
     border-color: var(--accent);

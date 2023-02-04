@@ -9,7 +9,7 @@
   <h3 class="tech-header">{title}</h3>
   <ul>
     {#each items as item}
-      <Skill title={item} />
+      <Skill class="skill" title={item} />
     {/each}
   </ul>
 </div>
@@ -34,7 +34,9 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
-
     margin: 0 0.5rem 0rem 00rem;
+  }
+  ul :global(.skill) {
+    margin: 0.5rem 0;
   }
 </style>

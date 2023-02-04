@@ -1,11 +1,11 @@
 <script lang="ts">
-  import SkillSetCard from './SkillsCard.svelte';
+  import SkillsCard from './SkillsCard.svelte';
   import technologies from '@/config/technologies';
 </script>
 
 <div class="skillset">
   {#each technologies as tech}
-    <SkillSetCard title={tech.title} items={tech.technologies} />
+    <SkillsCard title={tech.title} items={tech.technologies} />
   {/each}
 </div>
 

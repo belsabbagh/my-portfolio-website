@@ -1,9 +1,8 @@
 <script lang="ts">
   import Header from './Header/Header.svelte';
-  import Footer from '@/lib/Footer.svelte';
+  import Footer from './Footer.svelte';
   import Logo from '@/lib/Logo.svelte';
   import ContactsNav from '@/lib/ContactsNav.svelte';
-  import Introduction from '@/lib/Introduction.svelte';
 </script>
 
 <main>
@@ -53,5 +52,4 @@
     padding: 1rem;
     max-width: 850px;
   }
-
 </style>

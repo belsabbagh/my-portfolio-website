@@ -7,9 +7,7 @@
     studying for my bachelor's degree in computer science, I've found great
     beauty in A.I and software engineering.
   </p>
-  <p>
-    
-  </p>
+  <p />
 </div>
 
 <style></style>

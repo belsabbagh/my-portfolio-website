@@ -9,7 +9,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
-      "@components/*": ["./src/lib/*"]
+      "@components/*": ["./src/components/*"]
     },
     /**
      * Typecheck JS in `.svelte` and `.js` files by default.
