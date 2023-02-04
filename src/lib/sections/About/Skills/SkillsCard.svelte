@@ -5,7 +5,7 @@
   export let items: string[] = [];
 </script>
 
-<div class="skills">
+<div class={$$props.class}>
   <h3 class="tech-header">{title}</h3>
   <ul>
     {#each items as item}
@@ -17,24 +17,16 @@
 <style>
   ul {
     list-style: none;
-    text-align: start;
-    padding: 0 0 0 1rem;
+    padding: 0;
     margin: 0;
+    text-align: start;
     line-height: 75%;
   }
   .tech-header {
-    padding: 0 0 0 0;
-    margin: 1rem 0 0.75rem 0;
+    margin: 0 0 0.75rem 0;
     text-align: start;
     font-weight: 600;
     color: var(--primary);
-  }
-  .skills {
-    padding: 0 1rem 1rem 0rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin: 0 0.5rem 0rem 00rem;
   }
   ul :global(.skill) {
     margin: 0.5rem 0;

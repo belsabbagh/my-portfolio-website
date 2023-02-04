@@ -1,4 +1,6 @@
 export default [
-  { href: '#about-me', text: 'About Me' },
-  { href: '#my-work', text: 'My Work' },
+  { href: '#about', text: 'About' },
+  { href: '#experience', text: 'Experience' },
+  { href: '#work', text: 'Work' },
+  { href: '#contact', text: 'Contact'}
 ];

@@ -3,21 +3,28 @@
   import MdTagFaces from 'svelte-icons/md/MdTagFaces.svelte';
   import MdCode from 'svelte-icons/md/MdCode.svelte';
   import MainSection from '@/lib/Layout/MainSection.svelte';
-  import AboutMe from '@/lib/sections/AboutMe/index.svelte';
+  import AboutMe from '@/lib/sections/About/index.svelte';
   import Introduction from '@/lib/sections/Introduction/index.svelte';
 </script>
 
 <Main>
-  <Introduction />
-  <section style="margin-bottom: 4rem;" />
-  <MainSection id="about-me" title="About Me">
+  <section><Introduction /></section>
+  <MainSection id="about" title="About Me">
     <div class="section-icon" slot="icon"><MdTagFaces /></div>
     <AboutMe />
   </MainSection>
-  <MainSection id="my-work" title="My Work">
+  <MainSection id="experience" title="My Experience">
+    <div class="section-icon" slot="icon"><MdCode /></div>
+    This is my experience.
+  </MainSection>
+  <MainSection id="work" title="My Work">
     <div class="section-icon" slot="icon"><MdCode /></div>
     This is my work.
   </MainSection>
+  <section id="contact" class="contact">
+    <h1>Want to get in touch?</h1>
+    <p>Feel free to send me a message about anything.</p>
+  </section>
 </Main>
 
 <style>
@@ -26,5 +33,9 @@
     height: 32px;
     margin-right: 0.8rem;
     color: var(--accent);
+  }
+
+  .contact {
+    text-align: center;
   }
 </style>

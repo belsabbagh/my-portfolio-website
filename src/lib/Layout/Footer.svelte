@@ -5,6 +5,8 @@
 <footer class="footer">
   <div>
     Made by Belal Elsabbagh, inspired by <TextLink
+      target="_blank"
+      rel="noreferrer noopener"
       href="https://brittanychiang.com">Brittany Chiang</TextLink
     >
   </div>

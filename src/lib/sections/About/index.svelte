@@ -1,5 +1,4 @@
 <script lang="ts">
-  import AboutMeEssay from './AboutMeEssay.svelte';
   import SkillSet from './Skills/index.svelte';
   import FaUser from 'svelte-icons/fa/FaUser.svelte';
   import pfp from '@/assets/pfp.png';
@@ -8,8 +7,13 @@
 
 <div class="about-me">
   <div class="content">
-    <AboutMeEssay />
-    <SkillSet />
+    <p>
+      Hello! My name is Belal and I love building software. Ever since I started
+      studying for my bachelor's degree in computer science, I've found great
+      beauty in A.I and software engineering.
+    </p>
+    <p>Here are some of the technologies that I've worked with:</p>
+    <p><SkillSet /></p>
   </div>
   <div class="my-photo">
     <div class="me">

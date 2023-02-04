@@ -5,7 +5,7 @@
 
 <div class="skillset">
   {#each technologies as tech}
-    <SkillsCard title={tech.title} items={tech.technologies} />
+    <SkillsCard class="skill-card" title={tech.title} items={tech.technologies} />
   {/each}
 </div>
 
@@ -17,5 +17,7 @@
     flex-wrap: wrap;
     width: 100%;
     flex-direction: row;
+    justify-content: space-between;
   }
+
 </style>

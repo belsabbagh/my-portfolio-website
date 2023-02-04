@@ -10,6 +10,5 @@
     color: var(--accent); /* Change the color */
     display: inline-block; /* Needed to add space between the bullet and the text */
     width: 1em; /* Also needed for space (tweak if needed) */
-    margin-left: -1em; /* Also needed for space (tweak if needed) */
   }
 </style>

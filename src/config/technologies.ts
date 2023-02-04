@@ -1,11 +1,11 @@
 export default [
   {
     title: 'Languages',
-    technologies: ['C/C++', 'Java', 'Python', 'PHP', 'ES6+ & TS'],
+    technologies: ['C/C++', 'Java', 'Python', 'PHP', 'JavaScript ES6+', 'TypeScript'],
   },
   {
-    title: 'A.I.',
-    technologies: ['SciKit-Learn', 'Pandas', 'NumPy', 'Matplotlib'],
+    title: 'A.I. & D.Sc.',
+    technologies: ['SciKit-Learn', 'Pandas', 'NumPy', 'Matplotlib', 'OpenCV'],
   },
   {
     title: 'Front-end',
@@ -13,6 +13,6 @@ export default [
   },
   {
     title: 'Back-end',
-    technologies: ['Express', 'MongoDB', 'SQL', 'REST', 'Laravel'],
+    technologies: ['Node.js','Express', 'MongoDB', 'SQL', 'REST', 'Laravel'],
   },
 ];

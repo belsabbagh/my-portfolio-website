@@ -5,7 +5,7 @@
   import ContactsNav from '@/lib/ContactsNav.svelte';
 </script>
 
-<main>
+<main class={$$props.class}>
   <Header>
     <Logo slot="logo" />
   </Header>
@@ -27,6 +27,11 @@
     margin: 0rem 1rem 0rem 1rem;
     padding-bottom: 1.5rem;
   }
+
+  main :global(section) {
+    margin-bottom: 4rem;
+  }
+
   .body {
     display: flex;
     flex-direction: row;
