@@ -1,3 +1,5 @@
-<script lang="ts"></script>
+<script lang="ts">
+    
+</script>
 
 There was an error
