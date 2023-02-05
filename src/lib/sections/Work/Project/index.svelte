@@ -2,6 +2,7 @@
 	import TextLink from '$components/TextLink.svelte';
 	import type { Project } from '$types';
 	import TechStack from './TechStack.svelte';
+
 	export let project: Project;
 </script>
 

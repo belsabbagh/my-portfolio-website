@@ -1,111 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/public/Logo.svg" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code" />
+		<meta name="viewport" content="width=device-width" />
+		%sveltekit.head%
+	</head>
 
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" href="/public/Logo.svg" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code" />
-	<meta name="viewport" content="width=device-width" />
-	%sveltekit.head%
-</head>
-
-<body data-sveltekit-preload-data="hover">
-	<style>
-		:root {
-			--primary: rgb(218, 224, 255);
-			--primary-text: rgb(218, 224, 255, 0.7);
-			--accent: #d770ff;
-			--shadow: rgba(0, 0, 0, 0.3);
-			--background: rgb(23, 10, 46);
-			--background-header: rgba(23, 10, 46, 0.85);
-		
-			--default-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			--code-font: 'Fira Code', Monaco, monospace;
-		
-			color-scheme: light dark;
-			color: var(--primary);
-			background-color: var(--background);
-		
-			font-family: var(--default-font);
-			font-weight: 400;
-			font-size: 16px;
-			line-height: 24px;
-		
-			font-synthesis: none;
-			text-rendering: optimizeLegibility;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-			-webkit-text-size-adjust: 100%;
-		}
-		
-		p {
-			margin-top: 0;
-			line-height: 140%;
-			color: var(--primary-text);
-		}
-		
-		code {
-			color: var(--accent);
-			font-family: var(--code-font);
-		}
-		
-		a {
-			color: var(--accent);
-			text-decoration: none;
-			display: inline-block;
-			position: relative;
-		}
-		
-		body {
-			margin: 0;
-			width: 100%;
-			min-width: 320px;
-			min-height: 100vh;
-		}
-		
-		button {
-			border-radius: 8px;
-			border: 1px solid transparent;
-			padding: 0.6em 1.2em;
-			font-size: 1em;
-			font-weight: 500;
-			font-family: inherit;
-			background-color: transparent;
-			color: var(--primary);
-			cursor: pointer;
-			transition: border-color 0.25s;
-		}
-		button:hover {
-			border-color: var(--accent);
-		}
-		button:focus,
-		button:focus-visible {
-			outline: 4px auto -webkit-focus-ring-color;
-		}
-		
-		#app {
-			width: 100%;
-		}
-		
-		#app {
-		  width: 100%;
-		}
-		
-		@media (prefers-color-scheme: light) {
+	<body data-sveltekit-preload-data="hover">
+		<style>
 			:root {
-				color: #213547;
-				background-color: #ffffff;
-			}
-			a:hover {
-				color: #747bff;
-			}
-			button {
-				background-color: #f9f9f9;
-			}
-		}
-		
-	</style>
-	<div style="display: contents">%sveltekit.body%</div>
-</body>
+				--primary: rgb(218, 224, 255);
+				--primary-text: rgb(218, 224, 255, 0.7);
+				--accent: #d770ff;
+				--shadow: rgba(0, 0, 0, 0.3);
+				--background: rgb(23, 10, 46);
+				--background-header: rgba(23, 10, 46, 0.85);
 
+				--default-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				--code-font: 'Fira Code', Monaco, monospace;
+
+				color-scheme: light dark;
+				color: var(--primary);
+				background-color: var(--background);
+
+				font-family: var(--default-font);
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 24px;
+
+				font-synthesis: none;
+				text-rendering: optimizeLegibility;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-text-size-adjust: 100%;
+			}
+
+			p {
+				margin-top: 0;
+				line-height: 140%;
+				color: var(--primary-text);
+			}
+
+			code {
+				color: var(--accent);
+				font-family: var(--code-font);
+			}
+
+			a {
+				color: var(--accent);
+				text-decoration: none;
+				display: inline-block;
+				position: relative;
+			}
+
+			body {
+				margin: 0;
+				width: 100%;
+				min-width: 320px;
+				min-height: 100vh;
+			}
+
+			button {
+				border-radius: 8px;
+				border: 1px solid transparent;
+				padding: 0.6em 1.2em;
+				font-size: 1em;
+				font-weight: 500;
+				font-family: inherit;
+				background-color: transparent;
+				color: var(--primary);
+				cursor: pointer;
+				transition: border-color 0.25s;
+			}
+			button:hover {
+				border-color: var(--accent);
+			}
+			button:focus,
+			button:focus-visible {
+				outline: 4px auto -webkit-focus-ring-color;
+			}
+
+			#app {
+				width: 100%;
+			}
+
+			#app {
+				width: 100%;
+			}
+
+			@media (prefers-color-scheme: light) {
+				:root {
+					color: #213547;
+					background-color: #ffffff;
+				}
+				a:hover {
+					color: #747bff;
+				}
+				button {
+					background-color: #f9f9f9;
+				}
+			}
+		</style>
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
 </html>
