@@ -10,7 +10,10 @@
 </nav>
 
 <style>
-  .nav :global(.nav-item) {
+  nav {
+    font-size: 18px;
+  }
+  nav :global(.nav-item) {
     padding: 0.75rem;
   }
 </style>

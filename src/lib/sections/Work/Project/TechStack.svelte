@@ -1,10 +1,10 @@
 <script lang="ts">
-  export let items: string[] = [];
+  export let stack: string[] = [];
 </script>
 
 <ul class="project-tags">
-  {#each items as item}
-    <li class="project-tag">{item}</li>
+  {#each stack as item}
+    <li class="project-tag"><code>{item}</code></li>
   {/each}
 </ul>
 
@@ -24,5 +24,8 @@
   }
   .project-tag {
     text-align: center;
+  }
+  code {
+    color: var(--primary-text);
   }
 </style>

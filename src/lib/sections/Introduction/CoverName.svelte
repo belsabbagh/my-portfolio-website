@@ -1,7 +1,7 @@
-<div class={$$props.class}><slot /></div>
+<span class={$$props.class}><slot /></span>
 
 <style>
-  div {
+  span {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     max-width: fit-content;
     font-size: 5rem;

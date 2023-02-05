@@ -1,7 +1,4 @@
-interface Contact {
-  name: string;
-  link: string;
-}
+import type { Contact } from '..';
 
 const github: Contact = {
   name: 'GitHub',

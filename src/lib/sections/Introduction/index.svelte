@@ -4,9 +4,7 @@
 </script>
 
 <div class="intro">
-  <div class="greeting" style="color: var(--accent)">
-    Nice to meet you. My name is
-  </div>
+  <code class="greeting">Nice to meet you. My name is</code>
   <CoverName>Belal Elsabbagh.</CoverName>
   <div class="description">
     <p>
@@ -30,9 +28,6 @@
     flex-direction: column;
     max-width: fit-content;
     margin-left: -5rem;
-  }
-  .greeting {
-    font-family: var(--code-font);
   }
   .description {
     max-width: 60%;

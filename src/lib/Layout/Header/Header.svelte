@@ -18,6 +18,7 @@
     background: var(--background-header);
     backdrop-filter: blur(10px);
     width: 100%;
+    z-index: 1000;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

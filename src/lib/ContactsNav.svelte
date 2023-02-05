@@ -6,14 +6,14 @@
   import IconLink from '@/components/IconLink.svelte';
 </script>
 
-<div class="contacts">
+<div>
   <IconLink class="icon" href={contacts.github.link}><FaGithub /></IconLink>
   <IconLink class="icon" href={contacts.linkedin.link}><FaLinkedin /></IconLink>
   <IconLink class="icon" href={contacts.email.link}><FaEnvelope /></IconLink>
 </div>
 
 <style>
-  .contacts {
+  div {
     display: flex;
     flex-direction: column;
     place-items: center;
@@ -22,7 +22,7 @@
     height: 100%;
     max-height: fit-content;
   }
-  .contacts :global(.icon) {
+  div :global(.icon) {
     width: 1.5rem;
     height: 1.5rem;
     margin: 0.5rem;

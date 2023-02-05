@@ -2,7 +2,7 @@
   export let title: string;
 </script>
 
-<li class={$$props.class}>{title}</li>
+<li class={$$props.class}><code>{title}</code></li>
 
 <style>
   li::before {
@@ -10,5 +10,8 @@
     color: var(--accent); /* Change the color */
     display: inline-block; /* Needed to add space between the bullet and the text */
     width: 1em; /* Also needed for space (tweak if needed) */
+  }
+  code {
+    color: var(--primary-text);
   }
 </style>

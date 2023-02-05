@@ -4,7 +4,7 @@
   export let rel: string = '';
 </script>
 
-<a {target} {rel} class="text-link" {href}><slot /></a>
+<a {target} {rel} class={$$props.class} {href}><slot /></a>
 
 <style>
   a {

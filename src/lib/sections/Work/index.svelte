@@ -1,21 +1,19 @@
 <script lang="ts">
-  import FeaturedProject from './FeaturedProject/index.svelte';
-  import featuredProjects from '@/config/featuredProjects';
+  import Project from './Project/index.svelte';
+  import projects from '@/config/projects';
 </script>
 
-<div class="featured-projects">
-  {#each featuredProjects as project}
-    <FeaturedProject
-      class="featured-project"
-      title={project.title}
-      description={project.description}
-      tags={project.tags}
-    />
+<div class="projects">
+  {#each projects as project}
+    <Project {project} />
   {/each}
 </div>
 
 <style>
-  .featured-projects :global(.featured-project) {
+  .projects {
+    width: 60%;
+  }
+  .projects :global(.featured-project) {
     margin-bottom: 3rem;
   }
 </style>
