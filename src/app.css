@@ -2,6 +2,7 @@
   --primary: rgb(218, 224, 255);
   --primary-text: rgb(218, 224, 255, 0.7);
   --accent: #d770ff;
+  --accent-translucent: rgba(214, 112, 255, 0.2);
   --shadow: rgba(0, 0, 0, 0.3);
   --background: rgb(23, 10, 46);
   --background-header: rgba(23, 10, 46, 0.85);
@@ -50,9 +51,9 @@ body {
   min-height: 100vh;
 }
 
-button {
+.button-link {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid var(--accent);
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -60,14 +61,24 @@ button {
   background-color: transparent;
   color: var(--primary);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.25s;
 }
-button:hover {
-  border-color: var(--accent);
+.button-link:hover {
+  background-color: var(--accent-translucent);
 }
-button:focus,
-button:focus-visible {
+.button-link:focus,
+.button-link:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+input {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid var(--accent);
+  background-color: var(--accent-translucent);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
 }
 
 #app {

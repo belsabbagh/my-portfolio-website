@@ -9,7 +9,6 @@
 <div>
   <IconLink class="icon" href={contacts.github.link}><FaGithub /></IconLink>
   <IconLink class="icon" href={contacts.linkedin.link}><FaLinkedin /></IconLink>
-  <IconLink class="icon" href={contacts.email.link}><FaEnvelope /></IconLink>
 </div>
 
 <style>

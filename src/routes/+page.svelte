@@ -1,4 +1,6 @@
 <script lang="ts">
+  import ContactForm from '$lib/ContactForm.svelte';
+
   import Main from '$lib/Layout/Main.svelte';
   import MdTagFaces from 'svelte-icons/md/MdTagFaces.svelte';
   import MdContentPaste from 'svelte-icons/md/MdContentPaste.svelte';
@@ -7,6 +9,7 @@
   import AboutMe from '$lib/sections/About/index.svelte';
   import Introduction from '$lib/sections/Introduction/index.svelte';
   import Work from '$lib/sections/Work/index.svelte';
+  import contacts from '$config/contacts';
 </script>
 
 <Main>
@@ -26,17 +29,7 @@
   <section id="contact" class="contact">
     <h1>Want to get in touch?</h1>
     <p>Feel free to send me a message about anything.</p>
-    <form action="/contact" method="post">
-      <label>
-        Email
-        <input name="email" type="email" />
-      </label>
-      <label>
-        Message
-        <input name="message" type="text" />
-      </label>
-      <button>Send!</button>
-    </form>
+    <a class="button-link" href={contacts.email.link}>Mail Me</a>
   </section>
 </Main>
 
