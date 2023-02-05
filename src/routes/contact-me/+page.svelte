@@ -1,3 +1,0 @@
-<script lang="ts"></script>
-
-This is the contact me page
