@@ -5,7 +5,7 @@
 
 <div class="projects">
   {#each projects as project}
-    <Project {project} />
+    <Project class="project" {project} />
   {/each}
 </div>
 
@@ -13,7 +13,7 @@
   .projects {
     width: 60%;
   }
-  .projects :global(.featured-project) {
+  .projects :global(.project) {
     margin-bottom: 3rem;
   }
 </style>
