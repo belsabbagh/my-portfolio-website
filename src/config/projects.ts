@@ -21,7 +21,7 @@ const projects: Project[] = [
   {
     title: 'E-Commerce API',
     description: `<p>An API built to support an e-commerce website. 
-    I built this during my internship as a backend developer 
+    this was my first project with server-side JavaScript 
     and it helped me learn a lot about server-side 
     processes and better methods to structure an API.</p>`,
     stack: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT'],
