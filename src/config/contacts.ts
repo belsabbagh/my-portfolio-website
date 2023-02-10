@@ -1,4 +1,4 @@
-import type { Contact } from '#types';
+import type { Contact } from '../types';
 
 const github: Contact = {
   name: 'GitHub',
