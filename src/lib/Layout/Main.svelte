@@ -83,10 +83,4 @@
     background-color: var(--primary-text);
     margin: 0.5rem 0rem 0rem 0rem;
   }
-
-  @media only screen and (max-width: 600px) {
-    main {
-      width: 100%;
-    }
-  }
 </style>
