@@ -42,7 +42,6 @@
   }
   .my-photo {
     position: relative;
-    width: 100%;
   }
   .content {
     margin: 0 2rem 0 0rem;
@@ -54,7 +53,8 @@
   }
   .me {
     display: flex;
-    place-items: center;
+    align-items: center;
+    justify-content: center;
     padding: 1rem;
     width: 250px;
     height: 250px;
