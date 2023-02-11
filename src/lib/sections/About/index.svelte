@@ -33,6 +33,13 @@
     justify-content: center;
     align-items: flex-start;
   }
+
+  @media only screen and (max-width: 720px) {
+    .about-me {
+      flex-direction: column;
+      place-items: center;
+    }
+  }
   .my-photo {
     position: relative;
     width: 100%;

@@ -9,4 +9,11 @@
     line-height: 1.5;
     color: var(--primary);
   }
+
+  @media only screen and (max-width: 720px) {
+    span {
+     font-size: 4rem; 
+    }
+  }
+
 </style>

@@ -29,23 +29,23 @@
     align-items: flex-start;
     margin: 0rem 2rem 0rem 2rem;
   }
+ 
+  main::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+  }
 
-main::-webkit-scrollbar
-{
-	width: 10px;
-	background-color: #F5F5F5;
-}
-
-main::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	background-image: -webkit-gradient(linear,
-									   left bottom,
-									   left top,
-									   color-stop(0.44, rgb(122,153,217)),
-									   color-stop(0.72, rgb(73,125,189)),
-									   color-stop(0.86, rgb(28,58,148)));
-}
+  main::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.44, rgb(122, 153, 217)),
+      color-stop(0.72, rgb(73, 125, 189)),
+      color-stop(0.86, rgb(28, 58, 148))
+    );
+  }
 
   main :global(section) {
     margin-bottom: 4rem;
@@ -82,5 +82,11 @@ main::-webkit-scrollbar-thumb
     height: 2rem;
     background-color: var(--primary-text);
     margin: 0.5rem 0rem 0rem 0rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    main {
+      width: 100%;
+    }
   }
 </style>

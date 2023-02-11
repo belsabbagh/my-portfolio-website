@@ -5,7 +5,7 @@
 
 <div class="intro">
   <code class="greeting">Nice to meet you. My name is</code>
-  <CoverName>Belal Elsabbagh.</CoverName>
+  <CoverName>Belal Elsabbagh</CoverName>
   <div class="description">
     <p>
       I'm a software developer devoted to building/designing digital solutions. I'm currently
@@ -25,6 +25,12 @@
     max-width: fit-content;
     margin-left: -5rem;
   }
+  @media only screen and (max-width: 1200px) {
+    .intro {
+      margin-left: 0;
+    }
+  }
+
   .description {
     max-width: 60%;
   }
