@@ -11,7 +11,7 @@
 
 <style>
   .projects {
-    width: 60%;
+    width: 100%;
   }
   .projects :global(.project) {
     margin-bottom: 3rem;

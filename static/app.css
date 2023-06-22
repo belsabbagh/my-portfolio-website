@@ -97,6 +97,12 @@ input {
   width: 100%;
 }
 
+h3 {
+  font-size: 1.2em;
+  color: var(--primary);
+  margin: 0 0 0.5rem 0;
+}
+
 #app {
   width: 100%;
 }

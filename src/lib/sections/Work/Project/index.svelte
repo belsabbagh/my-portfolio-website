@@ -16,11 +16,6 @@
 </div>
 
 <style>
-  h3 {
-    font-size: 1.2em;
-    color: var(--primary);
-    margin: 0.5rem 0 0.5rem 0;
-  }
   code {
     font-size: 0.75rem;
   }

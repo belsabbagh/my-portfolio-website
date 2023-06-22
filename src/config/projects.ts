@@ -16,7 +16,7 @@ const projects: Project[] = [
     software engineering course. I implemented the models and controllers for 
     the API and implemented the UI for the login, dashboard, and charts pages.</p>`,
     stack: ['Laravel', 'MySQL', 'React.js', 'Chart.js'],
-    href: 'https://github.com/belal-elsabbagh/swe-project.git'
+    href: 'https://github.com/belsabbagh/productivity-manager-web-app.git'
   },
   {
     title: 'E-Commerce API',
