@@ -1,65 +1,35 @@
 {
 	"compilerOptions": {
 		"paths": {
-			"$assets": [
-				"../src/assets"
-			],
-			"$assets/*": [
-				"../src/assets/*"
+			"$lib": [
+				"../src/lib"
 			],
 			"$lib/*": [
 				"../src/lib/*"
-			],
-			"$routes": [
-				"../src/routes"
-			],
-			"$routes/*": [
-				"../src/routes/*"
-			],
-			"$stores": [
-				"../src/stores"
-			],
-			"$stores/*": [
-				"../src/stores/*"
-			],
-			"$config": [
-				"../src/config"
-			],
-			"$config/*": [
-				"../src/config/*"
-			],
-			"$components": [
-				"../src/components"
-			],
-			"$components/*": [
-				"../src/components/*"
-			],
-			"#types/*": [
-				"../src/types/*"
-			],
-			"$lib": [
-				"../src/lib"
 			]
 		},
 		"rootDirs": [
 			"..",
 			"./types"
 		],
-		"importsNotUsedAsValues": "error",
+		"verbatimModuleSyntax": true,
 		"isolatedModules": true,
-		"preserveValueImports": true,
 		"lib": [
 			"esnext",
 			"DOM",
 			"DOM.Iterable"
 		],
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"module": "esnext",
+		"noEmit": true,
 		"target": "esnext"
 	},
 	"include": [
 		"ambient.d.ts",
+		"non-ambient.d.ts",
 		"./types/**/$types.d.ts",
+		"../svelte.config.js",
+		"../vite.config.js",
 		"../vite.config.ts",
 		"../src/**/*.js",
 		"../src/**/*.ts",
@@ -69,10 +39,6 @@
 		"../tests/**/*.svelte"
 	],
 	"exclude": [
-		"../node_modules/**",
-		"./[!ambient.d.ts]**",
-		"../src/service-worker.js",
-		"../src/service-worker.ts",
-		"../src/service-worker.d.ts"
+		"../node_modules/**"
 	]
 }

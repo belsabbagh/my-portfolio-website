@@ -1,7 +1,7 @@
-<script lang="ts">
-  export let href: string;
-  export let target: string = '_self';
-  export let rel: string = '';
+<script>
+  export let href;
+  export let target = '_self';
+  export let rel = '';
 </script>
 
 <a {target} {rel} class={$$props.class} {href}><slot /></a>

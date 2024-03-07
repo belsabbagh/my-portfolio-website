@@ -1,1 +1,0 @@
-<div>Created by Belal Elsabbagh</div>

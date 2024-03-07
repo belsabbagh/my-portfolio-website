@@ -1,5 +1,5 @@
-<script lang="ts">
-  export let href: string = '';
+<script>
+  export let href = '';
 </script>
 
 <a class={$$props.class} {href}><slot /></a>
