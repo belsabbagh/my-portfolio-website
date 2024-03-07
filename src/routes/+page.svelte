@@ -12,9 +12,19 @@
     {
       company: "VOYANCE Medical",
       href: "https://voyancemedical.com/",
-      position: "Backend Intern",
+      position: "Backend Development Intern",
       startDate: "August 2022",
       endDate: "October 2022",
+      details:
+        "I Worked on developing an e-commerce API to implement authentication, authorization, request validation, error handling, and database aggregations using Express.js running on Node.js and MongoDB.",
+    },
+    {
+      company: "Glasgow Caledonian University",
+      position: "Research Assistant",
+      startDate: "June 2023",
+      endDate: "August 2023",
+      details:
+        "I worked on my own research project to estimate the state of health of Lithium-ion batteries using deep learning and time-series analysis. I've also contributed to the the research of M.Sc. and Ph.D. students on computer vision and natural language processing research."
     },
   ];
 </script>
@@ -58,14 +68,16 @@
   <MainSection id="experience" title="My Experience">
     <div class="section-icon" slot="icon"><MdContentPaste /></div>
     <div class="experience">
-      {#each experience as { company, position, startDate, endDate }}
+      {#each experience as { company, position, startDate, endDate, details }}
         <div class="experience-item">
           <div class="experience-item-title">
-            <h3>{company}</h3>
-            <p>{position}</p>
+            <h3 class="experience-position">{position}</h3> @ <span>{company}</span>
           </div>
           <p>{startDate} - {endDate}</p>
         </div>
+        <p>
+          {details}
+        </p>
       {/each}
     </div>
   </MainSection>
@@ -139,17 +151,23 @@
   .experience {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     width: 100%;
   }
 
   .experience-item {
     display: flex;
     flex-direction: row;
-    margin-bottom: 1rem;
+    justify-content: space-between;
+    align-items: start;
   }
 
   .experience-item-title {
     margin-right: 1rem;
   }
 
+  .experience-position {
+    /* make it so that other things can be in the same line */
+    display: inline;
+  }
 </style>
