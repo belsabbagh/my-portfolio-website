@@ -8,7 +8,7 @@
     <code>{project.tag}</code><br />
   {/if}
   <TextLink href={project.href}><h3>{project.title}</h3></TextLink>
-  <div>{@html project.description}</div>
+  <p>{project.description}</p>
   <ul class="project-tags">
     {#each project.stack as item}
       <li class="project-tag"><code>{item}</code></li>
