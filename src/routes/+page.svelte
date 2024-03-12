@@ -2,12 +2,12 @@
   import MdTagFaces from "svelte-icons/md/MdTagFaces.svelte";
   import MdContentPaste from "svelte-icons/md/MdContentPaste.svelte";
   import MdCode from "svelte-icons/md/MdCode.svelte";
-  import Main from "../layouts/Main.svelte";
   import MainSection from "../layouts/MainSection.svelte";
   import TextLink from "../components/TextLink.svelte";
   import projects from "../config/projects";
   import contacts from "../config/contacts";
   import Project from "../components/Project.svelte";
+  import HomePage from "../layouts/HomePage.svelte";
   let experience = [
     {
       company: "VOYANCE Medical",
@@ -29,7 +29,7 @@
   ];
 </script>
 
-<Main>
+<HomePage>
   <section>
     <div class="intro">
       <code class="greeting">Nice to meet you. My name is</code>
@@ -94,7 +94,7 @@
     <p>Feel free to send me a message about anything.</p>
     <a class="button-link" href={contacts.email.link}>Mail Me</a>
   </section>
-</Main>
+</HomePage>
 
 <style>
   .section-icon {

@@ -11,14 +11,30 @@
 	</body>
 	<style>
 		:root {
-			--primary: rgb(218, 224, 255);
-			--primary-text: rgb(218, 224, 255, 0.7);
-			--accent: #d770ff;
-			--accent-translucent: rgba(214, 112, 255, 0.2);
-			--shadow: rgba(0, 0, 0, 0.3);
-			--background: rgb(23, 10, 46);
-			--background-header: rgba(23, 10, 46, 0.85);
+			--primary-dark: rgb(218, 224, 255);
+			--primary-text-dark: rgb(218, 224, 255, 0.7);
+			--accent-dark: #d770ff;
+			--accent-translucent-dark: rgba(214, 112, 255, 0.2);
+			--shadow-dark: rgba(0, 0, 0, 0.3);
+			--background-dark: rgb(23, 10, 46);
+			--background-header-dark: rgba(23, 10, 46, 0.85);
+
+			--primary-light: black;
+			--primary-text-light: black;
+			--accent-light: #7469B6;
+			--accent-translucent-light: rgba(225, 175, 209, 0.2); 
+			--shadow-light: rgba(0, 0, 0, 0.3);
+			--background-light: rgb(255, 230, 230);
+			--background-header-light: rgb(255, 230, 230, 0.85);
 		
+			--primary: var(--primary-dark);
+			--primary-text-dark: var(--primary-text-dark);
+			--accent: var(--accent-dark);
+			--accent-translucent: var(--accent-translucent-dark);
+			--shadow: var(--shadow-dark);
+			--background: var(--background-dark);
+			--background-header: var(--background-header-dark);
+
 			--default-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			--code-font: 'Fira Code', Monaco, monospace;
 		
@@ -147,14 +163,20 @@
 		
 		@media (prefers-color-scheme: light) {
 			:root {
-				color: #213547;
-				background-color: #ffffff;
+				--primary: var(--primary-light);
+				--primary-text: var(--primary-text-light);
+				--accent: var(--accent-light);
+				--accent-translucent: var(--accent-translucent-light);
+				--shadow: var(--shadow-light);
+				--background: var(--background-light);
+				--background-header: var(--background-header-light);
+
 			}
 			a:hover {
-				color: #747bff;
+				color: #7469B6;
 			}
 			button {
-				background-color: #f9f9f9;
+				background-color: var(--accent);
 			}
 		}
 		
