@@ -24,7 +24,6 @@ const projects = [
     stack: ["Node.js", "Express", "MongoDB", "Mongoose", "JWT"],
     href: "https://github.com/belal-elsabbagh/e-commerce-app.git",
   },
-
   {
     title: "Energy Consumption and Production Forecasting",
     description: `A project that uses time series forecasting to predict 

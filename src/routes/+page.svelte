@@ -8,6 +8,64 @@
   import contacts from "../config/contacts";
   import Project from "../components/Project.svelte";
   import HomePage from "../layouts/HomePage.svelte";
+  import { writable } from "svelte/store";
+
+  const birthday = new Date(2002, 11, 26, 20, 0, 0, 0);
+  function formatDurationSince(date) {
+    const now = new Date();
+    const duration = now - date;
+
+    // Calculating years
+    const years = Math.floor(duration / (1000 * 60 * 60 * 24 * 365.25));
+    const remaining1 = duration % (1000 * 60 * 60 * 24 * 365.25);
+
+    // Calculating months
+    const months = Math.floor(remaining1 / (1000 * 60 * 60 * 24 * 30.4375));
+    const remaining2 = remaining1 % (1000 * 60 * 60 * 24 * 30.4375);
+
+    // Calculating days
+    const days = Math.floor(remaining2 / (1000 * 60 * 60 * 24));
+    const remaining3 = remaining2 % (1000 * 60 * 60 * 24);
+
+    // Calculating hours
+    const hours = Math.floor(remaining3 / (1000 * 60 * 60));
+    const remaining4 = remaining3 % (1000 * 60 * 60);
+
+    // Calculating minutes
+    const minutes = Math.floor(remaining4 / (1000 * 60));
+    const remaining5 = remaining4 % (1000 * 60);
+
+    // Calculating seconds
+    const seconds = Math.floor(remaining5 / 1000);
+
+    // Building the string
+    let result = "";
+    if (years > 0) result += years + (years === 1 ? " year" : " years");
+    if (months > 0)
+      result +=
+        (result ? ", " : "") + months + (months === 1 ? " month" : " months");
+    if (days > 0)
+      result += (result ? ", " : "") + days + (days === 1 ? " day" : " days");
+    if (hours > 0)
+      result +=
+        (result ? ", " : "") + hours + (hours === 1 ? " hour" : " hours");
+    if (minutes > 0)
+      result +=
+        (result ? ", " : "") +
+        minutes +
+        (minutes === 1 ? " minute" : " minutes");
+    if (seconds > 0)
+      result +=
+        (result ? ", " : "") +
+        seconds +
+        (seconds === 1 ? " second" : " seconds");
+
+    return result;
+  }
+  let age = writable(formatDurationSince(birthday));
+  setInterval(() => {
+    age.set(formatDurationSince(birthday));
+  }, 1000);
   let experience = [
     {
       company: "VOYANCE Medical",
@@ -24,7 +82,7 @@
       startDate: "June 2023",
       endDate: "August 2023",
       details:
-        "I worked on my own research project to estimate the state of health of Lithium-ion batteries using deep learning and time-series analysis. I've also contributed to the the research of M.Sc. and Ph.D. students on computer vision and natural language processing research."
+        "I worked on my own research project to estimate the state of health of Lithium-ion batteries using deep learning and time-series analysis. I've also contributed to the the research of M.Sc. and Ph.D. students on computer vision and natural language processing research.",
     },
   ];
 </script>
@@ -47,6 +105,7 @@
             MIU, Egypt
           </TextLink>.
         </p>
+        <p>I'm exactly <strong id="age">{$age}</strong> old.</p>
       </div>
     </div>
   </section>
@@ -71,7 +130,8 @@
       {#each experience as { company, position, startDate, endDate, details }}
         <div class="experience-item">
           <div class="experience-item-title">
-            <h3 class="experience-position">{position}</h3> @ <span>{company}</span>
+            <h3 class="experience-position">{position}</h3>
+            @<span>{company}</span>
           </div>
           <p>{startDate} - {endDate}</p>
         </div>
@@ -170,4 +230,5 @@
     /* make it so that other things can be in the same line */
     display: inline;
   }
+
 </style>
