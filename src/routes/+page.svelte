@@ -117,7 +117,9 @@
     </div>
   </section>
   <MainSection id="about" title="About Me">
-    <div class="section-icon" slot="icon"><MdTagFaces /></div>
+    {#snippet icon()}
+        <div class="section-icon" ><MdTagFaces /></div>
+      {/snippet}
     <div class="about-me">
       <div class="content">
         <p>
@@ -132,7 +134,9 @@
     </div>
   </MainSection>
   <MainSection id="experience" title="My Experience">
-    <div class="section-icon" slot="icon"><MdContentPaste /></div>
+    {#snippet icon()}
+        <div class="section-icon" ><MdContentPaste /></div>
+      {/snippet}
     <div class="experience">
       {#each experience as { company, position, startDate, endDate, details }}
         <div class="experience-item">
@@ -149,7 +153,9 @@
     </div>
   </MainSection>
   <MainSection id="work" title="Things I've Built">
-    <div class="section-icon" slot="icon"><MdCode /></div>
+    {#snippet icon()}
+        <div class="section-icon" ><MdCode /></div>
+      {/snippet}
     <div class="projects">
       {#each projects as project}
         <Project class="project" {project} />

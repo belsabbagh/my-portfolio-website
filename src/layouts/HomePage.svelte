@@ -3,21 +3,30 @@
   import Footer from "./Footer.svelte";
   import Logo from "../components/Logo.svelte";
   import ContactsNav from "../components/ContactsNav.svelte";
+  /**
+   * @typedef {Object} Props
+   * @property {import('svelte').Snippet} [children]
+   */
+
+  /** @type {Props & { [key: string]: any }} */
+  let { ...props } = $props();
 </script>
 
-<main class={$$props.class}>
+<main class={props.class}>
   <Header>
-    <Logo slot="logo" />
+    {#snippet logo()}
+        <Logo  />
+      {/snippet}
   </Header>
   <div class="body">
     <div class="left-bar">
       <ContactsNav />
-      <div class="line" />
+      <div class="line"></div>
     </div>
     <div class="middle-part">
-      <slot />
+      {@render props.children?.()}
     </div>
-    <div class="right-bar" />
+    <div class="right-bar"></div>
   </div>
   <Footer />
 </main>

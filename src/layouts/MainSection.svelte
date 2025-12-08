@@ -1,14 +1,14 @@
 <script>
-  export let title;
+  let { ...props } = $props();
 </script>
 
-<section id={$$props.id} class={$$props.class}>
+<section id={props.id} class={props.class}>
   <div class="header">
-    <slot name="icon" />
-    <h2>{title}</h2>
+    {@render props.icon?.()}
+    <h2>{props.title}</h2>
   </div>
 
-  <slot />
+  {@render props.children?.()}
 </section>
 
 <style>

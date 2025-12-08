@@ -1,6 +1,6 @@
 <script>
   import NavItem from './NavItem.svelte';
-  export let items = [];
+  let { items = [] } = $props();
 </script>
 
 <nav class="nav">

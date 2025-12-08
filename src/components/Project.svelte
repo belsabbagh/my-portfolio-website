@@ -1,16 +1,16 @@
 <script>
   import TextLink from './TextLink.svelte';
-  export let project;
+  let { ...props } = $props();
 </script>
 
-<div class={$$props.class}>
-  {#if project.tag}
-    <code>{project.tag}</code><br />
+<div class={props.class}>
+  {#if props.project.tag}
+    <code>{props.project.tag}</code><br />
   {/if}
-  <TextLink href={project.href}><h3>{project.title}</h3></TextLink>
-  <p>{project.description}</p>
+  <TextLink href={props.project.href}><h3>{props.project.title}</h3></TextLink>
+  <p>{props.project.description}</p>
   <ul class="project-tags">
-    {#each project.stack as item}
+    {#each props.project.stack as item}
       <li class="project-tag"><code>{item}</code></li>
     {/each}
   </ul>

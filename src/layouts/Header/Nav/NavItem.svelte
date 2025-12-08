@@ -1,8 +1,8 @@
 <script>
-  export let href;
+  let { ...props } = $props();
 </script>
 
-<a {href} class={$$props.class}><slot /></a>
+<a {props.href} class={props.class}>{@render props.children?.()}</a>
 
 <style>
   a {

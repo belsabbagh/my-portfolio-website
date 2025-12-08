@@ -1,10 +1,17 @@
 <script>
   import Nav from './Nav/Nav.svelte';
   import navItems from '../../config/navItems';
+  /**
+   * @typedef {Object} Props
+   * @property {import('svelte').Snippet} [logo]
+   */
+
+  /** @type {Props} */
+  let { logo } = $props();
 </script>
 
 <header>
-  <a href="/" class="pulse"><slot name="logo" /></a>
+  <a href="/" class="pulse">{@render logo?.()}</a>
   <Nav items={navItems} />
 </header>
 
