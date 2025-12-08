@@ -84,6 +84,13 @@
       details:
         "I worked on my own research project to estimate the state of health of Lithium-ion batteries using deep learning and time-series analysis. I've also contributed to the the research of M.Sc. and Ph.D. students on computer vision and natural language processing research.",
     },
+    {
+      company: "Elnady Engineering",
+      position: "Junior Full Stack Developer",
+      startDate: "Sep 2024",
+      endDate: "Feb 2025",
+      details: `Worked on Octopi, an all-in-one solution for managing educational institutes. Implemented a QR code based attendance system aimed to be resistant to fraudulent entries by students. Containerized the back-end and front-end, which was not implemented before. Developed test containers for end-to-end testing and added unit testing to some core functionality.`,
+    },
   ];
 </script>
 
