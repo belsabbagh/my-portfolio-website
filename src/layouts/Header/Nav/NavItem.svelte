@@ -1,8 +1,11 @@
 <script>
-  let { ...props } = $props();
+    // Destructure the properties you expect from $props()
+      let { href, class: className, children } = $props();
 </script>
 
-<a {props.href} class={props.class}>{@render props.children?.()}</a>
+<a {href} class={className}>
+    {@render children()}
+</a>
 
 <style>
   a {
