@@ -1,28 +1,13 @@
 FROM node:25-alpine as development
 WORKDIR /app
-
 COPY package*.json ./
 RUN npm ci
-
 COPY . .
-
-ENV CI=true
-ENV PORT=5173
-
-CMD [ "npm", "run", "dev" ]
-
-FROM development AS builder
-
 RUN npm run build
 
-FROM nginx:alpine
-
-# Copy config nginx
-COPY --from=builder /app/.nginx/nginx.conf /etc/nginx/conf.d/default.conf
-
-WORKDIR /usr/share/nginx/html
-
-# Remove default nginx static assets
-RUN rm -rf ./*
-
-COPY --from=builder /app/dist .
+FROM alpine:3.20
+RUN apk add --no-cache nginx
+COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder /app/dist /var/www/html/
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
