@@ -4,10 +4,13 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 RUN npm run build
+RUN npm prune --production
 
-FROM alpine:3.20
-RUN apk add --no-cache nginx
-COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --from=builder /app/dist /var/www/html/
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+FROM node:22-alpine
+WORKDIR /app
+COPY --from=builder /app/build build/
+COPY --from=builder /app/node_modules node_modules/
+COPY package.json .
+EXPOSE 2512
+ENV NODE_ENV=production
+CMD [ "node", "build" ]
