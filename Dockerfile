@@ -1,46 +1,28 @@
-# Build stage
 FROM node:25-alpine as build
-
-# Set working directory
 WORKDIR /app
 
-# Copy package files
-COPY package.json package-lock.json ./
-
-# Install dependencies
+COPY package*.json ./
 RUN npm ci
 
 COPY . .
+
+ENV CI=true
+ENV PORT=3000
+
+CMD [ "npm", "start" ]
+
+FROM development AS builder
 
 RUN npm run build
 
 FROM nginx:alpine
 
-RUN adduser -D -H -u 1001 -s /sbin/nologin webuser
+# Copy config nginx
+COPY --from=builder /app/.nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
-RUN mkdir -p /app/www
+WORKDIR /usr/share/nginx/html
 
-COPY --from=build /app/dist /app/www
+# Remove default nginx static assets
+RUN rm -rf ./*
 
-COPY nginx.conf /etc/nginx/templates/default.conf.template
-
-RUN chown -R webuser:webuser /app/www && \
-    chmod -R 755 /app/www && \
-    # Nginx needs to read and write to these directories
-    chown -R webuser:webuser /var/cache/nginx && \
-    chown -R webuser:webuser /var/log/nginx && \
-    chown -R webuser:webuser /etc/nginx/conf.d && \
-    touch /var/run/nginx.pid && \
-    chown -R webuser:webuser /var/run/nginx.pid && \
-    chmod -R 777 /etc/nginx/conf.d
-
-EXPOSE 80
-
-ENV NGINX_ENVSUBST_TEMPLATE_DIR=/etc/nginx/templates
-ENV NGINX_ENVSUBST_TEMPLATE_SUFFIX=.template
-ENV NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx/conf.d
-ENV PORT=80
-
-USER webuser
-
-CMD ["nginx", "-g", "daemon off;"]
+COPY --from=builder /app/dist .
