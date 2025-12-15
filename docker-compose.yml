@@ -4,4 +4,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    ports:
+      - "2512:2512"
     restart: unless-stopped
