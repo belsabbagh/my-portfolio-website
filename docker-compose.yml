@@ -3,25 +3,5 @@ services:
     # Build the service using the Dockerfile in the current directory
     build:
       context: .
-      dockerfile: Dockerfile # Assumes the Dockerfile is named 'Dockerfile' in the current context
-
-    # Map port 80 (inside the container, exposed by EXPOSE 80 in the Dockerfile)
-    # to port 8080 (or any available port) on the host machine.
-    ports:
-      - "8080:80"
-
-    # Optionally, you can set the environment variables defined in the Dockerfile
-    # if you need to override them or ensure they are explicitly present.
-    # The ENV instructions in the Dockerfile should suffice, but this is an option.
-    environment:
-      # These ENV variables from the Dockerfile are primarily used by NGINX_ENVSUBST
-      - NGINX_ENVSUBST_TEMPLATE_DIR=/etc/nginx/templates
-      - NGINX_ENVSUBST_TEMPLATE_SUFFIX=.template
-      - NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx/conf.d
-      - PORT=80
-
-    # If your application needs the custom nginx.conf, ensure it is in the
-    # same directory as the Dockerfile and docker-compose.yml.
-    # It will be copied into the image during the build process.
-
-    # restart: unless-stopped # Uncomment this if you want the container to restart automatically
+      dockerfile: Dockerfile
+    restart: unless-stopped
