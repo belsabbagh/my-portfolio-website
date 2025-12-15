@@ -1,97 +1,40 @@
 <script>
-  import MdTagFaces from "svelte-icons/md/MdTagFaces.svelte";
-  import MdContentPaste from "svelte-icons/md/MdContentPaste.svelte";
-  import MdCode from "svelte-icons/md/MdCode.svelte";
-  import MainSection from "../layouts/MainSection.svelte";
-  import TextLink from "../components/TextLink.svelte";
-  import projects from "../config/projects";
-  import contacts from "../config/contacts";
-  import Project from "../components/Project.svelte";
-  import HomePage from "../layouts/HomePage.svelte";
-  import { writable } from "svelte/store";
+import MdTagFaces from "svelte-icons/md/MdTagFaces.svelte";
+import MdContentPaste from "svelte-icons/md/MdContentPaste.svelte";
+import MdCode from "svelte-icons/md/MdCode.svelte";
+import MainSection from "../layouts/MainSection.svelte";
+import TextLink from "../components/TextLink.svelte";
+import projects from "../config/projects";
+import contacts from "../config/contacts";
+import Project from "../components/Project.svelte";
+import HomePage from "../layouts/HomePage.svelte";
 
-  const birthday = new Date(2002, 11, 26, 20, 0, 0, 0);
-  function formatDurationSince(date) {
-    const now = new Date();
-    const duration = now - date;
-
-    // Calculating years
-    const years = Math.floor(duration / (1000 * 60 * 60 * 24 * 365.25));
-    const remaining1 = duration % (1000 * 60 * 60 * 24 * 365.25);
-
-    // Calculating months
-    const months = Math.floor(remaining1 / (1000 * 60 * 60 * 24 * 30.4375));
-    const remaining2 = remaining1 % (1000 * 60 * 60 * 24 * 30.4375);
-
-    // Calculating days
-    const days = Math.floor(remaining2 / (1000 * 60 * 60 * 24));
-    const remaining3 = remaining2 % (1000 * 60 * 60 * 24);
-
-    // Calculating hours
-    const hours = Math.floor(remaining3 / (1000 * 60 * 60));
-    const remaining4 = remaining3 % (1000 * 60 * 60);
-
-    // Calculating minutes
-    const minutes = Math.floor(remaining4 / (1000 * 60));
-    const remaining5 = remaining4 % (1000 * 60);
-
-    // Calculating seconds
-    const seconds = Math.floor(remaining5 / 1000);
-
-    // Building the string
-    let result = "";
-    if (years > 0) result += years + (years === 1 ? " year" : " years");
-    if (months > 0)
-      result +=
-        (result ? ", " : "") + months + (months === 1 ? " month" : " months");
-    if (days > 0)
-      result += (result ? ", " : "") + days + (days === 1 ? " day" : " days");
-    if (hours > 0)
-      result +=
-        (result ? ", " : "") + hours + (hours === 1 ? " hour" : " hours");
-    if (minutes > 0)
-      result +=
-        (result ? ", " : "") +
-        minutes +
-        (minutes === 1 ? " minute" : " minutes");
-    if (seconds > 0)
-      result +=
-        (result ? ", " : "") +
-        seconds +
-        (seconds === 1 ? " second" : " seconds");
-
-    return result;
-  }
-  let age = writable(formatDurationSince(birthday));
-  setInterval(() => {
-    age.set(formatDurationSince(birthday));
-  }, 1000);
-  let experience = [
-    {
-      company: "VOYANCE Medical",
-      href: "https://voyancemedical.com/",
-      position: "Backend Development Intern",
-      startDate: "August 2022",
-      endDate: "October 2022",
-      details:
-        "I Worked on developing an e-commerce API to implement authentication, authorization, request validation, error handling, and database aggregations using Express.js running on Node.js and MongoDB.",
-    },
-    {
-      company: "Glasgow Caledonian University",
-      position: "Research Assistant",
-      startDate: "June 2023",
-      endDate: "August 2023",
-      details:
-        "I worked on my own research project to estimate the state of health of Lithium-ion batteries using deep learning and time-series analysis. I've also contributed to the the research of M.Sc. and Ph.D. students on computer vision and natural language processing research.",
-    },
-    {
-      company: "Elnady Engineering",
-      position: "Junior Full Stack Developer",
-      startDate: "Sep 2024",
-      endDate: "Feb 2025",
-      details: `Worked on Octopi, an all-in-one solution for managing educational institutes. Implemented a QR code based attendance system aimed to be resistant to fraudulent entries by students. Containerized the back-end and front-end, which was not implemented before. Developed test containers for end-to-end testing and added unit testing to some core functionality.`,
-    },
-  ];
+let experience = [
+	{
+		company: "VOYANCE Medical",
+		href: "https://voyancemedical.com/",
+		position: "Backend Development Intern",
+		startDate: "August 2022",
+		endDate: "October 2022",
+		details:
+			"I Worked on developing an e-commerce API to implement authentication, authorization, request validation, error handling, and database aggregations using Express.js running on Node.js and MongoDB.",
+	},
+	{
+		company: "Glasgow Caledonian University",
+		position: "Research Assistant",
+		startDate: "June 2023",
+		endDate: "August 2023",
+		details:
+			"I worked on my own research project to estimate the state of health of Lithium-ion batteries using deep learning and time-series analysis. I've also contributed to the the research of M.Sc. and Ph.D. students on computer vision and natural language processing research.",
+	},
+	{
+		company: "Elnady Engineering",
+		position: "Junior Full Stack Developer",
+		startDate: "Sep 2024",
+		endDate: "Feb 2025",
+		details: `Worked on Octopi, an all-in-one solution for managing educational institutes. Implemented a QR code based attendance system aimed to be resistant to fraudulent entries by students. Containerized the back-end and front-end, which was not implemented before. Developed test containers for end-to-end testing and added unit testing to some core functionality.`,
+	},
+];
 </script>
 
 <HomePage>
@@ -112,7 +55,6 @@
             MIU, Egypt
           </TextLink>.
         </p>
-        <p>I'm exactly <strong id="age">{$age}</strong> old.</p>
       </div>
     </div>
   </section>
@@ -163,7 +105,7 @@
     </div>
   </MainSection>
   <section id="contact" class="contact">
-    <h1>Want to get in touch?</h1>
+    <strong>Want to get in touch?</strong>
     <p>Feel free to send me a message about anything.</p>
     <a class="button-link" href={contacts.email.link}>Mail Me</a>
   </section>

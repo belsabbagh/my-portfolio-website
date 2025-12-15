@@ -1,13 +1,13 @@
 <script>
-  import Nav from './Nav/Nav.svelte';
-  import navItems from '../../config/navItems';
-  /**
-   * @typedef {Object} Props
-   * @property {import('svelte').Snippet} [logo]
-   */
+import Nav from "./Nav/Nav.svelte";
+import navItems from "../../config/navItems";
+/**
+ * @typedef {Object} Props
+ * @property {import('svelte').Snippet} [logo]
+ */
 
-  /** @type {Props} */
-  let { logo } = $props();
+/** @type {Props} */
+let { logo } = $props();
 </script>
 
 <header>
@@ -19,7 +19,7 @@
   header {
     position: sticky;
     top: 0;
-    padding-top: 1rem;
+    padding: 0 1rem; 
     margin-bottom: 4rem;
     filter: none !important;
     background: var(--background-header);

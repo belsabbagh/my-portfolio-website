@@ -1,6 +1,6 @@
 <script>
-  import NavItem from './NavItem.svelte';
-  let { items = [] } = $props();
+import NavItem from "./NavItem.svelte";
+let { items = [] } = $props();
 </script>
 
 <nav class="nav">
@@ -12,6 +12,7 @@
 <style>
   nav {
     font-size: 18px;
+    padding:1rem;
   }
   nav :global(.nav-item) {
     padding: 0.75rem;

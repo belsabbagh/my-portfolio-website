@@ -1,6 +1,8 @@
-export default [
-  { href: '#about', text: 'About' },
-  { href: '#experience', text: 'Experience' },
-  { href: '#work', text: 'Work' },
-  { href: '#contact', text: 'Contact' }
+const navItems = [
+	{ href: "#about", text: "About" },
+	{ href: "#work", text: "Work" },
+	{ href: "#projects", text: "Projects" },
+	{ href: "#contact", text: "Contact" },
 ];
+
+export default navItems;
