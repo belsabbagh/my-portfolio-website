@@ -9,7 +9,7 @@ import ContactsNav from "../components/ContactsNav.svelte";
  */
 
 /** @type {Props & { [key: string]: any }} */
-let { ...props } = $props();
+const { ...props } = $props();
 </script>
 
 <Header>

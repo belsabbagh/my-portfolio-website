@@ -69,9 +69,7 @@ let experience = [
           started studying for my bachelor's degree in computer science, I've
           found great beauty in A.I and software engineering.
         </p>
-        <TextLink href="/technologies"
-          >Check out all the technologies I've worked with!</TextLink
-        >
+
       </div>
     </div>
   </MainSection>
@@ -103,6 +101,7 @@ let experience = [
         <Project class="project" {project} />
       {/each}
     </div>
+    <TextLink href="/technologies">Check out all the technologies I've worked with!</TextLink>
   </MainSection>
   <section id="contact" class="contact">
     <strong>Want to get in touch?</strong>
@@ -122,16 +121,10 @@ let experience = [
     display: block;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     max-width: fit-content;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 700;
-    line-height: 1.5;
+    line-height: 1.25;
     color: var(--primary);
-  }
-
-  @media only screen and (max-width: 720px) {
-    .my-name {
-      font-size: 4rem;
-    }
   }
 
   .projects {

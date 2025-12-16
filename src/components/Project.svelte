@@ -1,6 +1,7 @@
 <script>
-  import TextLink from './TextLink.svelte';
-  let { ...props } = $props();
+import TextLink from "./TextLink.svelte";
+import ThinkingListItem from "./ThinkingListItem.svelte";
+let { ...props } = $props();
 </script>
 
 <div class={props.class}>
@@ -11,7 +12,7 @@
   <p>{props.project.description}</p>
   <ul class="project-tags">
     {#each props.project.stack as item}
-      <li class="project-tag"><code>{item}</code></li>
+      <ThinkingListItem content={item.opinion}><code>{item.name}</code></ThinkingListItem>
     {/each}
   </ul>
   </div>

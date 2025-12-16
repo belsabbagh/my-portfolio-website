@@ -12,9 +12,15 @@ let { items = [] } = $props();
 <style>
   nav {
     font-size: 18px;
-    padding:1rem;
+    padding:0.5rem;
+    margin-right:1rem;
   }
   nav :global(.nav-item) {
     padding: 0.75rem;
+  }
+  @media only screen and (max-width:720px) {
+    nav {
+      font-size: 14px;
+    }
   }
 </style>
