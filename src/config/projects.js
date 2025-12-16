@@ -134,7 +134,7 @@ const projects = [
 			{
 				name: "TensorFlow",
 				opinion:
-					"A robust end-to-end platform for building and deploying machine learning models.",
+					"It makes it easy to forget how mathematically heavy deep learning is. Copilot and the sorts makes it very tempting to skip learning the mathematics.",
 			},
 		],
 		href: "https://github.com/belsabbagh/energy-forecasting.git",

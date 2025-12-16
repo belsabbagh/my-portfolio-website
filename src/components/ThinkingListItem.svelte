@@ -67,7 +67,7 @@ function handleMouseLeave() {
     .thinking-bubble {
         position: absolute;
         bottom: 100%;
-        left: 100%;
+        left: 0%;
         line-height: 0.75rem;
         background-color: var(--accent);
         color: var(--primary-dark);
@@ -135,6 +135,15 @@ function handleMouseLeave() {
         50% {
             opacity: 0.7;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+        }
+    }
+
+@media only screen and (max-width:720px) {
+        .thinking-bubble {
+            left:-75%;
+
+        min-width: 150px;
+
         }
     }
 </style>
