@@ -32,16 +32,17 @@ const projects = [
 			{
 				name: "MySQL",
 				opinion:
-					"A reliable and widely-used relational database management system.",
+					"SQL is awesome, no problems there, but the interface to the MYSQL server is ugly and cluttered. I'm more of a CLI kind of person.",
 			},
 			{
 				name: "React.js",
-				opinion: "Great for building dynamic and modern user interfaces.",
+				opinion:
+					"Tailwind saved it for me. Styling it, or was, hellish. I haven't used it since React 16.",
 			},
 			{
 				name: "Chart.js",
 				opinion:
-					"Simple and effective library for adding beautiful charts to web applications.",
+					"I only put it here to make a comment about how badly documented its React wrapper is and how lacking it can be. I don't know the state of it now but that's how it was when I used it.",
 			},
 		],
 		href: "https://github.com/belsabbagh/productivity-manager-web-app.git",
@@ -56,7 +57,7 @@ const projects = [
 			{
 				name: "Node.js",
 				opinion:
-					"An efficient runtime environment, perfect for building fast, scalable network applications.",
+					"Writing javascript for the server is fun, the tooling around it is very fancy, it's really hard to resist over-engineering that simple API.",
 			},
 			{
 				name: "Express",
@@ -102,6 +103,33 @@ const projects = [
 				name: "Matplotlib",
 				opinion:
 					"Powerful tool for creating static, interactive, and animated visualizations in Python.",
+			},
+			{
+				name: "TensorFlow",
+				opinion:
+					"A robust end-to-end platform for building and deploying machine learning models.",
+			},
+		],
+		href: "https://github.com/belsabbagh/energy-forecasting.git",
+	},
+	{
+		title: "Peer-to-Peer Renewable Energy Trading Simulation",
+		description: `The system simulates an automatic trading process among households with renewable energy generation, with the goal optimizing renewable energy utilization and minimizing waste.`,
+		stack: [
+			{
+				name: "Python",
+				opinion:
+					"At some point, I was considering going with rust to cut all of the performance overhead, but there was too little time to bother with the AI model running in rust.",
+			},
+			{
+				name: "Flask",
+				opinion:
+					"For my use case, FastAPI would've probably made more sense, but I started out with flask and stuck with it.",
+			},
+			{
+				name: "Svelte",
+				opinion:
+					"It was the coolest thing at the time. The syntax, the compiled architecture, and the ease of use. Svelte 5 is making bold choices with the syntax, but I'm still experimenting with it on this site.",
 			},
 			{
 				name: "TensorFlow",
