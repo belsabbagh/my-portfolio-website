@@ -127,6 +127,16 @@ const projects = [
 					"For my use case, FastAPI would've probably made more sense, but I started out with flask and stuck with it.",
 			},
 			{
+				name: "FastAPI",
+				opinion:
+					"I loved the simplicity compared to Flask, but it was a hassle to have HTTP streaming given the underlying ASGI server.",
+			},
+			{
+				name: "Go",
+				opinion:
+					"I recently rewrote the simulation in Go to be able to deploy it on a demo server. Go is such a pleasure to work with.",
+			},
+			{
 				name: "Svelte",
 				opinion:
 					"It was the coolest thing at the time. The syntax, the compiled architecture, and the ease of use. Svelte 5 is making bold choices with the syntax, but I'm still experimenting with it on this site.",
@@ -137,7 +147,7 @@ const projects = [
 					"It makes it easy to forget how mathematically heavy deep learning is. Copilot and the sorts makes it very tempting to skip learning the mathematics.",
 			},
 		],
-		href: "https://github.com/belsabbagh/energy-forecasting.git",
+		href: "https://energy-trading.belsabbagh.me",
 	},
 ];
 
