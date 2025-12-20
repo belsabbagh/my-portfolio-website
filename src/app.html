@@ -28,7 +28,6 @@
 			--background-header-light: rgb(255, 230, 230, 0.85);
 		
 			--primary: var(--primary-dark);
-			--primary-text-dark: var(--primary-text-dark);
 			--accent: var(--accent-dark);
 			--accent-translucent: var(--accent-translucent-dark);
 			--shadow: var(--shadow-dark);
@@ -44,7 +43,7 @@
 		
 			font-family: var(--default-font);
 			font-weight: 400;
-			font-size: 14px;
+			font-size: 16px;
 			line-height: 24px;
 		
 			font-synthesis: none;
@@ -158,6 +157,12 @@
 				color-stop(0.72, rgb(73, 125, 189)),
 				color-stop(0.86, rgb(28, 58, 148))
 			);
+		}
+
+		@media only screen and (max-width:720px) {
+			:root {
+				font-size: 14px;
+			}
 		}
 	
 		
