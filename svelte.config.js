@@ -9,12 +9,13 @@ const config = {
 		adapter: adapter(),
 		csp: {
 			directives: {
-				'script-src': ['self']
+				'script-src': ['self'],
+				'object-src': ['self'],
+				'style-src': ['self', 'unsafe-inline'],
 			},
 			// must be specified with either the `report-uri` or `report-to` directives, or both
 			reportOnly: {
 				'script-src': ['self'],
-				'style-src': ['self', 'unsafe-inline'],
 				'report-uri': ['/']
 			}
 		}
