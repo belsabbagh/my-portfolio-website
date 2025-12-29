@@ -14,6 +14,7 @@ const config = {
 			// must be specified with either the `report-uri` or `report-to` directives, or both
 			reportOnly: {
 				'script-src': ['self'],
+				'style-src': ['self', 'unsafe-inline'],
 				'report-uri': ['/']
 			}
 		}
