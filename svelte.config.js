@@ -11,6 +11,7 @@ const config = {
 			directives: {
 				'script-src': ['self'],
 				'object-src': ['none'],
+				'base-uri': ['self'],
 				'style-src': ['self', 'unsafe-inline'],
 			},
 			// must be specified with either the `report-uri` or `report-to` directives, or both
