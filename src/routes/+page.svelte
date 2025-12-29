@@ -57,6 +57,7 @@ let experience = [
             target="_blank"
             rel="noreferrer noopener"
             href="http://www.miuegypt.edu.eg/"
+            aria-label="Misr International University"
           >
             MIU, Egypt
           </TextLink>.
@@ -107,12 +108,12 @@ let experience = [
         <Project class="project" {project} />
       {/each}
     </div>
-    <TextLink href="/technologies">Check out all the technologies I've worked with!</TextLink>
+    <TextLink href="/technologies" aria-label="Technologies">Check out all the technologies I've worked with!</TextLink>
   </MainSection>
   <section id="contact" class="contact">
     <strong>Want to get in touch?</strong>
     <p>Feel free to send me a message about anything.</p>
-    <a class="button-link" href={contacts.email.link}>Mail Me</a>
+    <a class="button-link" href={contacts.email.link} aria-label="Email me">Mail Me</a>
   </section>
 </HomePage>
 

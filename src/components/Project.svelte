@@ -8,7 +8,7 @@ let { ...props } = $props();
   {#if props.project.tag}
     <code>{props.project.tag}</code><br />
   {/if}
-  <TextLink href={props.project.href}><h3>{props.project.title}</h3></TextLink>
+  <TextLink href={props.project.href} aria-label={props.project.title}><h3>{props.project.title}</h3></TextLink>
   <p>{props.project.description}</p>
   <ul class="project-tags">
     {#each props.project.stack as item}
