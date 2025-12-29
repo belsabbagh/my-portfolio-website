@@ -37,6 +37,12 @@ let experience = [
 ];
 </script>
 
+<svelte:head>
+<title>Belal Elsabbagh</title>
+  <meta name="description" content="Hi! I'm Belal, and I love building software og any shape or form.">
+    <meta name="robots" content="index, follow">
+</svelte:head>
+
 <HomePage>
   <section>
     <div class="intro">
