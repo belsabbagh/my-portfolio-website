@@ -7,7 +7,7 @@ import IconLink from "../components/IconLink.svelte";
 
 <div>
   <IconLink class="icon" href={contacts.github.link} aria-label={contacts.github.name}><FaGithub /></IconLink>
-    <IconLink class="icon" href={contacts.linkedin.link} aria-label={contacts.github.name}><FaLinkedin /></IconLink>
+    <IconLink class="icon" href={contacts.linkedin.link} aria-label={contacts.linkedin.name}><FaLinkedin /></IconLink>
 </div>
 
 <style>
