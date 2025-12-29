@@ -9,7 +9,10 @@ const config = {
 		adapter: adapter(),
 		csp: {
 			directives: {
-				'script-src': ['self'],
+				'script-src': [
+					'self', 
+					'https://analytics.belsabbagh.me'
+				],
 				'object-src': ['none'],
 				'base-uri': ['self'],
 				'style-src': ['self'],
