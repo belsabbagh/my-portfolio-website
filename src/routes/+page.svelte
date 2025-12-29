@@ -8,6 +8,7 @@ import projects from "../config/projects";
 import contacts from "../config/contacts";
 import Project from "../components/Project.svelte";
 import HomePage from "../layouts/HomePage.svelte";
+  import Experience from "../components/Experience.svelte";
 
 let experience = [
 	{
@@ -85,17 +86,8 @@ let experience = [
         <div class="section-icon" ><MdContentPaste /></div>
       {/snippet}
     <div class="experience">
-      {#each experience as { company, position, startDate, endDate, details }}
-        <div class="experience-item">
-          <div class="experience-item-title">
-            <h3 class="experience-position">{position}</h3>
-            @<span>{company}</span>
-          </div>
-          <p>{startDate} - {endDate}</p>
-        </div>
-        <p>
-          {details}
-        </p>
+      {#each experience as i}
+        <Experience {...i}/>
       {/each}
     </div>
   </MainSection>
@@ -170,20 +162,4 @@ let experience = [
     width: 100%;
   }
 
-  .experience-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: start;
-  }
-
-  .experience-item-title {
-    margin-right: 1rem;
-  }
-
-  .experience-position {
-    /* make it so that other things can be in the same line */
-    display: inline;
-  }
-
-</style>
+ </style>
