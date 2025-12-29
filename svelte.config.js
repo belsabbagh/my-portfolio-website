@@ -10,7 +10,7 @@ const config = {
 		csp: {
 			directives: {
 				'script-src': ['self'],
-				'object-src': ['self'],
+				'object-src': ['none'],
 				'style-src': ['self', 'unsafe-inline'],
 			},
 			// must be specified with either the `report-uri` or `report-to` directives, or both
