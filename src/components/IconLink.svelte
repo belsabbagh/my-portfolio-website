@@ -1,9 +1,20 @@
-<!-- @migration-task Error while migrating Svelte code: $$props is used together with named props in a way that cannot be automatically migrated. -->
 <script>
-  export let href = '';
+  let { 
+    href = '', 
+    'aria-label': ariaLabel = '', 
+    children, 
+    ...rest 
+  } = $props();
 </script>
 
-<a class={$$props.class} {href}><slot /></a>
+<a 
+  {href} 
+  aria-label={ariaLabel} 
+  class={rest.class} 
+  {...rest}
+>
+  {@render children?.()}
+</a>
 
 <style>
   a {
@@ -17,3 +28,4 @@
     color: var(--accent);
   }
 </style>
+

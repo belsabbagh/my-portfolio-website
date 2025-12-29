@@ -6,8 +6,8 @@ import IconLink from "../components/IconLink.svelte";
 </script>
 
 <div>
-  <IconLink class="icon" href={contacts.github.link}><FaGithub /></IconLink>
-  <IconLink class="icon" href={contacts.linkedin.link}><FaLinkedin /></IconLink>
+  <IconLink class="icon" href={contacts.github.link} aria-label={contacts.github.name}><FaGithub /></IconLink>
+    <IconLink class="icon" href={contacts.linkedin.link} aria-label={contacts.github.name}><FaLinkedin /></IconLink>
 </div>
 
 <style>
