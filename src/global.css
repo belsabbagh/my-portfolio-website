@@ -22,8 +22,8 @@
   --background: var(--background-dark);
   --background-header: var(--background-header-dark);
 
-  --default-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  --code-font: "Fira Code", Monaco, monospace;
+  --default-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --code-font: 'Fira Code', Monaco, monospace;
 
   color-scheme: light dark;
   color: var(--primary);
