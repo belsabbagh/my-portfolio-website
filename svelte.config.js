@@ -15,6 +15,7 @@ const config = {
 				'object-src': ['none'],
 				'base-uri': ['self'],
 				'style-src': ['self', 'unsafe-inline'],
+				'require-trusted-types-for': ['script'],
 			},
 			// must be specified with either the `report-uri` or `report-to` directives, or both
 			reportOnly: {
