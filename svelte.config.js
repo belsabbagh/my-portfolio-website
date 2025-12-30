@@ -11,7 +11,7 @@ const config = {
 			directives: {
 				'script-src': [
 					'self', 
-					'https://analytics.belsabbagh.me'
+					'analytics.belsabbagh.me'
 				],
 				'object-src': ['none'],
 				'base-uri': ['self'],
