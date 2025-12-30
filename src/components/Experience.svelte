@@ -7,19 +7,22 @@
 		details 
 	} = $props();
 </script>
-<div class="experience-item">
-            <div class="experience-item-title">
-            <h3 class="experience-position">{position}</h3>
-            @<span>{company}</span>
-          </div>
-            <p>{startDate} - {endDate}</p>
-          </div>
-        <p>
-            {details}
-          </p>
+<div>
+  <div class="experience-header">
+    <div class="experience-item-title">
+      <h3 class="experience-position">{position}</h3>
+      @<span>{company}</span>
+    </div>
+    <p>{startDate} - {endDate}</p>
+  </div>
+  <p>
+    {details}
+  </p>
+</div>
+
  
 <style>
- .experience-item {
+ .experience-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
