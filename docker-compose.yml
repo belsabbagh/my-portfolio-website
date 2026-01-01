@@ -1,9 +1,0 @@
-services:
-  web:
-    # Build the service using the Dockerfile in the current directory
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - '2512:3000'
-    restart: unless-stopped
