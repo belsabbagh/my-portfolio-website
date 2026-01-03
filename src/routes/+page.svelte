@@ -39,10 +39,23 @@ let experience = [
 </script>
 
 <svelte:head>
-<title>Belal Elsabbagh</title>
-  <meta name="description" content="Hi! I'm Belal, and I love building software og any shape or form.">
+    <title>Belal Elsabbagh</title>
+    <meta name="description" content="Hi! I'm Belal, and I love building software of any shape or form.">
     <meta name="robots" content="index, follow">
-</svelte:head>
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://belsabbagh.me/">
+    <meta property="og:title" content="Belal Elsabbagh">
+    <meta property="og:description" content="Hi! I'm Belal, and I love building software of any shape or form.">
+    <meta property="og:image" content="https://belsabbagh.me/og-image.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://belsabbagh.me/">
+    <meta property="twitter:title" content="Belal Elsabbagh">
+    <meta property="twitter:description" content="Hi! I'm Belal, and I love building software of any shape or form.">
+    <meta property="twitter:image" content="https://belsabbagh.me/og-image.png">
+  </svelte:head>
+
 
 <HomePage>
   <section>
