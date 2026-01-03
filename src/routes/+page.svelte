@@ -47,14 +47,14 @@ let experience = [
     <meta property="og:url" content="https://belsabbagh.me/">
     <meta property="og:title" content="Belal Elsabbagh">
     <meta property="og:description" content="Hi! I'm Belal, and I love building software of any shape or form.">
-    <meta property="og:image" content="https://belsabbagh.me/og-image.png">
+    <meta property="og:image" content="/20240712_145317.jpg">
     <meta property="og:logo" content="your value" />
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://belsabbagh.me/">
     <meta property="twitter:title" content="Belal Elsabbagh">
     <meta property="twitter:description" content="Hi! I'm Belal, and I love building software of any shape or form.">
-    <meta property="twitter:image" content="https://belsabbagh.me/og-image.png">
+    <meta property="twitter:image" content="/20240712_145317.jpg">
   </svelte:head>
 
 
