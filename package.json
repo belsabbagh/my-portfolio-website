@@ -1,30 +1,24 @@
 {
-  "name": "belsabbagh.me",
-  "private": true,
-  "version": "0.0.1",
+  "name": "astrofolio",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "prepare": "svelte-kit sync || echo ''",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
-  },
-  "devDependencies": {
-    "@sveltejs/adapter-auto": "^7.0.0",
-    "@sveltejs/adapter-node": "^5.4.0",
-    "@sveltejs/adapter-static": "^3.0.10",
-    "@sveltejs/kit": "^2.49.1",
-    "@sveltejs/vite-plugin-svelte": "^6.2.1",
-    "prettier": "^3.7.4",
-    "prettier-plugin-svelte": "^3.4.1",
-    "svelte": "^5.45.6",
-    "svelte-check": "^4.3.4",
-    "typescript": "^5.9.3",
-    "vite": "^7.2.6"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "svelte-icons": "^2.1.0"
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/node": "^9.5.1",
+    "@astrojs/rss": "^4.0.14",
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.16.6",
+    "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.9.3"
   }
 }
