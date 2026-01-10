@@ -1,8 +1,6 @@
 FROM node:24-alpine AS base
 WORKDIR /app
 
-# By copying only the package.json and package-lock.json here, we ensure that the following `-deps` steps are independent of the source code.
-# Therefore, the `-deps` steps will be skipped if only the source code changes.
 COPY package.json package-lock.json ./
 
 FROM base AS prod-deps
@@ -21,5 +19,10 @@ COPY --from=build /app/dist ./dist
 
 ENV HOST=0.0.0.0
 ENV PORT=4321
-EXPOSE 4321
-CMD ["node", "./dist/server/entry.mjs"]
+
+RUN apk add --no-cache curl
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:$PORT/ || exit 1
+
+EXPOSE $PORT
+ENTRYPOINT ["node", "./dist/server/entry.mjs"]
