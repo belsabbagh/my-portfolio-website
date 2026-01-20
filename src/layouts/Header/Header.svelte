@@ -19,7 +19,6 @@ let { logo } = $props();
   header {
     position: sticky;
     top: 0;
-    padding: 0 1rem; 
     margin-bottom: 4rem;
     filter: none !important;
     background: var(--background-header);

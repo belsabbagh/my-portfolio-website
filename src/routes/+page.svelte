@@ -8,7 +8,7 @@ import projects from "../config/projects";
 import contacts from "../config/contacts";
 import Project from "../components/Project.svelte";
 import HomePage from "../layouts/HomePage.svelte";
-  import Experience from "../components/Experience.svelte";
+import Experience from "../components/Experience.svelte";
 
 let experience = [
 	{

@@ -12,8 +12,6 @@ let { items = [] } = $props();
 <style>
   nav {
     font-size: 18px;
-    padding:0.5rem;
-    margin-right:1rem;
   }
   nav :global(.nav-item) {
     padding: 0.75rem;
