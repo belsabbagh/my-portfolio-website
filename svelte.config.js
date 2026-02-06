@@ -5,6 +5,7 @@ const config = {
   kit: {
     adapter: adapter(),
     csp: {
+      mode: 'hash',
       directives: {
         'script-src': ['self'],
         'object-src': ['none'],
