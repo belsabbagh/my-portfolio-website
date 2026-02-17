@@ -7,7 +7,7 @@ const config = {
 		csp: {
 			mode: "nonce",
 			directives: {
-				"script-src": ["self"],
+				"script-src": ["self", "nonce-%sveltekit.nonce%"],
 				"object-src": ["none"],
 				"base-uri": ["self"],
 				"style-src": ["self", "unsafe-inline"],
