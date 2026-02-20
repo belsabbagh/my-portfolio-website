@@ -61,7 +61,7 @@ let experience = [
 <HomePage>
   <section>
     <div class="intro">
-      <code class="greeting">Nice to meet you. My name is</code>
+      <span class="greeting">Nice to meet you. My name is</span>
       <span class="my-name">Belal Elsabbagh</span>
       <div class="description">
         <p>
@@ -124,6 +124,10 @@ let experience = [
 </HomePage>
 
 <style>
+.greeting {
+	color: var(--accent);
+	font-family: var(--code-font);
+}
   .section-icon {
     width: 32px;
     height: 32px;
