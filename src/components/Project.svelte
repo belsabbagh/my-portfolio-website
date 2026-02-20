@@ -6,20 +6,23 @@ let { ...props } = $props();
 
 <div class={props.class}>
   {#if props.project.tag}
-    <code>{props.project.tag}</code><br />
+    <span class="monospace">{props.project.tag}</span><br />
   {/if}
   <TextLink href={props.project.href} aria-label={props.project.title}><h3>{props.project.title}</h3></TextLink>
   <p>{props.project.description}</p>
   <ul class="project-tags">
     {#each props.project.stack as item}
-      <ThinkingListItem content={item.opinion}><code>{item.name}</code></ThinkingListItem>
+      <ThinkingListItem content={item.opinion}><span
+      class="monospace">{item.name}</span ></ThinkingListItem>
     {/each}
   </ul>
   </div>
 
 <style>
-  code {
+  .monospace {
+    color: var(--accent);
     font-size: 0.75rem;
+    font-family: var(--code-font);
   }
   .project-tags {
     display: flex;
