@@ -5,7 +5,7 @@
   import MainSection from '../layouts/MainSection.svelte';
   import TextLink from '../components/TextLink.svelte';
   import projects from '../config/projects';
-  import contacts from '../config/contacts';
+  import * as contacts from '../config/contacts';
   import Project from '../components/Project.svelte';
   import Experience from '../components/Experience.svelte';
 

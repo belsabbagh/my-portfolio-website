@@ -1,16 +1,14 @@
-const github = {
+export const github = {
   name: 'GitHub',
   link: 'https://github.com/belsabbagh',
 };
 
-const linkedin = {
+export const linkedin = {
   name: 'LinkedIn',
   link: 'https://www.linkedin.com/in/belsabbagh/',
 };
 
-const email = {
+export const email = {
   name: 'Email',
-  link: 'mailto:belsabbagh@gmail.com',
+  link: 'mailto:belal@belsabbagh.me',
 };
-
-export default { github, linkedin, email };

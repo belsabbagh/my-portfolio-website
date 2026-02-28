@@ -14,6 +14,7 @@
     font-size: 18px;
     display: flex;
     justify-content: space-around;
+    gap: 0.5rem;
     min-width: 30%;
     max-width: 80%;
   }

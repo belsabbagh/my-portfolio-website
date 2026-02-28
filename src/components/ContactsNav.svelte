@@ -1,5 +1,5 @@
 <script>
-  import contacts from '../config/contacts';
+  import * as contacts from '../config/contacts';
   import FaGithub from 'svelte-icons/fa/FaGithub.svelte';
   import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte';
   import IconLink from '../components/IconLink.svelte';
