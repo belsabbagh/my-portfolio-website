@@ -69,21 +69,6 @@
   <div class="intro">
     <span class="greeting">Nice to meet you. My name is</span>
     <span class="my-name">Belal Elsabbagh</span>
-    <div class="description">
-      <p>
-        I'm a software developer who loves to build digital solutions for
-        real-world problems. I'm currently studying for my bachelor's degree in
-        computer science at
-        <TextLink
-          target="_blank"
-          rel="noreferrer noopener"
-          href="http://www.miuegypt.edu.eg/"
-          aria-label="Misr International University"
-        >
-          MIU, Egypt
-        </TextLink>.
-      </p>
-    </div>
   </div>
 </section>
 <MainSection id="about" title="About Me">
@@ -97,6 +82,22 @@
         started studying for my bachelor's degree in computer science, I've
         found great beauty in A.I and software engineering.
       </p>
+      <p>
+        I'm a software developer who loves to build digital solutions for
+        real-world problems. I'm currently studying for my bachelor's degree in
+        computer science at
+        <TextLink
+          target="_blank"
+          rel="noreferrer noopener"
+          href="http://www.miuegypt.edu.eg/"
+          aria-label="Misr International University"
+        >
+          MIU, Egypt
+        </TextLink>.
+      </p>
+      <div class="me">
+        <!-- <img src="/20240712_145317.jpg" alt="Me" /> -->
+      </div>
     </div>
   </div>
 </MainSection>
@@ -132,6 +133,12 @@
 </section>
 
 <style>
+  .me img {
+    border-radius: 12px;
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+  }
   .greeting {
     color: var(--accent);
     font-family: var(--code-font);

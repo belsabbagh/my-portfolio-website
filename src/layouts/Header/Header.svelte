@@ -8,9 +8,9 @@
   /** @type {Props} */
   let { logo } = $props();
   const navItems = [
-    { href: '#about', text: 'About' },
-    { href: '#experience', text: 'Experience' },
-    { href: '#work', text: 'Projects' },
+    { href: '/#about', text: 'About' },
+    { href: '/#experience', text: 'Experience' },
+    { href: '/#work', text: 'Projects' },
     { href: '/blog', text: 'Blog' },
   ];
 </script>

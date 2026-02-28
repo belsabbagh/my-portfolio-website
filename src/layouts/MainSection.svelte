@@ -19,7 +19,7 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 0rem 0rem 1rem 0rem;
+    margin: 0rem 0rem 1rem 0rem;
   }
 
   .header {
