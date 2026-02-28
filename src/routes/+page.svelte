@@ -65,8 +65,8 @@
   <meta property="twitter:image" content="/20240712_145317.jpg" />
 </svelte:head>
 
-<section>
-  <div class="intro">
+<section class="intro">
+  <div>
     <span class="greeting">Nice to meet you. My name is</span>
     <span class="my-name">Belal Elsabbagh</span>
   </div>
@@ -77,27 +77,32 @@
   {/snippet}
   <div class="about-me">
     <div class="content">
-      <p>
-        Hello! My name is Belal and I love building software. Ever since I
-        started studying for my bachelor's degree in computer science, I've
-        found great beauty in A.I and software engineering.
-      </p>
-      <p>
-        I'm a software developer who loves to build digital solutions for
-        real-world problems. I'm currently studying for my bachelor's degree in
-        computer science at
-        <TextLink
-          target="_blank"
-          rel="noreferrer noopener"
-          href="http://www.miuegypt.edu.eg/"
-          aria-label="Misr International University"
-        >
-          MIU, Egypt
-        </TextLink>.
-      </p>
       <div class="me">
-        <!-- <img src="/20240712_145317.jpg" alt="Me" /> -->
+        <img src="/20240712_145317.jpg" alt="Me" />
+        <p>
+          Hello! I'm Belal, and I've recently completed my bachelor's degree in
+          computer science. It is not just a career for me, it's a lifestyle. I
+          love building software that solves my problems. Real, human problems.
+          I've gained a lot of experience early on while trying many different,
+          yet overlapping, specializations. I've done academic research on
+          Artificial Intelligence, built production-ready software for thousands
+          of users, and even programmed competitively. I also self-host services
+          for my family's personal use.
+        </p>
       </div>
+      <!-- <p> -->
+      <!--   I'm a software developer who loves to build digital solutions for -->
+      <!--   real-world problems. I'm currently studying for my bachelor's degree in -->
+      <!--   computer science at -->
+      <!--   <TextLink -->
+      <!--     target="_blank" -->
+      <!--     rel="noreferrer noopener" -->
+      <!--     href="http://www.miuegypt.edu.eg/" -->
+      <!--     aria-label="Misr International University" -->
+      <!--   > -->
+      <!--     MIU, Egypt -->
+      <!--   </TextLink>. -->
+      <!-- </p> -->
     </div>
   </div>
 </MainSection>
@@ -133,8 +138,16 @@
 </section>
 
 <style>
+  .intro {
+    width: 100%;
+  }
+  .me {
+    display: flex;
+    gap: 1rem;
+  }
   .me img {
     border-radius: 12px;
+    min-width: 280px;
     width: 70%;
     height: 70%;
     object-fit: contain;
@@ -181,6 +194,9 @@
     .about-me {
       flex-direction: column;
       place-items: center;
+    }
+    .me {
+      flex-direction: column;
     }
   }
 
