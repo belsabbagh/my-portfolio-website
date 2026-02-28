@@ -65,27 +65,24 @@
   <meta property="twitter:image" content="/20240712_145317.jpg" />
 </svelte:head>
 
-
-<HomePage>
-  <section>
-    <div class="intro">
-      <span class="greeting">Nice to meet you. My name is</span>
-      <span class="my-name">Belal Elsabbagh</span>
-      <div class="description">
-        <p>
-          I'm a software developer who loves to build digital solutions for
-          real-world problems. I'm currently studying for my bachelor's degree
-          in computer science at
-          <TextLink
-            target="_blank"
-            rel="noreferrer noopener"
-            href="http://www.miuegypt.edu.eg/"
-            aria-label="Misr International University"
-          >
-            MIU, Egypt
-          </TextLink>.
-        </p>
-      </div>
+<section>
+  <div class="intro">
+    <span class="greeting">Nice to meet you. My name is</span>
+    <span class="my-name">Belal Elsabbagh</span>
+    <div class="description">
+      <p>
+        I'm a software developer who loves to build digital solutions for
+        real-world problems. I'm currently studying for my bachelor's degree in
+        computer science at
+        <TextLink
+          target="_blank"
+          rel="noreferrer noopener"
+          href="http://www.miuegypt.edu.eg/"
+          aria-label="Misr International University"
+        >
+          MIU, Egypt
+        </TextLink>.
+      </p>
     </div>
   </div>
 </section>
@@ -135,10 +132,10 @@
 </section>
 
 <style>
-.greeting {
-	color: var(--accent);
-	font-family: var(--code-font);
-}
+  .greeting {
+    color: var(--accent);
+    font-family: var(--code-font);
+  }
   .section-icon {
     width: 32px;
     height: 32px;

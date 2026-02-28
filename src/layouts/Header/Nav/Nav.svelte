@@ -14,6 +14,7 @@
     font-size: 18px;
     display: flex;
     justify-content: space-around;
+    min-width: 30%;
     max-width: 80%;
   }
   @media only screen and (max-width: 720px) {
