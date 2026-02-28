@@ -1,13 +1,18 @@
 <script>
-import Nav from "./Nav/Nav.svelte";
-import navItems from "../../config/navItems";
-/**
- * @typedef {Object} Props
- * @property {import('svelte').Snippet} [logo]
- */
+  import Nav from './Nav/Nav.svelte';
+  /**
+   * @typedef {Object} Props
+   * @property {import('svelte').Snippet} [logo]
+   */
 
-/** @type {Props} */
-let { logo } = $props();
+  /** @type {Props} */
+  let { logo } = $props();
+  const navItems = [
+    { href: '#about', text: 'About' },
+    { href: '#experience', text: 'Experience' },
+    { href: '#work', text: 'Projects' },
+    { href: '/blog', text: 'Blog' },
+  ];
 </script>
 
 <header>

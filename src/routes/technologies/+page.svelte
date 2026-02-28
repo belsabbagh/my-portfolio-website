@@ -1,60 +1,60 @@
 <script>
-  import TextLink from "../../components/TextLink.svelte";
+  import TextLink from '../../components/TextLink.svelte';
 
   const technologies = [
     {
-      name: "C++",
-      logo: "https://cdn.svgporn.com/logos/c-plusplus.svg",
-      note: "Working with classes in C++ automatically makes it extra complex.",
-      categories: ["language"],
+      name: 'C++',
+      logo: 'https://cdn.svgporn.com/logos/c-plusplus.svg',
+      note: 'Working with classes in C++ automatically makes it extra complex.',
+      categories: ['language'],
     },
     {
-      name: "Java",
-      logo: "https://cdn.svgporn.com/logos/java.svg",
-      note: "I first learnt OOP with Java. Not having to deal with pointers was an upgrade.",
-      categories: ["language"],
+      name: 'Java',
+      logo: 'https://cdn.svgporn.com/logos/java.svg',
+      note: 'I first learnt OOP with Java. Not having to deal with pointers was an upgrade.',
+      categories: ['language'],
     },
     {
-      name: "JavaScript",
-      logo: "https://cdn.svgporn.com/logos/javascript.svg",
-      note: "Only a skilled developer can write clean JavaScript code, assuming they understand its quirks.",
-      categories: ["language"],
+      name: 'JavaScript',
+      logo: 'https://cdn.svgporn.com/logos/javascript.svg',
+      note: 'Only a skilled developer can write clean JavaScript code, assuming they understand its quirks.',
+      categories: ['language'],
     },
     {
-      name: "Python",
-      logo: "https://cdn.svgporn.com/logos/python.svg",
+      name: 'Python',
+      logo: 'https://cdn.svgporn.com/logos/python.svg',
       note: "We have our differences, but it's still my digital Swiss army knife.",
-      categories: ["language"],
+      categories: ['language'],
     },
     {
-      name: "PHP",
-      logo: "https://cdn.svgporn.com/logos/php.svg",
-      note: "Hate on it all you want, but it got better ever since PHP 7.",
-      categories: ["language"],
+      name: 'PHP',
+      logo: 'https://cdn.svgporn.com/logos/php.svg',
+      note: 'Hate on it all you want, but it got better ever since PHP 7.',
+      categories: ['language'],
     },
     {
-      name: "Dart",
-      logo: "https://cdn.svgporn.com/logos/dart.svg",
-      note: "Neither I nor anyone I know has ever used Dart outside of Flutter.",
-      categories: ["language"],
+      name: 'Dart',
+      logo: 'https://cdn.svgporn.com/logos/dart.svg',
+      note: 'Neither I nor anyone I know has ever used Dart outside of Flutter.',
+      categories: ['language'],
     },
     {
-      name: "Rust",
-      logo: "https://cdn.svgporn.com/logos/rust.svg",
+      name: 'Rust',
+      logo: 'https://cdn.svgporn.com/logos/rust.svg',
       note: "I've only played around with it, but I wish I could use it for real.",
-      categories: ["language"],
+      categories: ['language'],
     },
     {
-      name: "React",
-      logo: "https://cdn.svgporn.com/logos/react.svg",
+      name: 'React',
+      logo: 'https://cdn.svgporn.com/logos/react.svg',
       note: "It's not obsolete yet.",
-      categories: ["framework", "JavaScript"],
+      categories: ['framework', 'JavaScript'],
     },
     {
-      name: "Svelte",
-      logo: "https://cdn.svgporn.com/logos/svelte-icon.svg",
-      note: "Now this is my front-end Swiss army knife.",
-      categories: ["framework", "JavaScript"],
+      name: 'Svelte',
+      logo: 'https://cdn.svgporn.com/logos/svelte-icon.svg',
+      note: 'Now this is my front-end Swiss army knife.',
+      categories: ['framework', 'JavaScript'],
     },
   ];
 </script>
@@ -66,7 +66,9 @@
     in personal projects, while others I've used in my studies or internships.
   </p>
   <p>
-    I talk in depth about tech I work with on <TextLink href="/blog">my blog</TextLink>.
+    I talk in depth about tech I work with on <TextLink href="/blog"
+      >my blog</TextLink
+    >.
   </p>
   <div class="center">
     <div class="technologies">

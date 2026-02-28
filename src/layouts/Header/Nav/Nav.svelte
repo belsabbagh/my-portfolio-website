@@ -1,22 +1,22 @@
 <script>
-import NavItem from "./NavItem.svelte";
-let { items = [] } = $props();
+  import NavItem from './NavItem.svelte';
+  let { items = [] } = $props();
 </script>
 
 <nav class="nav">
   {#each items as i}
-    <NavItem class="nav-item" href={i.href}>{i.text}</NavItem>
+    <NavItem href={i.href}>{i.text}</NavItem>
   {/each}
 </nav>
 
 <style>
   nav {
     font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 80%;
   }
-  nav :global(.nav-item) {
-    padding: 0.75rem;
-  }
-  @media only screen and (max-width:720px) {
+  @media only screen and (max-width: 720px) {
     nav {
       font-size: 14px;
     }

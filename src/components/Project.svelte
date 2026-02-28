@@ -1,14 +1,16 @@
 <script>
-import TextLink from "./TextLink.svelte";
-import ThinkingListItem from "./ThinkingListItem.svelte";
-let { ...props } = $props();
+  import TextLink from './TextLink.svelte';
+  import ThinkingListItem from './ThinkingListItem.svelte';
+  let { ...props } = $props();
 </script>
 
 <div class={props.class}>
   {#if props.project.tag}
     <span class="monospace">{props.project.tag}</span><br />
   {/if}
-  <TextLink href={props.project.href} aria-label={props.project.title}><h3>{props.project.title}</h3></TextLink>
+  <TextLink href={props.project.href} aria-label={props.project.title}
+    ><h3>{props.project.title}</h3></TextLink
+  >
   <p>{props.project.description}</p>
   <ul class="project-tags">
     {#each props.project.stack as item}
@@ -16,7 +18,7 @@ let { ...props } = $props();
       class="monospace">{item.name}</span ></ThinkingListItem>
     {/each}
   </ul>
-  </div>
+</div>
 
 <style>
   .monospace {
@@ -43,9 +45,9 @@ let { ...props } = $props();
   code {
     color: var(--primary-text);
   }
-@media only screen and (max-width:720px) {
-        .project-tags {
+  @media only screen and (max-width: 720px) {
+    .project-tags {
       padding: 0 2rem;
-        }
     }
+  }
 </style>

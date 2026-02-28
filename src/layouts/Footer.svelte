@@ -1,5 +1,5 @@
 <script>
-  import TextLink from "../components/TextLink.svelte";
+  import TextLink from '../components/TextLink.svelte';
 </script>
 
 <footer>

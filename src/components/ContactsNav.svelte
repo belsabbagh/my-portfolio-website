@@ -1,18 +1,26 @@
 <script>
-import contacts from "../config/contacts";
-import FaGithub from "svelte-icons/fa/FaGithub.svelte";
-import FaLinkedin from "svelte-icons/fa/FaLinkedin.svelte";
-import IconLink from "../components/IconLink.svelte";
+  import contacts from '../config/contacts';
+  import FaGithub from 'svelte-icons/fa/FaGithub.svelte';
+  import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte';
+  import IconLink from '../components/IconLink.svelte';
 </script>
 
 <div>
-  <IconLink class="icon" href={contacts.github.link} aria-label={contacts.github.name}><FaGithub /></IconLink>
-    <IconLink class="icon" href={contacts.linkedin.link} aria-label={contacts.linkedin.name}><FaLinkedin /></IconLink>
+  <IconLink
+    class="icon"
+    href={contacts.github.link}
+    aria-label={contacts.github.name}><FaGithub /></IconLink
+  >
+  <IconLink
+    class="icon"
+    href={contacts.linkedin.link}
+    aria-label={contacts.linkedin.name}><FaLinkedin /></IconLink
+  >
 </div>
 
 <style>
   div {
-    position:sticky;
+    position: sticky;
     display: flex;
     flex-direction: column;
     place-items: center;
@@ -29,7 +37,7 @@ import IconLink from "../components/IconLink.svelte";
 
   @media only screen and (max-width: 720px) {
     div {
-      display:none;
+      display: none;
     }
   }
 </style>

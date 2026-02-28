@@ -1,12 +1,13 @@
 <script>
-	let { 
-		position = "Position Title", 
-		company = "Company Name", 
-		startDate, 
-		endDate, 
-		details 
-	} = $props();
+  let {
+    position = 'Position Title',
+    company = 'Company Name',
+    startDate,
+    endDate,
+    details,
+  } = $props();
 </script>
+
 <div>
   <div class="experience-header">
     <div class="experience-item-title">
@@ -20,9 +21,8 @@
   </p>
 </div>
 
- 
 <style>
- .experience-header {
+  .experience-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -37,4 +37,3 @@
     display: inline;
   }
 </style>
-
