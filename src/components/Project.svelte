@@ -14,8 +14,9 @@
   <p>{props.project.description}</p>
   <ul class="project-tags">
     {#each props.project.stack as item}
-      <ThinkingListItem content={item.opinion}><span
-      class="monospace">{item.name}</span ></ThinkingListItem>
+      <ThinkingListItem content={item.opinion}
+        ><span class="monospace">{item.name}</span></ThinkingListItem
+      >
     {/each}
   </ul>
 </div>
