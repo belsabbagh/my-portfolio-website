@@ -59,10 +59,8 @@
   puzzle.set(makePuzzle(quote, PRESET_DIFFICULTIES[difficulty]));
 </script>
 
-<header>
-  <h1>Cryptogram</h1>
-</header>
 <main>
+  <h1>Cryptogram</h1>
   <div class="timer"></div>
   <div id="status">
     <Stopwatch />
