@@ -2,7 +2,7 @@
   import MdTagFaces from 'svelte-icons/md/MdTagFaces.svelte';
   import MdContentPaste from 'svelte-icons/md/MdContentPaste.svelte';
   import MdCode from 'svelte-icons/md/MdCode.svelte';
-  import MainSection from '../layouts/MainSection.svelte';
+  import MainSection from '../components/MainSection.svelte';
   import TextLink from '../components/TextLink.svelte';
   import projects from '../config/projects';
   import * as contacts from '../config/contacts';

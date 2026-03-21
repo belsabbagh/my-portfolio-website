@@ -1,7 +1,7 @@
 <script>
   import '../global.css';
-  import Header from '../layouts/Header/Header.svelte';
-  import Footer from '../layouts/Footer.svelte';
+  import Header from '../components/Header.svelte';
+  import Footer from '../components/Footer.svelte';
   import Logo from '../components/Logo.svelte';
   import ContactsNav from '../components/ContactsNav.svelte';
   /**

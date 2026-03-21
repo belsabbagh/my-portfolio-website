@@ -1,5 +1,5 @@
 <script>
-  import Nav from './Nav/Nav.svelte';
+  import Nav from './Nav.svelte';
   /**
    * @typedef {Object} Props
    * @property {import('svelte').Snippet} [logo]
