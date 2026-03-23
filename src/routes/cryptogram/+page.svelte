@@ -119,24 +119,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2rem;
   }
-  .controls {
-    /* stick to bottom */
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-  }
-
-  header {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    place-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
 
   select {
     margin-left: 0.35rem;
