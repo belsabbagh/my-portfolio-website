@@ -14,4 +14,9 @@ export default defineConfig({
   adapter: node({
     mode: "standalone",
   }),
+  security: {
+    csp: {
+      directives: ["default-src 'self'"],
+    },
+  },
 });
