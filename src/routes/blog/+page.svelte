@@ -12,7 +12,11 @@
           {post.meta.title}
         </a>
       </h2>
-      Published {post.meta.date}
+      {new Date(post.meta.date).toLocaleDateString('en-us', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      })}
     </li>
   {/each}
 </ul>
