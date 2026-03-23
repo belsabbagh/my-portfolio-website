@@ -2,7 +2,14 @@
   "useTabs": false,
   "tabWidth": 2,
   "singleQuote": true,
+  "plugins": ["prettier-plugin-astro"],
   "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    },
     {
       "files": ["*.json"],
       "options": { "tabWidth": 2 }

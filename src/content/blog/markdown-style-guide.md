@@ -175,6 +175,12 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
   - Cheese
 ```
 
+```python
+import numpy as np
+
+print(np)
+```
+
 #### Output
 
 - Fruit
