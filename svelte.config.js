@@ -5,12 +5,10 @@ const config = {
   kit: {
     adapter: adapter(),
     csp: {
-      mode: 'nonce',
       directives: {
         'script-src': [
           'self',
-          'nonce-%sveltekit.nonce%',
-          'https://analytics.belsabbagh.me',
+          'sha256-ieoeWczDHkReVBsRBqaal5AFMlBtNjMzgwKvLqi/tSU=',
         ],
         'object-src': ['none'],
         'base-uri': ['self'],
@@ -19,7 +17,10 @@ const config = {
       },
       // must be specified with either the `report-uri` or `report-to` directives, or both
       reportOnly: {
-        'script-src': ['self'],
+        'script-src': [
+          'self',
+          'sha256-ieoeWczDHkReVBsRBqaal5AFMlBtNjMzgwKvLqi/tSU=',
+        ],
         'report-uri': ['/'],
       },
     },

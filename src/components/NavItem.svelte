@@ -10,6 +10,7 @@
 <style>
   a {
     transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    padding: 0.5rem;
   }
   a:after,
   a:before {

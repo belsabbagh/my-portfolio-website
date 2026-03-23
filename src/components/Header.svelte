@@ -25,7 +25,6 @@
     position: sticky;
     top: 0;
     margin-bottom: 4rem;
-    filter: none !important;
     background: var(--background-header);
     backdrop-filter: blur(10px);
     width: 100%;

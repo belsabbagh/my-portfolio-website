@@ -4,37 +4,11 @@
   import MdCode from 'svelte-icons/md/MdCode.svelte';
   import MainSection from '../components/MainSection.svelte';
   import TextLink from '../components/TextLink.svelte';
-  import projects from '../config/projects';
   import * as contacts from '../config/contacts';
   import Project from '../components/Project.svelte';
   import Experience from '../components/Experience.svelte';
 
-  let experience = [
-    {
-      company: 'VOYANCE Medical',
-      href: 'https://voyancemedical.com/',
-      position: 'Backend Development Intern',
-      startDate: 'August 2022',
-      endDate: 'October 2022',
-      details:
-        'I Worked on developing an e-commerce API to implement authentication, authorization, request validation, error handling, and database aggregations using Express.js running on Node.js and MongoDB.',
-    },
-    {
-      company: 'Glasgow Caledonian University',
-      position: 'Research Assistant',
-      startDate: 'June 2023',
-      endDate: 'August 2023',
-      details:
-        "I worked on my own research project to estimate the state of health of Lithium-ion batteries using deep learning and time-series analysis. I've also contributed to the the research of M.Sc. and Ph.D. students on computer vision and natural language processing research.",
-    },
-    {
-      company: 'Elnady Engineering',
-      position: 'Junior Full Stack Developer',
-      startDate: 'Sep 2024',
-      endDate: 'Feb 2025',
-      details: `Worked on Octopi, an all-in-one solution for managing educational institutes. Implemented a QR code based attendance system aimed to be resistant to fraudulent entries by students. Containerized the back-end and front-end, which was not implemented before. Developed test containers for end-to-end testing and added unit testing to some core functionality.`,
-    },
-  ];
+  let { data } = $props();
 </script>
 
 <svelte:head>
@@ -91,7 +65,7 @@
             I also self-host services for my family's personal use.
           </p>
           <TextLink href="/technologies" aria-label="Technologies"
-            >Check out all the technologies I've worked with!</TextLink
+            >Check out my tools.</TextLink
           >
         </div>
       </div>
@@ -116,7 +90,7 @@
     <div class="section-icon"><MdContentPaste /></div>
   {/snippet}
   <div class="experience">
-    {#each experience as i}
+    {#each data.experience as i}
       <Experience {...i} />
     {/each}
   </div>
@@ -126,7 +100,7 @@
     <div class="section-icon"><MdCode /></div>
   {/snippet}
   <div class="projects">
-    {#each projects as project}
+    {#each data.projects as project}
       <Project class="project" {project} />
     {/each}
   </div>
