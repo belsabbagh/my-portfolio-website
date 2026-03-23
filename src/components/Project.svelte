@@ -43,9 +43,6 @@
   .project-tag {
     text-align: center;
   }
-  code {
-    color: var(--primary-text);
-  }
   @media only screen and (max-width: 720px) {
     .project-tags {
       padding: 0 2rem;
