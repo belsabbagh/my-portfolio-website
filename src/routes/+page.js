@@ -26,24 +26,24 @@ let experience = [
 ];
 
 const projects = [
-  {
-    title: 'Hand Geometry Detection',
-    description:
-      'A script that can be used to recognize a hand shape in an image.',
-    stack: [
-      {
-        name: 'Python',
-        opinion:
-          'My Swiss army knife at this point. Dependable but just as clunky and heavy.',
-      },
-      {
-        name: 'OpenCV',
-        opinion:
-          "Before 4.11, LSP integration was abysmal. It was powerfully useful, but still an undocumented mess to work with. I'm glad those dark days are behind us.",
-      },
-    ],
-    href: 'https://github.com/belal-elsabbagh/hand-geometry-detection.git',
-  },
+  // {
+  //   title: 'Hand Geometry Detection',
+  //   description:
+  //     'A script that can be used to recognize a hand shape in an image.',
+  //   stack: [
+  //     {
+  //       name: 'Python',
+  //       opinion:
+  //         'My Swiss army knife at this point. Dependable but just as clunky and heavy.',
+  //     },
+  //     {
+  //       name: 'OpenCV',
+  //       opinion:
+  //         "Before 4.11, LSP integration was abysmal. It was powerfully useful, but still an undocumented mess to work with. I'm glad those dark days are behind us.",
+  //     },
+  //   ],
+  //   href: 'https://github.com/belal-elsabbagh/hand-geometry-detection.git',
+  // },
   {
     title: 'Productivity Manager',
     description: `A web app built to keep track of employee utilization on 
