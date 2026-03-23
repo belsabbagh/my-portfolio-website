@@ -1,24 +1,34 @@
 <script>
   import * as contacts from '../config/contacts';
-  import FaGithub from 'svelte-icons/fa/FaGithub.svelte';
-  import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte';
-  import IconLink from '../components/IconLink.svelte';
 </script>
 
 <div>
-  <IconLink
-    class="icon"
-    href={contacts.github.link}
-    aria-label={contacts.github.name}><FaGithub /></IconLink
-  >
-  <IconLink
+  <a class="icon" href={contacts.github.link} aria-label={contacts.github.name}
+    ><span class="mdi--github"></span>
+  </a>
+  <a
     class="icon"
     href={contacts.linkedin.link}
-    aria-label={contacts.linkedin.name}><FaLinkedin /></IconLink
+    aria-label={contacts.linkedin.name}
   >
+    <span class="mdi--linkedin"></span>
+  </a>
 </div>
 
 <style>
+  a {
+    position: relative;
+    top: 0;
+    transition:
+      top 0.1s ease-in-out,
+      color 0.1s ease-in-out;
+    color: var(--primary);
+  }
+  a:hover {
+    top: -6px;
+    color: var(--accent);
+  }
+
   div {
     position: sticky;
     display: flex;

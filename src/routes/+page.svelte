@@ -1,7 +1,4 @@
 <script>
-  import MdTagFaces from 'svelte-icons/md/MdTagFaces.svelte';
-  import MdContentPaste from 'svelte-icons/md/MdContentPaste.svelte';
-  import MdCode from 'svelte-icons/md/MdCode.svelte';
   import MainSection from '../components/MainSection.svelte';
   import TextLink from '../components/TextLink.svelte';
   import * as contacts from '../config/contacts';
@@ -47,7 +44,7 @@
 </section>
 <MainSection id="about" title="About Me">
   {#snippet icon()}
-    <div class="section-icon"><MdTagFaces /></div>
+    <span class="section-icon mdi--face-outline"></span>
   {/snippet}
   <div class="about-me">
     <div class="content">
@@ -87,7 +84,7 @@
 </MainSection>
 <MainSection id="experience" title="My Experience">
   {#snippet icon()}
-    <div class="section-icon"><MdContentPaste /></div>
+    <span class="section-icon mdi--clipboard-outline"></span>
   {/snippet}
   <div class="experience">
     {#each data.experience as i}
@@ -97,7 +94,7 @@
 </MainSection>
 <MainSection id="work" title="Things I've Built">
   {#snippet icon()}
-    <div class="section-icon"><MdCode /></div>
+    <span class="section-icon material-symbols--code-rounded"></span>
   {/snippet}
   <div class="projects">
     {#each data.projects as project}

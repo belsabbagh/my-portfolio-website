@@ -1,6 +1,4 @@
 <script>
-  // import NewQuoteForm from '../../components/cryptogram/NewQuoteForm.svelte';
-
   import Stopwatch from '../../components/cryptogram/Stopwatch.svelte';
   import { getRandomQuote } from '$lib/cryptogram/quotes';
   import Puzzle from '../../components/cryptogram/Puzzle.svelte';
@@ -34,7 +32,7 @@
     }
   }
 
-  function startOverAction(e) {
+  function startOverAction(_e) {
     resetInputs();
   }
 
@@ -103,10 +101,6 @@
       for that letter
     </p>
   </div>
-  <!-- <div>
-        <h2>Add a quote</h2>
-        <NewQuoteForm />
-    </div> -->
 </main>
 
 <svelte:window onkeydown={handleKeyDown} />
