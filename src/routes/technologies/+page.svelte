@@ -108,9 +108,9 @@
 
   .technology:hover {
     /* spotlight */
-    transform: scale(1.05);
+    background: linear-gradient(var(--background) 0%, 90%, var(--accent) 100%);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    transition: all 0.15s ease-in-out;
+    transition: background 2s ease-in-out;
   }
 
   .technology img {
