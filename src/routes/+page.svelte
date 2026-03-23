@@ -79,16 +79,21 @@
     <div class="content">
       <div class="me">
         <img src="/20240712_145317.jpg" alt="Me" />
-        <p>
-          Hello! I'm Belal, and I've recently completed my bachelor's degree in
-          computer science. It is not just a career for me, it's a lifestyle. I
-          love building software that solves my problems. Real, human problems.
-          I've gained a lot of experience early on while trying many different,
-          yet overlapping, specializations. I've done academic research on
-          Artificial Intelligence, built production-ready software for thousands
-          of users, and even programmed competitively. I also self-host services
-          for my family's personal use.
-        </p>
+        <div>
+          <p>
+            Hello! I'm Belal, and I've recently completed my bachelor's degree
+            in computer science. It is not just a career for me, it's a
+            lifestyle. I love building software that solves my problems. Real,
+            human problems. I've gained a lot of experience early on while
+            trying many different, yet overlapping, specializations. I've done
+            academic research on Artificial Intelligence, built production-ready
+            software for thousands of users, and even programmed competitively.
+            I also self-host services for my family's personal use.
+          </p>
+          <TextLink href="/technologies" aria-label="Technologies"
+            >Check out all the technologies I've worked with!</TextLink
+          >
+        </div>
       </div>
       <!-- <p> -->
       <!--   I'm a software developer who loves to build digital solutions for -->
@@ -125,9 +130,6 @@
       <Project class="project" {project} />
     {/each}
   </div>
-  <TextLink href="/technologies" aria-label="Technologies"
-    >Check out all the technologies I've worked with!</TextLink
-  >
 </MainSection>
 <section id="contact" class="contact">
   <strong>Want to get in touch?</strong>
