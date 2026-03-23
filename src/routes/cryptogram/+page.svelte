@@ -9,6 +9,9 @@
   import { makePuzzle, PRESET_DIFFICULTIES } from '$lib/cryptogram/puzzleMaker';
   import { time } from '$lib/cryptogram/time';
 
+  let difficulty = $state('easy');
+  let quote = $state(getRandomQuote());
+
   function newPuzzle(quote, difficulty) {
     puzzle.set(makePuzzle(quote, difficulty));
     resetInputs();
@@ -54,9 +57,7 @@
     }
   }
 
-  let difficulty = $state('easy');
-  let quote = getRandomQuote();
-  puzzle.set(makePuzzle(quote, PRESET_DIFFICULTIES[difficulty]));
+  puzzle.set(makePuzzle(quote, PRESET_DIFFICULTIES['easy']));
 </script>
 
 <main>
