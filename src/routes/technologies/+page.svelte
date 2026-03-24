@@ -1,62 +1,7 @@
 <script>
   import TextLink from '../../components/TextLink.svelte';
 
-  const technologies = [
-    {
-      name: 'C++',
-      logo: 'https://cdn.svgporn.com/logos/c-plusplus.svg',
-      note: 'Working with classes in C++ automatically makes it extra complex.',
-      categories: ['language'],
-    },
-    {
-      name: 'Java',
-      logo: 'https://cdn.svgporn.com/logos/java.svg',
-      note: 'I first learnt OOP with Java. Not having to deal with pointers was an upgrade.',
-      categories: ['language'],
-    },
-    {
-      name: 'JavaScript',
-      logo: 'https://cdn.svgporn.com/logos/javascript.svg',
-      note: 'Only a skilled developer can write clean JavaScript code, assuming they understand its quirks.',
-      categories: ['language'],
-    },
-    {
-      name: 'Python',
-      logo: 'https://cdn.svgporn.com/logos/python.svg',
-      note: "We have our differences, but it's still my digital Swiss army knife.",
-      categories: ['language'],
-    },
-    {
-      name: 'PHP',
-      logo: 'https://cdn.svgporn.com/logos/php.svg',
-      note: 'Hate on it all you want, but it got better ever since PHP 7.',
-      categories: ['language'],
-    },
-    {
-      name: 'Dart',
-      logo: 'https://cdn.svgporn.com/logos/dart.svg',
-      note: 'Neither I nor anyone I know has ever used Dart outside of Flutter.',
-      categories: ['language'],
-    },
-    {
-      name: 'Rust',
-      logo: 'https://cdn.svgporn.com/logos/rust.svg',
-      note: "I've only played around with it, but I wish I could use it for real.",
-      categories: ['language'],
-    },
-    {
-      name: 'React',
-      logo: 'https://cdn.svgporn.com/logos/react.svg',
-      note: "It's not obsolete yet.",
-      categories: ['framework', 'JavaScript'],
-    },
-    {
-      name: 'Svelte',
-      logo: 'https://cdn.svgporn.com/logos/svelte-icon.svg',
-      note: 'Now this is my front-end Swiss army knife.',
-      categories: ['framework', 'JavaScript'],
-    },
-  ];
+  const { data } = $props();
 </script>
 
 <main>
@@ -72,7 +17,7 @@
   </p>
   <div class="center">
     <div class="technologies">
-      {#each technologies as { name, logo, note }}
+      {#each data.technologies as { name, logo, note }}
         <div class="technology hover-container">
           <img src={logo} alt={name} />
           <h3>{name}</h3>
@@ -92,18 +37,18 @@
   }
   .technologies {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    width: 70%;
-    justify-content: space-between;
     gap: 20px;
   }
 
   .technology {
     padding: 20px;
+    max-width: 225px;
+    width: 225px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: left;
   }
 
   .technology:hover {
@@ -131,11 +76,11 @@
     place-content: center;
   }
 
-  .technology:nth-child(odd) {
-    text-align: right;
-  }
-
-  .technology:nth-child(even) {
-    text-align: left;
-  }
+  /* .technology:nth-child(odd) { */
+  /*   text-align: right; */
+  /* } */
+  /**/
+  /* .technology:nth-child(even) { */
+  /*   text-align: left; */
+  /* } */
 </style>

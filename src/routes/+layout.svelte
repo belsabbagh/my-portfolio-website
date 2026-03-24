@@ -18,7 +18,7 @@
     <Logo />
   {/snippet}
 </Header>
-<main>
+<div class="root-container">
   <div class="body">
     <div class="left-bar">
       <ContactsNav />
@@ -30,13 +30,9 @@
     <div class="right-bar"></div>
   </div>
   <Footer />
-</main>
+</div>
 
 <style>
-  main :global(section) {
-    margin-bottom: 4rem;
-  }
-
   .body {
     display: flex;
     flex-direction: row;
@@ -58,7 +54,6 @@
     align-items: center;
     flex-direction: column;
     margin: auto;
-    max-width: 720px;
   }
 
   .line {
