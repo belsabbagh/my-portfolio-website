@@ -11,7 +11,6 @@
 
 <style>
   nav {
-    font-size: 18px;
     display: flex;
     justify-content: space-around;
     gap: 0.5rem;
@@ -19,8 +18,5 @@
     max-width: 80%;
   }
   @media only screen and (max-width: 720px) {
-    nav {
-      font-size: 14px;
-    }
   }
 </style>

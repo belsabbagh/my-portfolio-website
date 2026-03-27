@@ -3,17 +3,17 @@
   let { href, children } = $props();
 </script>
 
-<a {href}>
+<a class="nav-item" {href}>
   {@render children()}
 </a>
 
 <style>
-  a {
+  .nav-item {
     transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
     padding: 0.5rem;
   }
-  a:after,
-  a:before {
+  .nav-item:after,
+  .nav-item:before {
     content: '';
     position: absolute;
     display: block;
@@ -23,7 +23,7 @@
     transition: all 0.3s ease;
   }
 
-  a:after {
+  .nav-item:after {
     width: 0%;
     height: 0%;
     top: 0;
@@ -32,7 +32,7 @@
     border-left: 2px solid transparent;
   }
 
-  a:before {
+  .nav-item:before {
     width: 0%;
     height: 0%;
     right: 0;
@@ -41,8 +41,8 @@
     border-right: 2px solid transparent;
   }
 
-  a:hover::before,
-  a:hover::after {
+  .nav-item:hover::before,
+  .nav-item:hover::after {
     width: 10px;
     height: 10px;
     border-color: var(--accent);
