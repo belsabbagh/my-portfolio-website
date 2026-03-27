@@ -1,4 +1,10 @@
-const quotes = {
+export interface Quote {
+  text: string;
+  author: string;
+  tags: string[];
+}
+
+const quotes: { quotes: Quote[] } = {
   quotes: [
     {
       text: 'My mom used to say today is a great day for a great day.',
@@ -246,10 +252,9 @@ export function getRandomQuote(tags = ['programming']) {
 
   // 2. Check if any quotes were found
   if (taggedQuotes.length === 0) {
-    console.warn(
+    throw new Error(
       `No quotes found matching any of the tags: ${tags.join(', ')}`,
     );
-    return null;
   }
 
   // 3. Select a random quote from the filtered array

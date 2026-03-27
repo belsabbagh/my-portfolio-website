@@ -3,20 +3,28 @@
 </script>
 
 <div>
-  <a class="icon" href={contacts.github.link} aria-label={contacts.github.name}
-    ><span class="mdi--github"></span>
+  <a
+    class="contact-icon"
+    href={contacts.github.link}
+    aria-label={contacts.github.name}
+    ><span class="mdi--github icon"></span>
   </a>
   <a
-    class="icon"
+    class="contact-icon"
     href={contacts.linkedin.link}
     aria-label={contacts.linkedin.name}
   >
-    <span class="mdi--linkedin"></span>
+    <span class="mdi--linkedin icon"></span>
   </a>
 </div>
 
 <style>
-  a {
+  .icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact-icon {
     position: relative;
     top: 0;
     transition:
@@ -24,7 +32,7 @@
       color 0.1s ease-in-out;
     color: var(--primary);
   }
-  a:hover {
+  .contact-icon:hover {
     top: -6px;
     color: var(--accent);
   }
@@ -39,7 +47,7 @@
     height: 100%;
     max-height: fit-content;
   }
-  div :global(.icon) {
+  div :global(.contact-icon) {
     width: 1.5rem;
     height: 1.5rem;
     margin: 0.5rem;

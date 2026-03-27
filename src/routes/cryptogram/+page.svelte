@@ -1,11 +1,11 @@
 <script>
-  import Stopwatch from '../../components/cryptogram/Stopwatch.svelte';
   import { getRandomQuote } from '$lib/cryptogram/quotes';
   import Puzzle from '../../components/cryptogram/Puzzle.svelte';
   import { puzzle } from '$lib/cryptogram/puzzle';
   import { getALlInputs } from '$lib/cryptogram/dom';
   import { makePuzzle, PRESET_DIFFICULTIES } from '$lib/cryptogram/puzzleMaker';
   import { time } from '$lib/cryptogram/time';
+  import { secondsToTime } from '$lib/cryptogram/text';
 
   let difficulty = $state('easy');
   let quote = $state(getRandomQuote());
@@ -62,7 +62,7 @@
   <h1>Cryptogram</h1>
   <div class="timer"></div>
   <div id="status">
-    <Stopwatch />
+    <div id="stopwatch">{secondsToTime($time)}</div>
     {#if $puzzle.isFinished}
       You solved it!
     {:else}
@@ -106,6 +106,9 @@
 <svelte:window onkeydown={handleKeyDown} />
 
 <style>
+  main {
+    max-width: 980px;
+  }
   #status {
     display: flex;
     flex-direction: column;
@@ -118,5 +121,13 @@
   select {
     margin-left: 0.35rem;
     padding-left: 0.2rem;
+  }
+
+  #stopwatch {
+    display: inline-block;
+    vertical-align: top;
+    color: rgba(255, 255, 255, 0.35);
+    padding: 0;
+    font-size: x-large;
   }
 </style>
