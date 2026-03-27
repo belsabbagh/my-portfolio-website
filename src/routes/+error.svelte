@@ -1,4 +1,5 @@
 <script>
+  let { error } = $props();
 </script>
 
-There was an error
+<p>{error.message}</p>
