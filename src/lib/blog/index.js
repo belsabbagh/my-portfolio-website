@@ -1,5 +1,5 @@
-export const fetchMarkdownPosts = async () => {
-  const allPostFiles = import.meta.glob('/src/lib/blog/*.md');
+export async function fetchMarkdownPosts() {
+  const allPostFiles = import.meta.glob('$lib/blog/*.md');
   const iterablePostFiles = Object.entries(allPostFiles);
 
   const allPosts = await Promise.all(
@@ -15,4 +15,4 @@ export const fetchMarkdownPosts = async () => {
   );
 
   return allPosts;
-};
+}
