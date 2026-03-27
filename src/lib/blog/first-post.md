@@ -1,7 +1,7 @@
 ---
 title: First Post
 subtitle: Welcome to my mess.
-date: 2026-02-25
+date: 2026-03-01
 ---
 I'm human, and with that comes the urge to vent my thoughts and feelings, and I
 have a lot of those now that I'm looking to start off my career. So, I'm making
@@ -15,3 +15,4 @@ late, it's not that big of a deal, but it's a great opportunity to keep a human
 record of my work and progress outside of the "I'm thrilled to announce..."
 mold. It's my space and my thoughts and I hope you enjoy reading them as much as
 I enjoy writing them.
+

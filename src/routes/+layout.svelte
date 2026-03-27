@@ -1,5 +1,6 @@
 <script>
   import '../global.css';
+  import '../code.css';
   import Header from '../components/Header.svelte';
   import Footer from '../components/Footer.svelte';
   import Logo from '../components/Logo.svelte';

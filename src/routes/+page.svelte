@@ -115,7 +115,7 @@
 
 <style>
   main {
-    max-width: 720px;
+    max-width: 980px;
   }
 
   section {
@@ -125,6 +125,7 @@
 
   .intro {
     width: 100%;
+    margin-bottom: 2rem;
   }
   .me {
     display: flex;
@@ -149,7 +150,6 @@
   }
   .my-name {
     display: block;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     max-width: fit-content;
     font-size: 4rem;
     font-weight: 700;

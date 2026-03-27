@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "Atkinson";
+  src: url("/fonts/atkinson-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson";
+  src: url("/fonts/atkinson-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --primary-dark: #f0e6f6;
   --primary-text-dark: #f0e6f6;
@@ -22,7 +37,7 @@
   --background: var(--background-dark);
   --background-header: var(--background-header-dark);
 
-  --default-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --default-font: "Atkinson", sans-serif;
   --code-font: "Fira Code", Monaco, monospace;
 
   color-scheme: light dark;
@@ -31,8 +46,8 @@
 
   font-family: var(--default-font);
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 20px;
+  line-height: 1.7;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -43,7 +58,6 @@
 
 p {
   margin-top: 0;
-  line-height: 140%;
   color: var(--primary-text);
 }
 
