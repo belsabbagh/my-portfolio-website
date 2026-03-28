@@ -1,9 +1,6 @@
-<script>
+<script lang="ts">
   import Word from './Word.svelte';
   import { puzzle } from '$lib/cryptogram/puzzle';
-  function formatAuthor(name) {
-    return name.replace(/\n/g, '<br>');
-  }
 </script>
 
 <div class="quote">
@@ -11,7 +8,11 @@
     <Word {word} />
   {/each}
 </div>
-<div class="author">{@html formatAuthor($puzzle.author)}</div>
+<div class="author">
+  {#each $puzzle.author.split('\n') as line}
+    {line}<br />
+  {/each}
+</div>
 
 <style>
   .author {

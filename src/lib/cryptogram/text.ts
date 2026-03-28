@@ -1,12 +1,15 @@
-export function isAlpha(input: string) {
+export function isAlpha(input: string): boolean {
   return /^[a-zA-Z]+$/.test(input);
 }
 
-export function sanitizeInput(val) {
+export function sanitizeInput(val: string): string {
+  if (!val) {
+    return '';
+  }
   if (!isAlpha(val)) {
     return '';
   }
-  return (val > 1 ? val[0] : val).toUpperCase();
+  return ((val.length > 1 ? val[0] : val) ?? '').toUpperCase();
 }
 
 const formatter = new Intl.DurationFormat('en-US', {

@@ -1,5 +1,5 @@
-<script>
-  import { getRandomQuote } from '$lib/cryptogram/quotes';
+<script lang="ts">
+  import { getRandomQuote, type Quote } from '$lib/cryptogram/quotes';
   import Puzzle from '../../components/cryptogram/Puzzle.svelte';
   import { puzzle } from '$lib/cryptogram/puzzle';
   import { getALlInputs } from '$lib/cryptogram/dom';
@@ -10,47 +10,52 @@
   let difficulty = $state('easy');
   let quote = $state(getRandomQuote());
 
-  function newPuzzle(quote, difficulty) {
+  function newPuzzle(quote: Quote, difficulty: number) {
     puzzle.set(makePuzzle(quote, difficulty));
     resetInputs();
-    time.set(0);
+    time.start();
   }
 
-  function makePuzzleAction(_e) {
-    newPuzzle(getRandomQuote(), PRESET_DIFFICULTIES[difficulty]);
+  function makePuzzleAction() {
+    newPuzzle(getRandomQuote(), PRESET_DIFFICULTIES[difficulty] ?? 0.3);
   }
 
-  function setDifficultyAction(e) {
-    newPuzzle(quote, PRESET_DIFFICULTIES[e.target.value]);
+  function setDifficultyAction(
+    e: Event & { currentTarget: EventTarget & HTMLSelectElement },
+  ) {
+    const target = e.target as HTMLSelectElement;
+    newPuzzle(quote, PRESET_DIFFICULTIES[target.value] ?? 0.3);
   }
 
   function resetInputs() {
     const inputs = getALlInputs();
-    for (const i of inputs) {
+    inputs.forEach((i) => {
       i.value = '';
       i.readOnly = false;
-    }
+    });
   }
 
-  function startOverAction(_e) {
+  function startOverAction() {
     resetInputs();
   }
 
-  function handleKeyDown(e) {
+  function handleKeyDown(e: KeyboardEvent) {
     if (e.key === 'Enter') {
       if (!$puzzle.isFinished) return;
-      document.getElementById('next').click();
+      const nextButton = document.getElementById('next') as HTMLButtonElement;
+      nextButton.click();
     }
 
-    if (e.keyCode >= 65 && e.keyCode <= 90) {
+    if (e.shiftKey && /^[a-zA-Z]$/.test(e.key)) {
       if (!e.shiftKey) return;
       const key = e.key.toUpperCase();
       const inputs = document.getElementsByName(key);
       if (inputs.length === 0) return;
-      inputs[0].focus();
+      inputs[0]?.focus();
     }
 
-    if (![8, 9, 16, 17].includes(e.keyCode)) {
+    const navigationKeys = ['Backspace', 'Tab', 'Shift', 'Control', 'Alt'];
+    if (!navigationKeys.includes(e.key)) {
       e.preventDefault();
     }
   }

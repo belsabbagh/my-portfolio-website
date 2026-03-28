@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
   import CharInput from './CharInput.svelte';
 
   import { isAlpha } from '$lib/cryptogram/text';
   import { puzzle } from '$lib/cryptogram/puzzle';
 
-  function specialCharStyle(char) {
+  function specialCharStyle(char: string) {
     return `special-char ${[',', '.'].includes(char) ? 'low' : 'high'}`;
   }
   let { char } = $props();

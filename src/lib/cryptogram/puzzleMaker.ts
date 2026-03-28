@@ -71,7 +71,7 @@ export function makePuzzle(
   };
 }
 
-export const PRESET_DIFFICULTIES = {
+export const PRESET_DIFFICULTIES: Record<string, number> = {
   easy: 0.5,
   normal: 0.65,
   hard: 0.8,

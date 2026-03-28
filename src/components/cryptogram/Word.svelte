@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Char from './Char.svelte';
   let { word } = $props();
 </script>

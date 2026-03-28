@@ -1,52 +1,63 @@
-<script>
+<script lang="ts">
   import { sanitizeInput } from '$lib/cryptogram/text';
   import { colorOthers, getALlInputs } from '$lib/cryptogram/dom';
   import { puzzle } from '$lib/cryptogram/puzzle';
 
-  function actionColorOthers(e) {
+  function actionColorOthers(
+    e: FocusEvent & { currentTarget: EventTarget & HTMLInputElement },
+  ) {
     if ($puzzle.isFinished) return;
-    colorOthers(e.target.name);
+    colorOthers(e.currentTarget.name);
   }
 
-  function updatePuzzle(e) {
-    e.target.value = sanitizeInput(e.target.value);
+  function updatePuzzle(
+    e: Event & { currentTarget: EventTarget & HTMLInputElement },
+  ) {
+    const target = e.target as HTMLInputElement;
+    const { name, id, value } = target;
+    const sanitizedValue = sanitizeInput(value);
     const inputs = getALlInputs();
-    for (const i of inputs) {
-      if (i.name === e.target.name) {
-        i.value = e.target.value;
+    inputs.forEach((i) => {
+      if (i.name === name) {
+        i.value = sanitizedValue;
       }
-    }
+    });
     if (getInput() === $puzzle.answerKey) {
       finishPuzzle(inputs);
       return;
     }
     let found = false;
-    for (const i of inputs) {
-      if (i.id === e.target.id) {
+    inputs.forEach((i) => {
+      if (i.id === id) {
         found = true;
       }
       if (found && i.readOnly === false) {
         i.focus();
-        break;
+        //break
       }
-    }
+    });
   }
 
-  function finishPuzzle(inputs) {
-    inputs.forEach((i) => {
-      i.readOnly = true;
-      i.style.color = 'white';
-      i.style.borderBottom = '1px solid white';
-    });
+  function finishPuzzle(inputs: NodeListOf<HTMLInputElement>) {
+    inputs.forEach(
+      (i: {
+        readOnly: boolean;
+        style: { color: string; borderBottom: string };
+      }) => {
+        i.readOnly = true;
+        i.style.color = 'white';
+        i.style.borderBottom = '1px solid white';
+      },
+    );
     $puzzle.isFinished = true;
   }
 
   function getInput() {
     const inputs = getALlInputs();
     let answer = '';
-    for (const i of inputs) {
+    inputs.forEach((i) => {
       answer += i.value;
-    }
+    });
     return answer;
   }
 
