@@ -19,6 +19,6 @@
 <style>
   main {
     max-width: 720px;
-    min-height: 75vh;
+    min-height: 80vh;
   }
 </style>
