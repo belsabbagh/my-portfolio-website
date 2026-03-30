@@ -1,13 +1,14 @@
 <script lang="ts">
   import { sanitizeInput } from '$lib/cryptogram/text';
-  import { colorOthers, getALlInputs } from '$lib/cryptogram/dom';
+  import { colorOthers, getAllInputs } from '$lib/cryptogram/dom';
   import { puzzle } from '$lib/cryptogram/puzzle';
 
   function actionColorOthers(
     e: FocusEvent & { currentTarget: EventTarget & HTMLInputElement },
   ) {
     if ($puzzle.isFinished) return;
-    colorOthers(e.currentTarget.name);
+    const target = e.target as HTMLInputElement;
+    colorOthers(target.name);
   }
 
   function updatePuzzle(
@@ -16,7 +17,7 @@
     const target = e.target as HTMLInputElement;
     const { name, id, value } = target;
     const sanitizedValue = sanitizeInput(value);
-    const inputs = getALlInputs();
+    const inputs = getAllInputs();
     inputs.forEach((i) => {
       if (i.name === name) {
         i.value = sanitizedValue;
@@ -26,16 +27,6 @@
       finishPuzzle(inputs);
       return;
     }
-    let found = false;
-    inputs.forEach((i) => {
-      if (i.id === id) {
-        found = true;
-      }
-      if (found && i.readOnly === false) {
-        i.focus();
-        //break
-      }
-    });
   }
 
   function finishPuzzle(inputs: NodeListOf<HTMLInputElement>) {
@@ -49,11 +40,11 @@
         i.style.borderBottom = '1px solid white';
       },
     );
-    $puzzle.isFinished = true;
+    puzzle.finish();
   }
 
   function getInput() {
-    const inputs = getALlInputs();
+    const inputs = getAllInputs();
     let answer = '';
     inputs.forEach((i) => {
       answer += i.value;

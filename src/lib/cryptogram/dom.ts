@@ -1,4 +1,4 @@
-export function getALlInputs() {
+export function getAllInputs(): NodeListOf<HTMLInputElement> {
   return document.querySelectorAll('input');
 }
 
@@ -11,5 +11,5 @@ export function colorInput(input: HTMLInputElement, name: string) {
 }
 
 export function colorOthers(name: string) {
-  getALlInputs().forEach((i) => colorInput(i, name));
+  getAllInputs().forEach((i) => colorInput(i, name));
 }

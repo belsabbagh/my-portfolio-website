@@ -1,9 +1,8 @@
 <script lang="ts">
   import { getRandomQuote, type Quote } from '$lib/cryptogram/quotes';
   import Puzzle from '../../components/cryptogram/Puzzle.svelte';
-  import { puzzle } from '$lib/cryptogram/puzzle';
-  import { getALlInputs } from '$lib/cryptogram/dom';
-  import { makePuzzle, PRESET_DIFFICULTIES } from '$lib/cryptogram/puzzleMaker';
+  import { getAllInputs } from '$lib/cryptogram/dom';
+  import { puzzle, PRESET_DIFFICULTIES } from '$lib/cryptogram/puzzle';
   import { time } from '$lib/cryptogram/time';
   import { secondsToTime } from '$lib/cryptogram/text';
 
@@ -11,7 +10,7 @@
   let quote = $state(getRandomQuote());
 
   function newPuzzle(quote: Quote, difficulty: number) {
-    puzzle.set(makePuzzle(quote, difficulty));
+    puzzle.make(quote.text, difficulty);
     resetInputs();
     time.start();
   }
@@ -28,7 +27,7 @@
   }
 
   function resetInputs() {
-    const inputs = getALlInputs();
+    const inputs = getAllInputs();
     inputs.forEach((i) => {
       i.value = '';
       i.readOnly = false;
@@ -44,6 +43,7 @@
       if (!$puzzle.isFinished) return;
       const nextButton = document.getElementById('next') as HTMLButtonElement;
       nextButton.click();
+      return;
     }
 
     if (e.shiftKey && /^[a-zA-Z]$/.test(e.key)) {
@@ -52,15 +52,12 @@
       const inputs = document.getElementsByName(key);
       if (inputs.length === 0) return;
       inputs[0]?.focus();
-    }
-
-    const navigationKeys = ['Backspace', 'Tab', 'Shift', 'Control', 'Alt'];
-    if (!navigationKeys.includes(e.key)) {
       e.preventDefault();
+      return;
     }
   }
 
-  puzzle.set(makePuzzle(quote, PRESET_DIFFICULTIES['easy']));
+  puzzle.make(quote.text, PRESET_DIFFICULTIES['easy'] ?? 0.3);
 </script>
 
 <main>
@@ -86,6 +83,11 @@
 
   <div class="card">
     <Puzzle />
+    <div class="author">
+      {#each quote.author.split('\n') as line}
+        {line}<br />
+      {/each}
+    </div>
   </div>
   <div class="controls">
     <button onclick={startOverAction}>Clear</button>
@@ -134,5 +136,10 @@
     color: rgba(255, 255, 255, 0.35);
     padding: 0;
     font-size: x-large;
+  }
+  .author {
+    padding: 0.5rem 0 0.5rem 0;
+    text-align: end;
+    color: rgba(255, 255, 255, 0.35);
   }
 </style>
