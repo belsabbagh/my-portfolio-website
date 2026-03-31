@@ -6,7 +6,6 @@
   function specialCharStyle(char: string) {
     return `special-char ${[',', '.'].includes(char) ? 'low' : 'high'}`;
   }
-
   let refs: Record<string, CharInput> = {};
 
   function actionColorOthers(
@@ -74,7 +73,7 @@
                     `${String(i).padStart(
                       3,
                       '0',
-                    )}-${String(i).padStart(3, '0')}`
+                    )}-${String(j).padStart(3, '0')}`
                   ]
                 }
                 name={$puzzle.charMap[char] ?? ''}
