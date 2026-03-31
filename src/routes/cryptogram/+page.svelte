@@ -32,10 +32,6 @@
     puzzleComponent?.reset();
   }
 
-  function startOverAction() {
-    resetInputs();
-  }
-
   function handleKeyDown(e: KeyboardEvent) {
     if (e.key === 'Enter') {
       if (!$puzzle.isFinished) return;
@@ -90,7 +86,7 @@
     </div>
   </div>
   <div class="controls">
-    <button onclick={startOverAction}>Clear</button>
+    <button onclick={resetInputs}>Clear</button>
     <button
       id="next"
       class="next"
