@@ -1,25 +1,20 @@
 <script lang="ts">
+  import { createInputManager } from '$lib/cryptogram/inputManager';
   import { puzzle } from '$lib/cryptogram/puzzle';
   import { isAlpha, sanitizeInput } from '$lib/cryptogram/text';
   import CharInput from './CharInput.svelte';
-
+  const refs: Record<string, CharInput> = {};
+  const inputManager = createInputManager(refs);
   function specialCharStyle(char: string) {
     return `special-char ${[',', '.'].includes(char) ? 'low' : 'high'}`;
   }
-  let refs: Record<string, CharInput> = {};
 
   function actionColorOthers(
     e: FocusEvent & { currentTarget: EventTarget & HTMLInputElement },
   ) {
     if ($puzzle.isFinished) return;
     const target = e.target as HTMLInputElement;
-    for (const key in refs) {
-      if (refs[key]?.getName() === target.name) {
-        refs[key]?.focus();
-      } else {
-        refs[key]?.blur();
-      }
-    }
+    inputManager.syncFocus(target.name);
   }
 
   function updatePuzzle(
@@ -28,35 +23,22 @@
     const target = e.target as HTMLInputElement;
     const { name, value } = target;
     const sanitizedValue = sanitizeInput(value);
-    for (const key in refs) {
-      if (refs[key]?.getName() === name) {
-        refs[key]?.set(sanitizedValue);
-      }
-    }
-    // console.debug(`${$puzzle.answerKey}\n\n${getInput()}`);
-    if ($puzzle.answerKey === getInput()) {
+    inputManager.updateValues(name, sanitizedValue);
+    if ($puzzle.answerKey === inputManager.getCurrentInput()) {
       finishPuzzle();
     }
   }
   function finishPuzzle() {
-    for (const key in refs) {
-      refs[key]?.finish();
-    }
+    inputManager.finishAll();
     puzzle.finish();
   }
 
-  function getInput() {
-    return Object.keys(refs)
-      .sort()
-      .map((key) => refs[key]?.getValue())
-      .filter((val) => val !== undefined && val !== null)
-      .join('');
+  function makeRefId(i: number, j: number) {
+    return `${String(i).padStart(3, '0')}-${String(j).padStart(3, '0')}`;
   }
 
   export function reset() {
-    for (const i in refs) {
-      refs[i]?.reset();
-    }
+    inputManager.resetAll();
   }
 </script>
 
@@ -68,14 +50,7 @@
           {#if isAlpha(char)}
             {#if $puzzle.hiddenChars.includes(char)}
               <CharInput
-                bind:this={
-                  refs[
-                    `${String(i).padStart(
-                      3,
-                      '0',
-                    )}-${String(j).padStart(3, '0')}`
-                  ]
-                }
+                bind:this={refs[makeRefId(i, j)]}
                 name={$puzzle.charMap[char] ?? ''}
                 onfocus={actionColorOthers}
                 oninput={updatePuzzle}

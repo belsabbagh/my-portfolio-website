@@ -1,6 +1,5 @@
 import { writable } from 'svelte/store';
 import { isAlpha } from './text';
-
 function _createCharMap(uniqueCharacters: string) {
   const allChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const puzzleChars = allChars
