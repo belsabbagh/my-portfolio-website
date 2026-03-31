@@ -1,66 +1,49 @@
 <script lang="ts">
-  import { sanitizeInput } from '$lib/cryptogram/text';
-  import { colorOthers, getAllInputs } from '$lib/cryptogram/dom';
-  import { puzzle } from '$lib/cryptogram/puzzle';
-
-  function actionColorOthers(
-    e: FocusEvent & { currentTarget: EventTarget & HTMLInputElement },
-  ) {
-    if ($puzzle.isFinished) return;
-    const target = e.target as HTMLInputElement;
-    colorOthers(target.name);
+  let { name, oninput, onfocus } = $props();
+  let inputEl: HTMLInputElement;
+  const focusColor = '#ff0000';
+  const blurColor = '#ffffff';
+  export function focus() {
+    inputEl.style.color = focusColor;
+    inputEl.style.borderBottom = `1px solid ${focusColor}`;
   }
 
-  function updatePuzzle(
-    e: Event & { currentTarget: EventTarget & HTMLInputElement },
-  ) {
-    const target = e.target as HTMLInputElement;
-    const { name, id, value } = target;
-    const sanitizedValue = sanitizeInput(value);
-    const inputs = getAllInputs();
-    inputs.forEach((i) => {
-      if (i.name === name) {
-        i.value = sanitizedValue;
-      }
-    });
-    if (getInput() === $puzzle.answerKey) {
-      finishPuzzle(inputs);
-      return;
-    }
+  export function blur() {
+    inputEl.style.color = blurColor;
+    inputEl.style.borderBottom = `1px solid ${blurColor}`;
   }
 
-  function finishPuzzle(inputs: NodeListOf<HTMLInputElement>) {
-    inputs.forEach(
-      (i: {
-        readOnly: boolean;
-        style: { color: string; borderBottom: string };
-      }) => {
-        i.readOnly = true;
-        i.style.color = 'white';
-        i.style.borderBottom = '1px solid white';
-      },
-    );
-    puzzle.finish();
+  export function set(value: string) {
+    inputEl.value = value;
   }
 
-  function getInput() {
-    const inputs = getAllInputs();
-    let answer = '';
-    inputs.forEach((i) => {
-      answer += i.value;
-    });
-    return answer;
+  export function getName(): string {
+    return name;
   }
 
-  let { name } = $props();
+  export function finish() {
+    inputEl.readOnly = true;
+    inputEl.style.color = 'white';
+    inputEl.style.borderBottom = '1px solid white';
+  }
+
+  export function getValue(): string {
+    return inputEl.value;
+  }
+
+  export function reset() {
+    inputEl.value = '';
+    inputEl.readOnly = false;
+  }
 </script>
 
 <input
   {name}
+  bind:this={inputEl}
   id={name + Math.random()}
   type="text"
-  oninput={updatePuzzle}
-  onfocus={actionColorOthers}
+  {oninput}
+  {onfocus}
   maxlength="1"
   autocomplete="off"
   autocorrect="off"

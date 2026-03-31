@@ -1,13 +1,14 @@
 <script lang="ts">
   import { getRandomQuote, type Quote } from '$lib/cryptogram/quotes';
   import Puzzle from '../../components/cryptogram/Puzzle.svelte';
-  import { getAllInputs } from '$lib/cryptogram/dom';
   import { puzzle, PRESET_DIFFICULTIES } from '$lib/cryptogram/puzzle';
   import { time } from '$lib/cryptogram/time';
   import { secondsToTime } from '$lib/cryptogram/text';
+  import { onMount } from 'svelte';
 
   let difficulty = $state('easy');
-  let quote = $state(getRandomQuote());
+  let quote = $state<Quote>({} as Quote);
+  let puzzleComponent: Puzzle | null = null;
 
   function newPuzzle(quote: Quote, difficulty: number) {
     puzzle.make(quote.text, difficulty);
@@ -15,8 +16,9 @@
     time.start();
   }
 
-  function makePuzzleAction() {
-    newPuzzle(getRandomQuote(), PRESET_DIFFICULTIES[difficulty] ?? 0.3);
+  async function makePuzzleAction() {
+    quote = await getRandomQuote();
+    newPuzzle(quote, PRESET_DIFFICULTIES[difficulty] ?? 0.3);
   }
 
   function setDifficultyAction(
@@ -27,11 +29,7 @@
   }
 
   function resetInputs() {
-    const inputs = getAllInputs();
-    inputs.forEach((i) => {
-      i.value = '';
-      i.readOnly = false;
-    });
+    puzzleComponent?.reset();
   }
 
   function startOverAction() {
@@ -47,7 +45,6 @@
     }
 
     if (e.shiftKey && /^[a-zA-Z]$/.test(e.key)) {
-      if (!e.shiftKey) return;
       const key = e.key.toUpperCase();
       const inputs = document.getElementsByName(key);
       if (inputs.length === 0) return;
@@ -57,7 +54,10 @@
     }
   }
 
-  puzzle.make(quote.text, PRESET_DIFFICULTIES['easy'] ?? 0.3);
+  onMount(async () => {
+    quote = await getRandomQuote();
+    newPuzzle(quote, PRESET_DIFFICULTIES[difficulty] ?? 0.3);
+  });
 </script>
 
 <main>
@@ -82,9 +82,9 @@
   </div>
 
   <div class="card">
-    <Puzzle />
+    <Puzzle bind:this={puzzleComponent} />
     <div class="author">
-      {#each quote.author.split('\n') as line}
+      {#each quote.author?.split('\n') as line}
         {line}<br />
       {/each}
     </div>
@@ -116,6 +116,7 @@
   main {
     max-width: 980px;
   }
+
   #status {
     display: flex;
     flex-direction: column;
