@@ -69,7 +69,14 @@
           {#if isAlpha(char)}
             {#if $puzzle.hiddenChars.includes(char)}
               <CharInput
-                bind:this={refs[`${String(i).padStart(3, '0')}-${j}`]}
+                bind:this={
+                  refs[
+                    `${String(i).padStart(
+                      3,
+                      '0',
+                    )}-${String(i).padStart(3, '0')}`
+                  ]
+                }
                 name={$puzzle.charMap[char] ?? ''}
                 onfocus={actionColorOthers}
                 oninput={updatePuzzle}
