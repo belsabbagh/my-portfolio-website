@@ -3,6 +3,7 @@
   let inputEl: HTMLInputElement;
   const focusColor = '#ff0000';
   const blurColor = '#ffffff';
+
   export function focus() {
     inputEl.style.color = focusColor;
     inputEl.style.borderBottom = `1px solid ${focusColor}`;
@@ -55,6 +56,7 @@
   input {
     background-color: transparent;
     border: none;
+    border-radius: 0;
     border-bottom: 1px solid white;
     font-size: larger;
     text-align: center;

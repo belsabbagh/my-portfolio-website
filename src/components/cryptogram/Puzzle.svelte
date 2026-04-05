@@ -42,7 +42,7 @@
   }
 </script>
 
-<div class="quote">
+<div class="puzzle">
   {#each $puzzle.words as word, i}
     <span class="word">
       {#each word as char, j}
@@ -91,7 +91,7 @@
   }
 
   .whitespace {
-    margin: 0 0.3rem 0 0.3rem;
+    margin: 0 0.5rem 0 0.5rem;
   }
 
   .solved-char {
@@ -107,6 +107,7 @@
   }
 
   .key {
+    text-align: center;
     display: block;
     color: rgba(255, 255, 255, 0.35);
   }
