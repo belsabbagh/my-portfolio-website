@@ -3,29 +3,37 @@
   import Puzzle from '../../components/cryptogram/Puzzle.svelte';
   import { puzzle, PRESET_DIFFICULTIES } from '$lib/cryptogram/puzzle';
   import { time } from '$lib/cryptogram/time';
-  import { secondsToTime } from '$lib/cryptogram/text';
+  import { isAlpha, secondsToTime } from '$lib/cryptogram/text';
   import { onMount } from 'svelte';
+
+  const DEFAULT_DIFFICULTY = 0.3;
 
   let difficulty = $state('easy');
   let quote = $state<Quote>({} as Quote);
   let puzzleComponent: Puzzle | null = null;
 
-  function newPuzzle(quote: Quote, difficulty: number) {
-    puzzle.make(quote.text, difficulty);
+  async function newPuzzle(quote: Quote, difficulty: number) {
+    await puzzle.make(quote.text, difficulty);
     resetInputs();
     time.start();
   }
 
   async function makePuzzleAction() {
     quote = await getRandomQuote();
-    newPuzzle(quote, PRESET_DIFFICULTIES[difficulty] ?? 0.3);
+    await newPuzzle(
+      quote,
+      PRESET_DIFFICULTIES[difficulty] ?? DEFAULT_DIFFICULTY,
+    );
   }
 
-  function setDifficultyAction(
+  async function setDifficultyAction(
     e: Event & { currentTarget: EventTarget & HTMLSelectElement },
   ) {
     const target = e.target as HTMLSelectElement;
-    newPuzzle(quote, PRESET_DIFFICULTIES[target.value] ?? 0.3);
+    await newPuzzle(
+      quote,
+      PRESET_DIFFICULTIES[target.value] ?? DEFAULT_DIFFICULTY,
+    );
   }
 
   function resetInputs() {
@@ -40,7 +48,7 @@
       return;
     }
 
-    if (e.shiftKey && /^[a-zA-Z]$/.test(e.key)) {
+    if (e.shiftKey && isAlpha(e.key)) {
       const key = e.key.toUpperCase();
       const inputs = document.getElementsByName(key);
       if (inputs.length === 0) return;

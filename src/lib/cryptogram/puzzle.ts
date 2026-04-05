@@ -1,12 +1,20 @@
-import { writable } from 'svelte/store';
+import { get, writable } from 'svelte/store';
 import { isAlpha } from './text';
+
+async function _hash(text: string): Promise<string> {
+  const msgUint8 = new TextEncoder().encode(text.trim().toUpperCase());
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
 function _createCharMap(uniqueCharacters: string) {
   const allChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const puzzleChars = allChars
     .split('')
     .filter((i) => uniqueCharacters.indexOf(i) === -1);
-  if (puzzleChars.length < uniqueCharacters.length) {
-    const extra = uniqueCharacters.length - puzzleChars.length;
+  const extra = uniqueCharacters.length - puzzleChars.length;
+  if (extra > 0) {
     for (let i = 0; i < extra; i++) {
       const c = uniqueCharacters[i];
       if (c === undefined) {
@@ -16,12 +24,12 @@ function _createCharMap(uniqueCharacters: string) {
     }
   }
   let charMap: Record<string, string> = {};
-  [...uniqueCharacters].forEach((element: string, index: number) => {
+  [...uniqueCharacters].forEach((i: string, index: number) => {
     let k = puzzleChars[index];
     if (k === undefined) {
       return;
     }
-    charMap[element] = k;
+    charMap[i] = k;
   });
   return charMap;
 }
@@ -32,14 +40,17 @@ function _hideChars(uniqueChars: string, difficultyPercent: number): string {
     .join('');
 }
 
-function _makeAnswerKey(text: string, hiddenChars: string): string {
+async function _makeAnswerKey(
+  text: string,
+  hiddenChars: string,
+): Promise<string> {
   let key = '';
   for (const i of text) {
     if (hiddenChars.indexOf(i) !== -1) {
       key += i;
     }
   }
-  return key;
+  return await _hash(key);
 }
 
 export interface Puzzle {
@@ -50,10 +61,10 @@ export interface Puzzle {
   charMap: Record<string, string>;
 }
 
-export function makePuzzle(
+export async function makePuzzle(
   text: string,
   difficultyPercent: number = 0.7,
-): Puzzle {
+): Promise<Puzzle> {
   text = text.toUpperCase();
   let uniqueChars = [...new Set<string>(text)]
     .filter((char: string) => char !== ' ' && isAlpha(char))
@@ -61,7 +72,7 @@ export function makePuzzle(
   const hiddenChars = _hideChars(uniqueChars, difficultyPercent);
   return {
     hiddenChars,
-    answerKey: _makeAnswerKey(text, hiddenChars),
+    answerKey: await _makeAnswerKey(text, hiddenChars),
     words: text.split(' '),
     charMap: _createCharMap(uniqueChars),
     isFinished: false,
@@ -91,18 +102,25 @@ export function createPuzzleGame() {
     set(structuredClone(DEFAULT_PUZZLE));
   }
 
-  function make(text: string, difficulty: number) {
-    set(makePuzzle(text, difficulty));
+  async function make(text: string, difficulty: number) {
+    set(await makePuzzle(text, difficulty));
   }
 
   function finish() {
     update((p: Puzzle) => ({ ...p, isFinished: true }));
   }
 
+  async function solved(input: string): Promise<boolean> {
+    const currentState = get({ subscribe });
+    const hashedInput = await _hash(input);
+    return currentState.answerKey === hashedInput;
+  }
+
   return {
     subscribe,
     clear,
     make,
+    solved,
     finish,
   };
 }
