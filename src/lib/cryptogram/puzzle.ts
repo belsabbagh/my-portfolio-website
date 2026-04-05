@@ -10,22 +10,22 @@ async function _hash(text: string): Promise<string> {
 
 function _createCharMap(uniqueCharacters: string) {
   const allChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  const puzzleChars = allChars
+  const unusedChars = allChars
     .split('')
     .filter((i) => uniqueCharacters.indexOf(i) === -1);
-  const extra = uniqueCharacters.length - puzzleChars.length;
+  const extra = uniqueCharacters.length - unusedChars.length;
   if (extra > 0) {
     for (let i = 0; i < extra; i++) {
       const c = uniqueCharacters[i];
       if (c === undefined) {
         continue;
       }
-      puzzleChars.push(c);
+      unusedChars.push(c);
     }
   }
   let charMap: Record<string, string> = {};
   [...uniqueCharacters].forEach((i: string, index: number) => {
-    let k = puzzleChars[index];
+    let k = unusedChars[index];
     if (k === undefined) {
       return;
     }

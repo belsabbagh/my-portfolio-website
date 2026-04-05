@@ -17,14 +17,14 @@
     inputManager.syncFocus(target.name);
   }
 
-  function updatePuzzle(
+  async function updatePuzzle(
     e: Event & { currentTarget: EventTarget & HTMLInputElement },
   ) {
     const target = e.target as HTMLInputElement;
     const { name, value } = target;
     const sanitizedValue = sanitizeInput(value);
     inputManager.updateValues(name, sanitizedValue);
-    if ($puzzle.answerKey === inputManager.getCurrentInput()) {
+    if (await puzzle.solved(inputManager.getCurrentInput())) {
       finishPuzzle();
     }
   }
