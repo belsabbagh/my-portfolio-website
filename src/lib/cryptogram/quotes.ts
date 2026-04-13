@@ -4,6 +4,10 @@ export interface Quote {
   tags: string[];
 }
 
+interface QuotesData {
+  quotes: Quote[];
+}
+
 const quotesDataPromise = import('./quotes.json');
 
 /**
@@ -13,7 +17,7 @@ export async function getRandomQuote(
   tags: string[] = ['programming'],
 ): Promise<Quote> {
   const { default: data } = await quotesDataPromise;
-  const quotesList = (data as { quotes: Quote[] }).quotes;
+  const quotesList = (data satisfies QuotesData).quotes;
   const taggedQuotes = quotesList.filter((quote) => {
     return quote.tags && tags.some((tag) => quote.tags.includes(tag));
   });

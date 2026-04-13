@@ -1,5 +1,7 @@
+import type { Component } from 'svelte';
+
 interface BlogPostModule {
-  default: any;
+  default: Component;
   metadata: {
     title: string;
     date: string | Date;
