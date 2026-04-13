@@ -2,6 +2,7 @@
 title: First Post
 subtitle: Welcome to my mess.
 date: 2026-03-01
+draft: false
 ---
 I'm human, and with that comes the urge to vent my thoughts and feelings, and I
 have a lot of those now that I'm looking to start off my career. So, I'm making
