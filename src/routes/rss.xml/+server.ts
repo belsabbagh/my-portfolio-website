@@ -44,7 +44,7 @@ const generateRss = (entries: Entry[]): string => {
       <guid>${'https://belsabbagh.me/' + item.slug}</guid>
       <description>${item.meta.subtitle}</description>
       <pubDate>${new Date(item.lastmod).toUTCString()}</pubDate>
-      <link rel="self">${'https://belsabbagh.me/' + item.slug}</link>
+      <link>${'https://belsabbagh.me/' + item.slug}</link>
     </item>
   `,
     )
