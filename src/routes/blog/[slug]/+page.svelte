@@ -1,6 +1,9 @@
 <script>
+  import Head from '$lib/components/Head.svelte';
   export let data;
 </script>
+
+<Head title="{data.title}" description="Read the article: {data.title}" ogImage="/20240712_145317.jpg" />
 
 <main>
   <article>
