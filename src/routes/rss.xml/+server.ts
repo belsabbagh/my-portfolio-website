@@ -20,7 +20,7 @@ async function fetchBlogPostsMetadata(): Promise<Entry[]> {
 
     const lastmod = new Date().toISOString();
     return {
-      slug: slug,
+      slug: 'blog/' + slug,
       lastmod: lastmod,
       meta: post.meta,
       content: post.content || 'No content available',
@@ -44,7 +44,8 @@ const generateRss = (entries: Entry[]): string => {
       <guid>${'https://belsabbagh.me/' + item.slug}</guid>
       <description>${item.meta.subtitle}</description>
       <pubDate>${new Date(item.lastmod).toUTCString()}</pubDate>
-    <link rel="self">${'https://belsabbagh.me/' + item.slug}</link>
+      <link rel="self">${'https://belsabbagh.me/' + item.slug}</link>
+    </item>
   `,
     )
     .join('');
