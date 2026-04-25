@@ -1,4 +1,4 @@
-import { fetchMarkdownPosts } from '$lib/blog';
+import { getPosts } from '$lib/blog';
 
 const site = 'https://belsabbagh.me';
 
@@ -14,7 +14,7 @@ interface SitemapEntry {
  * @returns {Promise<SitemapEntry[]>} An array of sitemap entries for posts.
  */
 async function fetchBlogSitemapEntries(): Promise<SitemapEntry[]> {
-  const posts = await fetchMarkdownPosts();
+  const posts = await getPosts();
   const entries: SitemapEntry[] = [];
 
   for (const post of posts) {

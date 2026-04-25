@@ -1,9 +1,9 @@
-import { fetchMarkdownPosts } from '$lib/blog';
+import { getPosts, type Post, type PostMetadata } from '$lib/blog';
 
-interface PostMetadata {
+interface Entry {
   slug: string;
   lastmod: string;
-  title: string;
+  meta: PostMetadata;
   content: string;
 }
 
@@ -11,9 +11,9 @@ interface PostMetadata {
  * Fetches metadata (slug, title, and last modified date) for all markdown posts from the blog directory.
  * @returns {Promise<PostMetadata[]>} An array of post metadata entries.
  */
-async function fetchBlogPostsMetadata(): Promise<PostMetadata[]> {
-  const posts = await fetchMarkdownPosts();
-  const entries: PostMetadata[] = posts.map((post) => {
+async function fetchBlogPostsMetadata(): Promise<Entry[]> {
+  const posts = await getPosts();
+  const entries: Entry[] = posts.map((post: Post) => {
     const slug = post.path
       .substring(post.path.lastIndexOf('/') + 1)
       .replace('.md', '');
@@ -35,7 +35,7 @@ async function fetchBlogPostsMetadata(): Promise<PostMetadata[]> {
  * @param {PostMetadata[]} entries - List of post metadata.
  * @returns {string} The XML RSS feed string.
  */
-const generateRss = (entries: PostMetadata[]): string => {
+const generateRss = (entries: Entry[]): string => {
   const items = entries
     .map(
       (item) => `
@@ -72,4 +72,3 @@ export async function GET() {
   response.headers.set('Content-Type', 'application/rss+xml');
   return response;
 }
-
