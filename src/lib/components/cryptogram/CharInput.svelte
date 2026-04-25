@@ -41,7 +41,6 @@
 <input
   {name}
   bind:this={inputEl}
-  id={name + Math.random()}
   type="text"
   {oninput}
   {onfocus}

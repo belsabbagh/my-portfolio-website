@@ -1,11 +1,10 @@
-<!-- @migration-task Error while migrating Svelte code: $$props is used together with named props in a way that cannot be automatically migrated. -->
 <script>
-  export let href;
-  export let target = '_self';
-  export let rel = '';
+  let { children, ...rest } = $props();
 </script>
 
-<a {target} {rel} class={$$props.class} {href}><slot /></a>
+<a {...rest}>
+  {@render children?.()}
+</a>
 
 <style>
   a {

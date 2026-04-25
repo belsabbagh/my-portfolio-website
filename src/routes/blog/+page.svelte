@@ -1,7 +1,10 @@
 <script>
+  import Head from '$lib/components/Head.svelte';
+
   let { data } = $props();
 </script>
 
+<Head />
 <h1>Blog</h1>
 
 <ul>

@@ -1,5 +1,5 @@
 <script>
-  import * as contacts from '../config/contacts';
+  import * as contacts from '$lib/config/contacts';
 </script>
 
 <div>

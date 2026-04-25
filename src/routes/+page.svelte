@@ -1,46 +1,25 @@
 <script>
-  import MainSection from '../components/MainSection.svelte';
-  import TextLink from '../components/TextLink.svelte';
-  import * as contacts from '../config/contacts';
-  import Project from '../components/Project.svelte';
-  import Experience from '../components/Experience.svelte';
+  import MainSection from '$lib/components/MainSection.svelte';
+  import TextLink from '$lib/components/TextLink.svelte';
+  import * as contacts from '$lib/config/contacts';
+  import Project from '$lib/components/Project.svelte';
+  import Experience from '$lib/components/Experience.svelte';
+  import Head from '$lib/components/Head.svelte';
 
   let { data } = $props();
 </script>
 
-<svelte:head>
-  <title>Belal Elsabbagh</title>
-  <meta
-    name="description"
-    content="Hi! I'm Belal, and I love building software of any shape or form."
-  />
-  <meta name="robots" content="index, follow" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://belsabbagh.me/" />
-  <meta property="og:title" content="Belal Elsabbagh" />
-  <meta
-    property="og:description"
-    content="Hi! I'm Belal, and I love building software of any shape or form."
-  />
-  <meta property="og:image" content="/20240712_145317.jpg" />
-  <meta property="og:logo" content="your value" />
-
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://belsabbagh.me/" />
-  <meta property="twitter:title" content="Belal Elsabbagh" />
-  <meta
-    property="twitter:description"
-    content="Hi! I'm Belal, and I love building software of any shape or form."
-  />
-  <meta property="twitter:image" content="/20240712_145317.jpg" />
-</svelte:head>
+<Head
+  title="Belal Elsabbagh"
+  description="Welcome to my website."
+  ogImage="/20240712_145317.jpg"
+/>
 
 <main>
   <section class="intro">
     <div>
       <span class="greeting">Nice to meet you. My name is</span>
-      <span class="my-name">Belal Elsabbagh</span>
+      <h1 class="my-name">Belal Elsabbagh</h1>
     </div>
   </section>
   <MainSection id="about" title="About Me">
@@ -149,6 +128,7 @@
     color: var(--accent);
   }
   .my-name {
+    margin: 0;
     display: block;
     max-width: fit-content;
     font-size: 4rem;

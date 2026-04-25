@@ -2,9 +2,12 @@
   import { createInputManager } from '$lib/cryptogram/inputManager';
   import { puzzle } from '$lib/cryptogram/puzzle';
   import { isAlpha, sanitizeInput } from '$lib/cryptogram/text';
+  import { onMount } from 'svelte';
   import CharInput from './CharInput.svelte';
+  import { time } from '$lib/cryptogram/time';
   const refs: Record<string, CharInput> = {};
   const inputManager = createInputManager(refs);
+
   function specialCharStyle(char: string) {
     return `special-char ${[',', '.'].includes(char) ? 'low' : 'high'}`;
   }
@@ -28,7 +31,9 @@
       finishPuzzle();
     }
   }
+
   function finishPuzzle() {
+    time.pause();
     inputManager.finishAll();
     puzzle.finish();
   }
@@ -40,6 +45,10 @@
   export function reset() {
     inputManager.resetAll();
   }
+  onMount(() => {
+    time.start();
+    time.reset();
+  });
 </script>
 
 <div class="puzzle">

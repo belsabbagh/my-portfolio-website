@@ -1,10 +1,10 @@
 <script>
   import '../global.css';
   import '../code.css';
-  import Header from '../components/Header.svelte';
-  import Footer from '../components/Footer.svelte';
-  import Logo from '../components/Logo.svelte';
-  import ContactsNav from '../components/ContactsNav.svelte';
+  import Header from '$lib/components/Header.svelte';
+  import Footer from '$lib/components/Footer.svelte';
+  import Logo from '$lib/components/Logo.svelte';
+  import ContactsNav from '$lib/components/ContactsNav.svelte';
   /**
    * @typedef {Object} Props
    * @property {import('svelte').Snippet} [children]

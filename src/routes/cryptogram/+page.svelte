@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getRandomQuote, type Quote } from '$lib/cryptogram/quotes';
-  import Puzzle from '../../components/cryptogram/Puzzle.svelte';
+  import Puzzle from '$lib/components/cryptogram/Puzzle.svelte';
   import { puzzle, PRESET_DIFFICULTIES } from '$lib/cryptogram/puzzle';
   import { time } from '$lib/cryptogram/time';
   import { isAlpha, secondsToTime } from '$lib/cryptogram/text';
@@ -15,7 +15,6 @@
   async function newPuzzle(quote: Quote, difficulty: number) {
     await puzzle.make(quote.text, difficulty);
     resetInputs();
-    time.start();
   }
 
   async function makePuzzleAction() {
