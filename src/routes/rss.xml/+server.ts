@@ -41,10 +41,10 @@ const generateRss = (entries: Entry[]): string => {
       (item) => `
     <item>
       <title>${item.meta.title}</title>
-      <link>${'https://belsabbagh.me/' + item.slug}</link>
+      <guid>${'https://belsabbagh.me/' + item.slug}</guid>
       <description>${item.meta.subtitle}</description>
-      <pubDate>${item.lastmod}</pubDate>
-    </item>
+      <pubDate>${new Date(item.lastmod).toUTCString()}</pubDate>
+    <link rel="self">${'https://belsabbagh.me/' + item.slug}</link>
   `,
     )
     .join('');

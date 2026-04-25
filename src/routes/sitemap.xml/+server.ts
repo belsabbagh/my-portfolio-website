@@ -25,7 +25,7 @@ async function fetchBlogSitemapEntries(): Promise<SitemapEntry[]> {
     const lastmod = new Date().toISOString();
 
     entries.push({
-      loc: slug,
+      loc: `blog/${slug}`,
       lastmod: lastmod,
       changefreq: 'daily',
       priority: '0.5',
