@@ -1,31 +1,56 @@
+import { fetchMarkdownPosts } from '$lib/blog';
+
 const site = 'https://belsabbagh.me';
-/** @type {import('./$types').RequestHandler} */
-export async function GET({ url }) {
-  const allPosts = await fetchAllPostSlugs();
-  const pages = ['/', 'blog', ...allPosts];
-  const body = sitemap(pages);
-  const response = new Response(body);
-  response.headers.set('Cache-Control', 'max-age=0, s-maxage=3600');
-  response.headers.set('Content-Type', 'application/xml');
-  return response;
+
+interface SitemapEntry {
+  loc: string;
+  lastmod: string;
+  changefreq: string;
+  priority: string;
 }
 
 /**
- * Fetches all slugs for markdown posts from the blog directory.
- * @returns {Promise<string[]>} An array of post slugs.
+ * Fetches metadata (slug and last modified date) for all markdown posts from the blog directory.
+ * @returns {Promise<SitemapEntry[]>} An array of sitemap entries for posts.
  */
-async function fetchAllPostSlugs(): Promise<string[]> {
-  const allPostFiles = import.meta.glob<any>('$lib/blog/*.md');
-  const slugs: string[] = [];
-  for (const [path, resolver] of Object.entries(allPostFiles)) {
-    // Extract slug from the file path (e.g., $lib/blog/my-post.md -> my-post)
-    const slug = path.substring(path.lastIndexOf('/') + 1).replace('.md', '');
-    slugs.push(slug);
+async function fetchBlogSitemapEntries(): Promise<SitemapEntry[]> {
+  const posts = await fetchMarkdownPosts();
+  const entries: SitemapEntry[] = [];
+
+  for (const post of posts) {
+    const slug = post.path
+      .substring(post.path.lastIndexOf('/') + 1)
+      .replace('.md', '');
+
+    const lastmod = new Date().toISOString();
+
+    entries.push({
+      loc: slug,
+      lastmod: lastmod,
+      changefreq: 'daily',
+      priority: '0.5',
+    });
   }
-  return slugs;
+  return entries;
 }
 
-const sitemap = (pages: string[]) => `<?xml version="1.0" encoding="UTF-8" ?>
+/**
+ * Generates the sitemap XML content from a list of entries.
+ * @param {SitemapEntry[]} entries - List of sitemap entries.
+ * @returns {string} The XML sitemap string.
+ */
+const sitemap = (entries: SitemapEntry[]): string => {
+  // Combine page slugs and post metadata for the final list
+  const allUrls: SitemapEntry[] = [
+    {
+      loc: '',
+      lastmod: new Date().toISOString(),
+      changefreq: 'daily',
+      priority: '1.0',
+    }, // Root page
+  ].concat(entries);
+
+  return `<?xml version="1.0" encoding="UTF-8" ?>
 <urlset
   xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:news="https://www.google.com/schemas/sitemap-news/0.9"
@@ -34,15 +59,27 @@ const sitemap = (pages: string[]) => `<?xml version="1.0" encoding="UTF-8" ?>
   xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
   xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
 >
-  ${pages
+  ${allUrls
     .map(
-      (page) => `
+      (item) => `
   <url>
-    <loc>${site}/${page}</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
+    <loc>${site}/${item.loc}</loc>
+    <lastmod>${item.lastmod}</lastmod>
+    <changefreq>${item.changefreq}</changefreq>
+    <priority>${item.priority}</priority>
   </url>
   `,
     )
     .join('')}
 </urlset>`;
+};
+
+/** @type {import('./$types').RequestHandler} */
+export async function GET() {
+  const postMetadata = await fetchBlogSitemapEntries();
+  const body = sitemap(postMetadata);
+  const response = new Response(body);
+  response.headers.set('Cache-Control', 'max-age=0, s-maxage=3600');
+  response.headers.set('Content-Type', 'application/xml');
+  return response;
+}
