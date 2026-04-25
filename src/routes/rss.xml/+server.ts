@@ -54,7 +54,7 @@ const generateRss = (entries: Entry[]): string => {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Belal Elsabbagh Blog</title>
-    <link>https://belsabbagh.me/</link>
+    <link rel="self">https://belsabbagh.me/</link>
     <description>A feed of posts from the Belal Elsabbagh blog.</description>
     <language>en</language>
     <pubDate>${new Date().toUTCString()}</pubDate>
