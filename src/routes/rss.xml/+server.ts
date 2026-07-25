@@ -2,7 +2,7 @@ import { getPosts, type Post, type PostMetadata } from '$lib/blog';
 
 interface Entry {
   slug: string;
-  lastmod: string;
+  lastmod: Date;
   meta: PostMetadata;
   content: string;
 }
@@ -18,7 +18,7 @@ async function fetchBlogPostsMetadata(): Promise<Entry[]> {
       .substring(post.path.lastIndexOf('/') + 1)
       .replace('.md', '');
 
-    const lastmod = new Date().toISOString();
+    const lastmod = new Date(post.meta.date);
     return {
       slug: 'blog/' + slug,
       lastmod: lastmod,
@@ -36,29 +36,27 @@ async function fetchBlogPostsMetadata(): Promise<Entry[]> {
  * @returns {string} The XML RSS feed string.
  */
 const generateRss = (entries: Entry[]): string => {
-  const items = entries
-    .map(
-      (item) => `
+  const generateRssItem = (item: Entry) => `
     <item>
       <title>${item.meta.title}</title>
       <guid>${'https://belsabbagh.me/' + item.slug}</guid>
       <description>${item.meta.subtitle}</description>
-      <pubDate>${new Date(item.lastmod).toUTCString()}</pubDate>
+      <pubDate>${item.lastmod.toUTCString()}</pubDate>
       <link>${'https://belsabbagh.me/' + item.slug}</link>
     </item>
-  `,
-    )
-    .join('');
+  `;
+  const items = entries.map(generateRssItem).join('');
 
   return `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Belal Elsabbagh Blog</title>
-    <link rel="self">https://belsabbagh.me/</link>
+    <link>https://belsabbagh.me/</link>
+    <atom:link href="https://belsabbagh.me/rss.xml" rel="self" type="application/rss+xml" />
     <description>A feed of posts from the Belal Elsabbagh blog.</description>
     <language>en</language>
-    <pubDate>${new Date().toUTCString()}</pubDate>
-    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <pubDate>${entries[0]?.lastmod.toUTCString()}</pubDate>
+    <lastBuildDate>${entries[0]?.lastmod.toUTCString()}</lastBuildDate>
     ${items}
   </channel>
 </rss>`;
